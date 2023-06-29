@@ -41,12 +41,18 @@
       "password": "abc@123",
       "email": "bhasker@test.com",
       "id": 8
+    },
+    {
+      "name": "DichHong",
+      "password": "hoang",
+      "email": "hoangkai25@gmail.com",
+      "id": 9
     }
   ],
   "products": [
     {
       "name": "Samsung m 40 a ",
-      "price": "550",
+      "price": "5500",
       "category": "mobile",
       "color": "white",
       "description": "this is a Samsung product",
@@ -72,40 +78,71 @@
       "id": 3
     },
     {
-      "name": "Nike Shoes",
-      "price": "3000",
-      "category": "Shoes",
-      "color": "Black",
-      "description": "Best shoes for Running",
-      "image": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/1eeaacc0-e07c-4024-a5f7-57f2fd23e8a2/air-max-270-g-golf-shoe-Z6vCfs.png",
+      "name": "naptop",
+      "price": "123",
+      "category": "laptop",
+      "description": "123",
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSOO1JDPUNwcPiqzHYhaL_zpJA0Ymlr6mD9sSgTPad_JYdrk-o",
       "id": 4
     },
     {
-      "name": "Levies Jeans",
-      "price": "5000",
-      "category": "Jeans",
-      "color": "blue",
-      "description": "Confirmable jeans for man ",
-      "image": "https://www.filmibeat.com/wimg/desktop/2012/12/13548612746596.jpg",
-      "id": 5
+      "name": "naptop",
+      "price": "123",
+      "category": "laptop",
+      "description": "123",
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSOO1JDPUNwcPiqzHYhaL_zpJA0Ymlr6mD9sSgTPad_JYdrk-o",
+      "id": 8
     },
     {
-      "name": "Truck",
-      "price": "Toy",
-      "category": "Toys",
-      "color": "Red",
-      "description": "A toy for 5 year old child",
-      "image": "https://cdn.shopify.com/s/files/1/0011/8367/8476/products/Truck2_1400x.png?v=1662789388",
-      "id": 6
+      "name": "naptop",
+      "price": "123",
+      "category": "laptop",
+      "description": "123",
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSOO1JDPUNwcPiqzHYhaL_zpJA0Ymlr6mD9sSgTPad_JYdrk-o",
+      "id": 9
     },
     {
-      "name": "Noise Smart Watch",
-      "price": "2000",
-      "category": "Watch",
-      "color": "Black",
-      "description": "Noise smart watch for man and women both",
-      "image": "https://www.reliancedigital.in/medias/Noise-Colorfit-Pro-2-Smart-Watch-491900986-i-1-1200Wx1200H-300Wx300H?context=bWFzdGVyfGltYWdlc3w1MDc0NXxpbWFnZS9qcGVnfGltYWdlcy9oYzkvaDdjLzk1OTE4MjA3NDY3ODIuanBnfDA3MjZlMzkzOTExYzMyNzk5Y2YzOTk0MWFkMjc5YjE5OTlkMDE4NzYzYTg1YzQ2YmNjZjMxYzc5ZDJiYjBlNDg",
-      "id": 7
+      "name": "HP 0 calo",
+      "price": "123",
+      "category": "laptop",
+      "color": "",
+      "description": "123",
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSOO1JDPUNwcPiqzHYhaL_zpJA0Ymlr6mD9sSgTPad_JYdrk-o",
+      "id": 10
+    },
+    {
+      "name": "naptop123",
+      "price": "123",
+      "category": "laptop",
+      "description": "123",
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSOO1JDPUNwcPiqzHYhaL_zpJA0Ymlr6mD9sSgTPad_JYdrk-o",
+      "id": 11
+    },
+    {
+      "name": "naptop1232",
+      "price": "123",
+      "category": "laptop",
+      "description": "123",
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSOO1JDPUNwcPiqzHYhaL_zpJA0Ymlr6mD9sSgTPad_JYdrk-o",
+      "id": 12
+    },
+    {
+      "name": "naptop1232",
+      "price": "123",
+      "category": "laptop",
+      "description": "123",
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSOO1JDPUNwcPiqzHYhaL_zpJA0Ymlr6mD9sSgTPad_JYdrk-o",
+      "color": "blue eye white",
+      "id": 13
+    },
+    {
+      "name": "ádsa",
+      "price": "123",
+      "category": "laptop",
+      "description": "123",
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSOO1JDPUNwcPiqzHYhaL_zpJA0Ymlr6mD9sSgTPad_JYdrk-o",
+      "color": "blue eye white",
+      "id": 14
     }
   ],
   "users": [
@@ -154,15 +191,15 @@
       "id": 7
     },
     {
-      "name": "Levies Jeans",
-      "price": "5000",
-      "category": "Jeans",
-      "color": "blue",
-      "description": "Confirmable jeans for man ",
-      "image": "https://www.filmibeat.com/wimg/desktop/2012/12/13548612746596.jpg",
+      "name": "I phone 14",
+      "price": "100000",
+      "category": "mobile",
+      "color": "black",
+      "description": "An Apple Product",
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSOO1JDPUNwcPiqzHYhaL_zpJA0Ymlr6mD9sSgTPad_JYdrk-o",
       "quantity": 1,
-      "productId": 5,
-      "userId": 3,
+      "productId": 2,
+      "userId": 5,
       "id": 8
     }
   ],

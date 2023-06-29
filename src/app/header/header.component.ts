@@ -59,7 +59,7 @@ export class HeaderComponent implements OnInit {
     if(query){
       const element = query.target as HTMLInputElement;
       this.product.searchProduct(element.value).subscribe((result)=>{
-       
+
         if(result.length>5){
           result.length=length
         }

@@ -8,8 +8,10 @@ import { ProductService } from '../services/product.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
- popularProducts:undefined|product[];
- trendyProducts:undefined | product[];
+  p:any;
+  pageSize: string | number | undefined ;
+ popularProducts:any|product[];
+ trendyProducts:any | product[];
   constructor(private product:ProductService) {}
 
   ngOnInit(): void {

@@ -1,41 +1,48 @@
-<ngb-carousel *ngIf="popularProducts">
-    <ng-template  *ngFor="let item of popularProducts" ngbSlide>
-      <div class="picsum-img-wrapper">
-        <a routerLink="/details/{{item.id}}"> <img class="product-header-image" src="{{item.image}}" alt="Random first slide">
-     </a>
+<!-- <ngb-carousel class="mb-3" *ngIf="popularProducts">
+  <ng-template *ngFor="let item of popularProducts" ngbSlide>
+    <div class="picsum-img-wrapper">
+      <a routerLink="/details/{{ item.id }}">
+        <img
+          class="product-header-image"
+          src="{{ item.image }}"
+          alt="Random first slide"
+        />
+      </a>
+    </div> -->
+    <!-- <div class="carousel-caption">
+      <h3>{{ item.name }}</h3>
+      <p>{{ item.description }}</p>
+    </div> -->
+  <!-- </ng-template>
+</ngb-carousel> -->
+<div class="container-fluid mb-3 bg-dark" >
+  <img width="100%" height="500px" src="https://laptopbachkhoa.net/wp-content/uploads/2021/03/laptop2_800x450.jpg" alt="">
+</div>
+<div class="product-list-wrapper container">
+  <h1 class="mb-3">Sản phẩm nổi bật</h1>
+  <div class="row">
+    <div class="col-sm-3" *ngFor="let item of trendyProducts | paginate : { itemsPerPage: 8, currentPage: p }">
+      <div class="product-item" style="border-radius: 5px; border: 2px solid black;">
+        <img src="{{ item.image }}" alt="" />
+        <div class="product-details">
+          <a class="name-head" routerLink="/details/{{ item.id }}">{{
+            item.name
+          }}</a>
+          <div class="product-price">
+            <h6>Price:{{ item.price }}</h6>
+          </div>
+          <div class="product-color">
+            <h6>Color:{{ item.color }}</h6>
+          </div>
         </div>
-      <div class="carousel-caption">
-        <h3>{{item.name}}</h3>
-        <p>{{item.description}}</p>
+        <div class="product-footer">
+          <a routerLink="/details/{{ item.id }}">View Details</a>
+          <a href="">Add to Cart</a>
+        </div>
       </div>
-    </ng-template>
-  </ngb-carousel>
-<div class="product-list-wrapper">
-<h1>Trendy Products</h1>
-<div class="row">
-  <div class="col-sm-3" *ngFor="let item of trendyProducts">
-    <div class="product-item">
-      <img src="{{item.image}}" alt="">
-    <div class="product-details">
-      <h6 class="name-head">{{item.name}}</h6>
-      <div class="product-price">
-        <h6>Price:{{item.price}}</h6>
-      </div>
-      <div class="product-color">
-        <h6>Color:{{item.color}}</h6>
-      </div>
-    </div>
-    <div class="product-footer">
-      <a routerLink="/details/{{item.id}}">View Details</a>
-      <a href="">Add to Cart</a>
 
     </div>
-    </div>
+    <pagination-controls class="" (pageChange)="p = $event"></pagination-controls>
+
   </div>
-
-
 </div>
-</div>
-
-  
-  
