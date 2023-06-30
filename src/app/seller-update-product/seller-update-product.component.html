@@ -1,54 +1,121 @@
-<div class="update-product">
-    <h1>Update Product</h1>
-    <p class="message-p">{{productMessage}}</p>
-    <form #addProduct="ngForm"
+<!-- <div class="update-product">
+  <h1>Update Product</h1>
+  <form
+    #addProduct="ngForm"
     (ngSubmit)="submit(addProduct.value)"
-     class="common-form">
-      <input
-        type="text"
-        class="form-input"
-        placeholder="Enter Product Name"
-        name="name"
-        ngModel="{{productData?.name}}"
-      />
-      <input
+    class="common-form"
+  >
+    <input
+      type="text"
+      class="form-input"
+      placeholder="Enter Product Name"
+      name="name"
+      ngModel="{{ productData?.name }}"
+    />
+    <input
       type="text"
       class="form-input"
       placeholder="Enter Product Price"
       name="price"
-      ngModel="{{productData?.price}}"
+      ngModel="{{ productData?.price }}"
     />
     <input
-    type="text"
-    class="form-input"
-    placeholder="Enter Product Category"
-    name="category"
-    ngModel="{{productData?.category}}"
-  />
-  <input
-  type="text"
-  class="form-input"
-  placeholder="Enter Product Color"
-  name="color"
-  ngModel="{{productData?.color}}"
-  />
-  <textarea
-  type="text"
-  class="form-input"
-  placeholder="Enter Product Description"
-  name="description"
-  ngModel="{{productData?.description}}"
-  ></textarea>
-  
-  <input
-  type="text"
-  class="form-input"
-  placeholder="Enter Product Image URL"
-  name="image"
-  ngModel="{{productData?.image}}"
-  />
-  <button class="form-button">Update Product</button>
-  
-    </form>
-  </div>
-  
+      type="text"
+      class="form-input"
+      placeholder="Enter Product Category"
+      name="category"
+      ngModel="{{ productData?.category }}"
+    />
+    <input
+      type="text"
+      class="form-input"
+      placeholder="Enter Product Color"
+      name="color"
+      ngModel="{{ productData?.color }}"
+    />
+    <textarea
+      type="text"
+      class="form-input"
+      placeholder="Enter Product Description"
+      name="description"
+      ngModel="{{ productData?.description }}"
+    ></textarea>
+
+    <input
+      type="text"
+      class="form-input"
+      placeholder="Enter Product Image URL"
+      name="image"
+      ngModel="{{ productData?.image }}"
+    />
+    <button class="form-button">Update Product</button>
+  </form>
+</div> -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Update Form</title>
+    <style>
+      /* Style cho input fields và buttons */
+      input[type=text], select, textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+      }
+
+      button[type=submit] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      button[type=submit]:hover {
+        background-color: #45a049;
+      }
+
+      /* Style cho container */
+
+    </style>
+  </head>
+  <body>
+    <h2 class="container mt-6">Cập nhật sản phẩm</h2>
+    <p class="message-p">{{ productMessage }}</p>
+
+    <div class="container">
+      <form #addProduct="ngForm"
+      (ngSubmit)="submit(addProduct.value)">
+        <label for="fname" >Tên sản phẩm</label>
+        <input type="text" id="fname" name="name"
+        ngModel="{{ productData?.name }}" placeholder="Nhập tên sản phẩm">
+
+        <label for="lname">Giá sản phẩm</label>
+        <input type="text"name="price"
+        ngModel="{{ productData?.price }}" placeholder="Nhập giá sản phẩm">
+
+        <label for="email">Danh mục</label>
+        <input type="text" name="category"
+        ngModel="{{ productData?.category }}" placeholder="Danh mục">
+
+        <label for="color">Màu sản phẩm</label>
+        <input type="text" name="color"
+        ngModel="{{ productData?.color }}" placeholder="Màu sản phẩm">
+
+        <label for="description">Mô tả chi tiết</label>
+        <textarea name="description"
+        ngModel="{{ productData?.description }}" placeholder="Mô tả chi tiết" style="height:200px"></textarea>
+        <label for="color">Ảnh sản phẩm</label>
+        <input type="text" name="image"
+        ngModel="{{ productData?.image }}" placeholder="Ảnh sản phẩm">
+
+        <button type="submit" class="mb-4">Cập nhật</button>
+      </form>
+    </div>
+  </body>
+</html>

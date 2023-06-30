@@ -1,4 +1,4 @@
-<div class="add-product">
+<!-- <div class="add-product">
   <h1>Add New Product</h1>
   <p class="message-p">{{addProductMessage}}</p>
   <form #addProduct="ngForm"
@@ -49,5 +49,34 @@ ngModel
 />
 <button class="form-button">Add Product</button>
 
+  </form>
+</div> -->
+<div class="container">
+  <form #addProduct="ngForm"
+  (ngSubmit)="submit(addProduct.value)">
+    <label for="fname" >Tên sản phẩm</label>
+    <input type="text"  name="name"
+    ngModel placeholder="Nhập tên sản phẩm">
+
+    <label for="lname">Giá sản phẩm</label>
+    <input type="text"name="price"
+    ngModel placeholder="Nhập giá sản phẩm">
+
+    <label for="email">Danh mục</label>
+    <input type="text" name="category"
+    ngModel placeholder="Nhập danh mục sản phẩm">
+
+    <label for="color">Màu sản phẩm</label>
+    <input type="text" name="color"
+    ngModel placeholder="Nhập màu sản phẩm">
+
+    <label for="description">Mô tả chi tiết</label>
+    <textarea name="description"
+    ngModel placeholder="Nhập mô tả sản phẩm" style="height:200px"></textarea>
+    <label for="color">Ảnh sản phẩm</label>
+    <input type="text" name="image"
+    ngModel placeholder="Nhập ảnh sản phẩm">
+
+    <button type="submit" class="mb-4">Thêm sản phẩm</button>
   </form>
 </div>

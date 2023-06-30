@@ -47,16 +47,22 @@
       "password": "hoang",
       "email": "hoangkai25@gmail.com",
       "id": 9
+    },
+    {
+      "name": "hoang",
+      "password": "hoang",
+      "email": "hoang@gmail.com",
+      "id": 10
     }
   ],
   "products": [
     {
-      "name": "Samsung m 40 a ",
-      "price": "5500",
+      "name": "Samsung m 40 abc",
+      "price": "550",
       "category": "mobile",
       "color": "white",
       "description": "this is a Samsung product",
-      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSOO1JDPUNwcPiqzHYhaL_zpJA0Ymlr6mD9sSgTPad_JYdrk-o",
+      "image": "",
       "id": 1
     },
     {
@@ -81,6 +87,7 @@
       "name": "naptop",
       "price": "123",
       "category": "laptop",
+      "color": "pink",
       "description": "123",
       "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSOO1JDPUNwcPiqzHYhaL_zpJA0Ymlr6mD9sSgTPad_JYdrk-o",
       "id": 4
@@ -89,6 +96,7 @@
       "name": "naptop",
       "price": "123",
       "category": "laptop",
+      "color": "blue",
       "description": "123",
       "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSOO1JDPUNwcPiqzHYhaL_zpJA0Ymlr6mD9sSgTPad_JYdrk-o",
       "id": 8
@@ -97,6 +105,7 @@
       "name": "naptop",
       "price": "123",
       "category": "laptop",
+      "color": "gray",
       "description": "123",
       "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSOO1JDPUNwcPiqzHYhaL_zpJA0Ymlr6mD9sSgTPad_JYdrk-o",
       "id": 9
@@ -122,6 +131,7 @@
       "name": "naptop1232",
       "price": "123",
       "category": "laptop",
+      "color": "green",
       "description": "123",
       "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSOO1JDPUNwcPiqzHYhaL_zpJA0Ymlr6mD9sSgTPad_JYdrk-o",
       "id": 12
@@ -130,9 +140,9 @@
       "name": "naptop1232",
       "price": "123",
       "category": "laptop",
-      "description": "123",
-      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSOO1JDPUNwcPiqzHYhaL_zpJA0Ymlr6mD9sSgTPad_JYdrk-o",
       "color": "blue eye white",
+      "description": "Hp laptop for student and professionals\t\n",
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSOO1JDPUNwcPiqzHYhaL_zpJA0Ymlr6mD9sSgTPad_JYdrk-o",
       "id": 13
     },
     {
@@ -143,6 +153,15 @@
       "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSOO1JDPUNwcPiqzHYhaL_zpJA0Ymlr6mD9sSgTPad_JYdrk-o",
       "color": "blue eye white",
       "id": 14
+    },
+    {
+      "name": "Việt Trương",
+      "price": "55002",
+      "category": "mobile",
+      "color": "green",
+      "description": "hahaaha",
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSOO1JDPUNwcPiqzHYhaL_zpJA0Ymlr6mD9sSgTPad_JYdrk-o",
+      "id": 15
     }
   ],
   "users": [
@@ -201,6 +220,30 @@
       "productId": 2,
       "userId": 5,
       "id": 8
+    },
+    {
+      "name": "HP Laptop",
+      "price": "50000",
+      "category": "Laptop",
+      "color": "black",
+      "description": "Hp laptop for student and professionals",
+      "image": "https://www.91-cdn.com/hub/wp-content/uploads/2022/07/Top-laptop-brands-in-India.jpg",
+      "quantity": 3,
+      "productId": 3,
+      "userId": 5,
+      "id": 9
+    },
+    {
+      "name": "HP 0 calo",
+      "price": "123",
+      "category": "laptop",
+      "color": "",
+      "description": "123",
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSOO1JDPUNwcPiqzHYhaL_zpJA0Ymlr6mD9sSgTPad_JYdrk-o",
+      "quantity": 2,
+      "productId": 10,
+      "userId": 5,
+      "id": 10
     }
   ],
   "orders": [

@@ -8,7 +8,9 @@ import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./seller-home.component.css'],
 })
 export class SellerHomeComponent implements OnInit {
-  productList: undefined | product[];
+  p:any;
+  pageSize: string | number | undefined ;
+  productList: any | product[];
   productMessage: undefined | string;
   icon = faTrash;
   iconEdit=faEdit;

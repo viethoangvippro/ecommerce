@@ -1,23 +1,41 @@
 <div class="row product-details" *ngIf="productData">
-<div class="col-sm-6">
-<img  class="product-img" src="{{productData.image}}" alt="">
-</div>
-<div class="col-sm-6">
+  <div class="col-sm-6">
+    <img class="product-img" src="{{ productData.image }}" alt="" />
+  </div>
+  <div class="col-sm-6">
     <div class="details">
-        <h1>{{productData.name}}</h1>
-        <h3>Price : {{productData.price}}</h3>
-        <div>Color :<h3 [style.backgroundColor]="productData.color" class="product-color"></h3></div>
-        <h6>Category : {{productData.category}}</h6>
-        <h6>Description : {{productData.description}}</h6>
-        <button class="form-button">Buy Now</button>
-        <button *ngIf="removeCart" class="form-button" (click)=" removeToCart(productData.id)">Remove to Cart</button>
-        <button *ngIf="!removeCart" class="form-button" (click)="addToCart()">Add to Cart</button>
-        <div class="quantity-group">
-            <button (click)="handleQuantity('min')" >-</button>
-            <input type="text" value="{{productQuantity}}" />
-            <button (click)="handleQuantity('plus')">+</button>
+      <h1>{{ productData.name }}</h1>
+      <h3>Giá : {{ productData.price }}</h3>
+      <div>
+        Màu :
+        <h3
+          [style.backgroundColor]="productData.color"
+          class="product-color"
+        ></h3>
+      </div>
+      <h6>Danh mục : {{ productData.category }}</h6>
+      <h6>Mô tả chi tiết : {{ productData.description }}</h6>
+      <div class="quantity-group mb-4">
+        <button (click)="handleQuantity('min')">-</button>
+        <input type="text" value="{{ productQuantity }}" />
+        <button (click)="handleQuantity('plus')">+</button>
+      </div>
 
-        </div>
+      <button
+        *ngIf="removeCart"
+        class="form-button btn btn-outline-success addToCart"
+        (click)="removeToCart(productData.id)"
+      >
+        Xoá khỏi giỏ hàng
+      </button>
+      <button
+        *ngIf="!removeCart"
+        class="form-button addToCart"
+        (click)="addToCart()"
+      >
+        Thêm vào giỏ hàng
+      </button>
+      <button class="form-button buynow">Mua ngay</button>
     </div>
-</div>
+  </div>
 </div>
