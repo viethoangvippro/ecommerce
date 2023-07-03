@@ -1,7 +1,7 @@
 <div class="product-list container">
   <h1>Danh sách sản phẩm</h1>
   <p class="message-p">{{ productMessage }}</p>
-  <table style="width: 100%;">
+  <table class="mb-3" style="width: 100%;">
     <thead>
       <tr>
         <th>Ảnh sản phẩm</th>
@@ -29,6 +29,6 @@
       </tr>
     </tbody>
   </table>
-  <pagination-controls class="" (pageChange)="p = $event"></pagination-controls>
+  <pagination-controls style="text-align: center;" (pageChange)="p = $event"></pagination-controls>
 
 </div>

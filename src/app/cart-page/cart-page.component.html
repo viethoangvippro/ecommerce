@@ -1,39 +1,41 @@
 
 <div class="cart-page">
 <h1>
-    Cart Page
+    Giỏ hàng của bạn
 </h1>
-<div class="row">
-<div class="col-sm-8 details">
-    <ul *ngFor="let cart of cartData">
-        <li>
-            <img src="{{cart.image}}" alt="">
-        </li>
-        <li>
-            <span> {{cart.name}}</span>
-        </li>
-        <li>
-            <span> Price : {{cart.price}}</span>
-        </li>
-        <li>
-            <span> Quantity : {{cart.quantity}}</span>
-        </li>
-        <li >
-           <button class="form-button"(click)="removeToCart(cart.id)" >Remove To Cart</button>
-        </li>
-    </ul>
-    
-</div>
-<div class="col-sm-4 summary">
-<h3>Summary</h3>
-<ul>
-    <li> <span>Amount:</span><span>{{priceSummary.price}}</span></li>
-    <li> <span>Tax:</span><span>{{priceSummary.tax}}</span></li>
-    <li> <span>Delivery:</span><span>{{priceSummary.delivery}}</span></li>
-    <li> <span>Discount:</span><span>{{priceSummary.discount}}</span></li>
-    <li> <span><h4>Total</h4></span> <span><h4>{{priceSummary.total}}</h4></span></li>
-    <button (click)="checkout()" class="form-button max-width" >Checkout</button>
-</ul>
-</div>
+<div class="container">
+  <div class="row">
+  <div class="col-sm-8 details">
+      <ul *ngFor="let cart of cartData">
+          <li>
+              <img src="{{cart.image}}" alt="">
+          </li>
+          <li>
+              <span> {{cart.name}}</span>
+          </li>
+          <li>
+              <span> Giá sản phẩm : {{cart.price}}</span>
+          </li>
+          <li>
+              <span> Số lượng : {{cart.quantity}}</span>
+          </li>
+          <li >
+            <button class="form-button"(click)="removeToCart(cart.id)" >Xoá</button>
+          </li>
+      </ul>
+
+  </div>
+  <div class="col-sm-4 summary">
+  <h3>Chi tiết thanh toán</h3>
+  <ul>
+      <li> <span>Giá sản phẩm:</span><span>{{priceSummary.price}} VNĐ</span></li>
+      <li> <span>Thuế:</span><span>{{priceSummary.tax}} VNĐ</span></li>
+      <li> <span>Phí vận chuyển:</span><span>{{priceSummary.delivery}} VNĐ</span></li>
+      <li> <span>Mã giảm giá:</span><span>{{priceSummary.discount}} VNĐ</span></li>
+      <li> <span><h4>Tổng tiền</h4></span> <span><h4>{{priceSummary.total}} VNĐ</h4></span></li>
+      <button (click)="checkout()" class="form-button max-width" >Thanh toán</button>
+  </ul>
+  </div>
+  </div>
 </div>
 </div>

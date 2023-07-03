@@ -23,7 +23,7 @@ export class SellerAuthComponent implements OnInit {
     this.seller.userLogin(data);
     this.seller.isLoginError.subscribe((isError)=>{
       if(isError){
-        this.authError="Email or password is not correct";
+        this.authError="Sai email hoặc mật khẩu";
       }
     })
   }

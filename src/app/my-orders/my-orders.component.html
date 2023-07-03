@@ -1,20 +1,20 @@
-<div class="my-orders">
-    <h1>My Orders</h1>
+<div class="my-orders container">
+    <h1>Đơn hàng của tôi</h1>
     <div class="row">
         <div class="col-sm-2">
-            <span>Orders</span>
+            <span>Đơn hàng</span>
         </div>
         <div class="col-sm-2">
-            <span>Order Id</span>
+            <span>Mã đơn hàng</span>
         </div>
         <div class="col-sm-2">
-            <span>Price</span>
+            <span>Giá</span>
         </div>
         <div class="col-sm-2">
-            <span>Status</span>
+            <span>Trạng thái đơn hàng</span>
         </div>
         <div class="col-sm-2">
-           <span>Cancel Order</span>
+           <span>Huỷ đơn hàng</span>
         </div>
     </div>
     <div class="row" *ngFor="let order of orderData">
@@ -28,11 +28,11 @@
             <span>{{order.totalPrice}}</span>
         </div>
         <div class="col-sm-2">
-            <span>In Progress</span>
+            <span>Chờ xác nhận</span>
         </div>
         <div class="col-sm-2">
-            <button class="form-button" (click)="cancelOrder(order.id)">Cancel Order</button>
+            <button class="form-button" (click)="cancelOrder(order.id)">Huỷ đơn hàng</button>
         </div>
     </div>
-    
+
 </div>

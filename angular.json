@@ -27,6 +27,10 @@
               "src/styles.css"
             ],
             "scripts": [
+              "src/assets/js/main.js",
+              "src/assets/js/mainn.js",
+              "src/assets/js/mixitup.min.js",
+              "src/assets/js/script.js"
 
             ]
           },

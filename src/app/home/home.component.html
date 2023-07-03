@@ -1,4 +1,4 @@
-<!-- <ngb-carousel class="mb-3" *ngIf="popularProducts">
+<ngb-carousel class="mb-5 bg-dark" *ngIf="popularProducts">
   <ng-template *ngFor="let item of popularProducts" ngbSlide>
     <div class="picsum-img-wrapper">
       <a routerLink="/details/{{ item.id }}">
@@ -8,16 +8,38 @@
           alt="Random first slide"
         />
       </a>
-    </div> -->
-    <!-- <div class="carousel-caption">
+    </div>
+    <div class="carousel-caption bg-dark">
       <h3>{{ item.name }}</h3>
       <p>{{ item.description }}</p>
-    </div> -->
-  <!-- </ng-template>
-</ngb-carousel> -->
-<div class="container-fluid mb-3 bg-dark" >
+    </div>
+</ng-template>
+</ngb-carousel>
+
+<!-- <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="..." class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div> -->
+<!-- <div class="container-fluid mb-3 bg-dark" >
   <img width="100%" height="500px" src="https://laptopbachkhoa.net/wp-content/uploads/2021/03/laptop2_800x450.jpg" alt="">
-</div>
+</div> -->
 <div class="product-list-wrapper container">
   <h1 class="mb-3">Sản phẩm nổi bật</h1>
   <div class="row">
@@ -29,10 +51,10 @@
             item.name
           }}</h6></a>
           <div class="product-price">
-            <h6>Price:{{ item.price }}</h6>
+            <h6>Giá sản phẩm: {{ item.price }} VNĐ</h6>
           </div>
           <div class="product-color">
-            <h6>Color:{{ item.color }}</h6>
+            <h6>Màu: {{ item.color }}</h6>
           </div>
         </div>
         <div class="product-footer">
@@ -42,7 +64,59 @@
       </div>
 
     </div>
-    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
 
   </div>
+  <pagination-controls style="text-align: center; " (pageChange)="p = $event"></pagination-controls>
+  <div class="card mb-4 mt-5">
+    <input type="radio" name="select" id="slide_1" checked>
+    <input type="radio" name="select" id="slide_2">
+    <input type="radio" name="select" id="slide_3">
+    <input type="checkbox" id="slideImg">
+
+    <div class="slider">
+      <label for="slide_1" class="slide slide_1"></label>
+      <label for="slide_2" class="slide slide_2"></label>
+      <label for="slide_3" class="slide slide_3"></label>
+    </div>
+
+    <div class="inner_part">
+      <label for="slideImg" class="img">
+        <img class="img_1" src="https://c4.wallpaperflare.com/wallpaper/978/131/617/kiz-kulesi-turkey-istanbul-maiden-s-tower-wallpaper-preview.jpg">
+      </label>
+      <div class="content content_1">
+        <div class="title">DevForum</div>
+        <div class="text">
+          DevForum - Diễn đàn chia sẻ miễn phí code mẫu về Giao diện Admin, Template Frontend Free, HTML , CSS , JavaScript , Selenium và Automation Testing.
+        </div>
+        <button>Read More</button>
+      </div>
+    </div>
+
+    <div class="inner_part">
+      <label for="slideImg" class="img">
+        <img class="img_2" src="https://c4.wallpaperflare.com/wallpaper/649/96/56/ankara-cityscape-night-night-sky-wallpaper-preview.jpg">
+      </label>
+      <div class="content content_2">
+        <div class="title">DevForum</div>
+        <div class="text">
+          DevForum - Diễn đàn chia sẻ miễn phí code mẫu về Giao diện Admin, Template Frontend Free, HTML , CSS , JavaScript , Selenium và Automation Testing.
+        </div>
+        <button>Read More</button>
+      </div>
+    </div>
+
+    <div class="inner_part">
+      <label for="slideImg" class="img">
+        <img class="img_3" src="https://c4.wallpaperflare.com/wallpaper/620/34/558/turkey-izmir-mountains-wallpaper-preview.jpg">
+      </label>
+      <div class="content content_3">
+        <div class="title">DevForum</div>
+        <div class="text">DevForum - Diễn đàn chia sẻ miễn phí code mẫu về Giao diện Admin, Template Frontend Free, HTML , CSS , JavaScript , Selenium và Automation Testing.
+        </div>
+        <button>Read More</button>
+      </div>
+    </div>
+  </div>
 </div>
+

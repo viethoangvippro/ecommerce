@@ -12,7 +12,12 @@ export class HomeComponent implements OnInit {
   pageSize: string | number | undefined ;
  popularProducts:any|product[];
  trendyProducts:any | product[];
-  constructor(private product:ProductService) {}
+  constructor(private product:ProductService) {
+    const myScript = document.createElement('script');
+    myScript.src = '/assets/js/main.js';
+    myScript.src = '/assets/js/mixitup.min.js';
+    document.body.appendChild(myScript);
+  }
 
   ngOnInit(): void {
     this.product.popularProducts().subscribe((data)=>{
