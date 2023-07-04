@@ -20,3 +20,11 @@ ul{
     color: blueviolet;
     text-decoration: none;
 }
+ul li a{
+  text-decoration: none;
+  color: white;
+}
+h3{
+  margin-bottom: 20px;
+}
+

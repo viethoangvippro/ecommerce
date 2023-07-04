@@ -41,8 +41,8 @@
   <img width="100%" height="500px" src="https://laptopbachkhoa.net/wp-content/uploads/2021/03/laptop2_800x450.jpg" alt="">
 </div> -->
 <div class="product-list-wrapper container">
-  <h1 class="mb-3">Sản phẩm nổi bật</h1>
-  <div class="row">
+  <h2 class="mb-3" style="text-align: center; color:red; font-weight: bold;">SẢN PHẨM MỚI</h2>
+  <section class="row">
     <div class="col-sm-3" *ngFor="let item of trendyProducts | paginate : { itemsPerPage: 8, currentPage: p }">
       <div class="product-item" style="border-radius: 5px; border: 2px solid black;">
         <img src="{{ item.image }}" alt="" />
@@ -66,9 +66,12 @@
     </div>
 
 
-  </div>
+  </section>
   <pagination-controls style="text-align: center; " (pageChange)="p = $event"></pagination-controls>
-  <div class="card mb-4 mt-5">
+
+  <h2 style="text-align: center; margin-top: 50px; font-weight: bold;">BÁN CHẠY NHẤT</h2>
+
+  <section class="card mb-4 mt-5">
     <input type="radio" name="select" id="slide_1" checked>
     <input type="radio" name="select" id="slide_2">
     <input type="radio" name="select" id="slide_3">
@@ -82,40 +85,46 @@
 
     <div class="inner_part">
       <label for="slideImg" class="img">
-        <img class="img_1" src="https://c4.wallpaperflare.com/wallpaper/978/131/617/kiz-kulesi-turkey-istanbul-maiden-s-tower-wallpaper-preview.jpg">
+        <img class="img_1" src="https://laptop88.vn/media/product/6780_msi_bravo_15_b5dd_265vn_r5_5600h_919c422d73604315a617fb4a79299da1_master.png">
       </label>
       <div class="content content_1">
-        <div class="title">DevForum</div>
+        <div class="title">MSI Bravo 15</div>
         <div class="text">
-          DevForum - Diễn đàn chia sẻ miễn phí code mẫu về Giao diện Admin, Template Frontend Free, HTML , CSS , JavaScript , Selenium và Automation Testing.
+          MSI Gaming Bravo 15 B5DD (084VN) gây ấn tượng với người dùng bởi phong cách thiết kế hầm hố, năng động chuẩn gaming cùng cấu hình vượt trội, đáp ứng tốt đa tác vụ từ văn phòng cơ bản đến đồ họa - kỹ thuật chuyên sâu.
         </div>
-        <button>Read More</button>
+        <button>Xem thêm</button>
       </div>
     </div>
 
     <div class="inner_part">
       <label for="slideImg" class="img">
-        <img class="img_2" src="https://c4.wallpaperflare.com/wallpaper/649/96/56/ankara-cityscape-night-night-sky-wallpaper-preview.jpg">
+        <img class="img_2" src="https://dlcdnwebimgs.asus.com/gain/f93bdd99-47d7-4f97-8800-5a83d0bd46a6/">
       </label>
       <div class="content content_2">
-        <div class="title">DevForum</div>
+        <div class="title">Asus TUF Gaming F15</div>
         <div class="text">
-          DevForum - Diễn đàn chia sẻ miễn phí code mẫu về Giao diện Admin, Template Frontend Free, HTML , CSS , JavaScript , Selenium và Automation Testing.
+          Laptop Asus TUF Gaming F15 FX506LHB i5 10300H (HN188W) được trang bị bộ vi xử lý Intel dòng H mạnh mẽ, card đồ họa rời NVIDIA và ổ cứng SSD tốc độ cao, tất cả tạo nên một "cỗ máy" mạnh mẽ, đáp ứng tốt nhu cầu chơi game ở mức độ cấu hình cao.
         </div>
-        <button>Read More</button>
+        <button>Xem thêm</button>
       </div>
     </div>
 
     <div class="inner_part">
       <label for="slideImg" class="img">
-        <img class="img_3" src="https://c4.wallpaperflare.com/wallpaper/620/34/558/turkey-izmir-mountains-wallpaper-preview.jpg">
+        <img class="img_3" src="https://nguyenvu-store-medias.tn-cdn.net/2022/03/HP-VICTUS-16-e0177AX-4R0U9PA-nguyenvustore-1.png">
       </label>
       <div class="content content_3">
-        <div class="title">DevForum</div>
-        <div class="text">DevForum - Diễn đàn chia sẻ miễn phí code mẫu về Giao diện Admin, Template Frontend Free, HTML , CSS , JavaScript , Selenium và Automation Testing.
+        <div class="title">HP Victus 15</div>
+        <div class="text">Laptop HP VICTUS 15 fa0155TX i5 12450H (81P00PA) hứa hẹn mang đến trải nghiệm làm việc và giải trí tuyệt vời nhờ bộ vi xử lý Intel thế hệ 12 mạnh mẽ, card đồ họa NVIDIA RTX 30-series và màn hình 144 Hz siêu mượt mà
         </div>
-        <button>Read More</button>
+        <button>Xem thêm</button>
       </div>
+    </div>
+  </section>
+  <div class="mt-5">
+    <div>
+      <h2 style="text-align: center;" class="mb-3">Thông tin về chúng tôi</h2>
+      <iframe class="w-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3826.4980873905147!2d107.58356821029936!3d16.450298029059113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3141a1457de005d7%3A0x6608565df1f87298!2zMTc2IFRy4bqnbiBQaMO6LCBQaMaw4bubYyBWxKluaCwgVGjDoG5oIHBo4buRIEh14bq_LCBUaOG7q2EgVGhpw6puIEh14bq_IDUzMDAwMCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1688435168728!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
 </div>
