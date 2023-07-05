@@ -20,6 +20,8 @@ export class UserAuthComponent implements OnInit {
   signUp(data: signUp) {
     this.user.userSignUp(data);
   }
+
+
   login(data: login) {
     this.user.userLogin(data)
     this.user.invalidUserAuth.subscribe((result)=>{
@@ -32,6 +34,8 @@ export class UserAuthComponent implements OnInit {
 
     })
   }
+
+
   openSignUp(){
     this.showLogin=false
   }

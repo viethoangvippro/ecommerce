@@ -1,6 +1,27 @@
 .nav {
   display: flex;
   justify-content: space-between;
+  background-color: rgb(255, 166, 0);
+}
+.nav a {
+  text-decoration: none;
+  color: black;
+
+}
+.nav span{
+  font-size: 14px;
+  margin-left: 10%;
+}
+.nav span svg{
+  margin-top: -3%;
+}
+.seller{
+  margin-left: 62%;
+  font-size: 14px;
+}
+.login{
+  margin-right: 5%;
+  font-size: 14px;
 }
 
 .nav h1 {
@@ -77,3 +98,15 @@ div ul li a{
 .bi-search{
   color: black;
 }
+.wrapper{
+  position: relative;
+  margin-top: 10px;
+  margin-right: 50px;
+}
+
+  .wrapper span{
+  position: absolute;
+  top: -4px;
+  right: -7px;
+  font-size: 13px;
+  }

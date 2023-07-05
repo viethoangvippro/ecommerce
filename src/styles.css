@@ -1,5 +1,10 @@
+/* Font Awesome Icons */
+@import "~@fortawesome/fontawesome-free/css/all.css";
 body {
   font-family: sans-serif;
+}
+.checked {
+  color: gold;
 }
 .container {
   margin-left: 5%;

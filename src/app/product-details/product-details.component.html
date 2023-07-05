@@ -5,6 +5,7 @@
   <div class="col-sm-6">
     <div class="details">
       <h1>{{ productData.name }}</h1>
+      <div [innerHTML]="convertToStars(productData.rating)"></div>
       <h3>Giá : {{ productData.price }}</h3>
       <div>
         Màu :

@@ -41,5 +41,12 @@
 }
 
 
-
+.fa {
+  font-size: 1.2rem;
+  color: #ccc;
+  cursor: pointer;
+}
+.checked {
+  color: gold;
+}
 

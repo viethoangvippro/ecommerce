@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { cart, product } from '../data-type';
 import { ProductService } from '../services/product.service';
@@ -13,7 +13,32 @@ export class ProductDetailsComponent implements OnInit {
   productQuantity:number=1;
   removeCart=false;
   cartData:product|undefined;
+
   constructor(private activeRoute:ActivatedRoute, private product:ProductService) { }
+  products: any[] = [];
+
+  OnInit() {
+    this.product.getProducts().subscribe(
+      products => {
+        this.products = products;
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  }
+
+  convertToStars(rating: number): string {
+    let stars = '';
+    for (let i = 0; i < 5; i++) {
+      if (i < Math.round(rating)) {
+        stars += '<span class="fa fa-star checked"></span>';
+      } else {
+        stars += '<span class="fa fa-star"></span>';
+      }
+    }
+    return stars;
+  }
 
   ngOnInit(): void {
     let productId= this.activeRoute.snapshot.paramMap.get('productId');
@@ -44,11 +69,11 @@ export class ProductDetailsComponent implements OnInit {
        }
         })
       }
-      
-      
-      
+
+
+
     })
-    
+
   }
   handleQuantity(val:string){
     if(this.productQuantity<20 && val==='plus'){
@@ -78,17 +103,17 @@ export class ProductDetailsComponent implements OnInit {
            this.product.getCartList(userId);
            this.removeCart=true
           }
-        })        
+        })
       }
-      
-    } 
+
+    }
   }
   removeToCart(productId:number){
     if(!localStorage.getItem('user')){
 this.product.removeItemFromCart(productId)
     }else{
       console.warn("cartData", this.cartData);
-      
+
       this.cartData && this.product.removeToCart(this.cartData.id)
       .subscribe((result)=>{
         let user = localStorage.getItem('user');

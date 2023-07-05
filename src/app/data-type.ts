@@ -17,7 +17,8 @@ export interface product{
   description:string,
   id:number,
   quantity:undefined | number,
-  productId:undefined|number
+  productId:undefined|number,
+  rating:any;
 }
 export interface cart{
   name:string,
@@ -47,4 +48,9 @@ export interface order {
   totalPrice:number,
   userId:string,
   id:number|undefined
+}
+
+export interface category {
+  id: number ,
+  name: string
 }

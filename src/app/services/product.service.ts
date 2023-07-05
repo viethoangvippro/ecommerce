@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
 import { cart, order, product } from '../data-type';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -21,6 +22,12 @@ export class ProductService {
 
   getProduct(id: string) {
     return this.http.get<product>(`http://localhost:3000/products/${id}`);
+  }
+
+
+  private apiUrl = "http://localhost:3000/products";
+  getProducts(): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl);
   }
 
   updateProduct(product: product) {
@@ -70,6 +77,13 @@ export class ProductService {
   addToCart(cartData: cart) {
     return this.http.post('http://localhost:3000/cart', cartData);
   }
+
+
+  private baseUrl = "http://localhost:3000";
+  addProductReview(review: any) {
+    return this.http.post(`${this.baseUrl}/reviews`, review);
+  }
+
   getCartList(userId: number) {
     return this.http
       .get<product[]>('http://localhost:3000/cart?userId=' + userId, {
@@ -109,5 +123,9 @@ export class ProductService {
     return this.http.delete('http://localhost:3000/orders/'+orderId)
 
   }
+
+
+
+
 
 }
