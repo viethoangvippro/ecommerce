@@ -8,37 +8,64 @@ import { UserService } from '../services/user.service';
   styleUrls: ['./product-reviews.component.css']
 })
 export class ProductReviewsComponent implements OnInit {
-  userId: string |any;
+  rating: number |any;
+  comment: string | any;
+  product: any;
+  user: any;
 
-  review = {
-    userId: '',
-    productId: '123',
-    rating: 4.5,
-    comment: 'Sản phẩm rất tốt!'
-  };
+  constructor(
+    private productService: ProductService,
+    private userService: UserService,
 
-  constructor(private authService: UserService, private productService: ProductService) { }
+  ) {}
 
-  ngOnInit(): void {
-    this.authService.getCurrentUserId().subscribe(
-      userId => {
-        this.userId = userId;
-        this.review.userId = userId;
+  ngOnInit() {
+    const productId = "1"; // replace with actual product ID
+    this.productService.getProduct(productId).subscribe(
+      (product: any) => {
+        this.product = product;
       },
-      err => {
-        console.log(err); // in ra lỗi nếu có
+      (error: any) => {
+        console.error('Failed to fetch product:', error);
+      }
+    );
+
+    this.user = this.userService.getCurrentUserId();
+  }
+
+  saveProductReview() {
+    const review = {
+      rating: this.rating,
+      comment: this.comment,
+      productId: this.product.id,
+      userId: this.user.id,
+    };
+
+    // Update product rating
+    const newProduct = {
+      ...this.product,
+      rating: (this.product.rating * this.product.numReviews + this.rating) / (this.product.numReviews + 1),
+      numReviews: this.product.numReviews + 1,
+    };
+
+    // Save product review
+    this.productService.saveProductReview(review,this.user.id).subscribe(
+      (response: any) => {
+        console.log('Product review saved successfully:', response);
+        // Update product in mockAPI
+        this.productService.updateProduct(newProduct).subscribe(
+          (response) => {
+            console.log('Product updated successfully:', response);
+          },
+          (error) => {
+            console.error('Failed to update product:', error);
+          }
+        );
+      },
+      (error: any) => {
+        console.error('Failed to save product review:', error);
       }
     );
   }
 
-  submitReview() {
-    this.productService.addProductReview(this.review).subscribe(
-      res => {
-        console.log(res); // in ra kết quả trả về từ mockAPI
-      },
-      err => {
-        console.log(err); // in ra lỗi nếu có
-      }
-    );
-  }
   }

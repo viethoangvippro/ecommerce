@@ -1,11 +1,9 @@
-<form (ngSubmit)="submitReview()">
-  <div>
-    <label for="rating">Rating:</label>
-    <input type="number" name="rating" [(ngModel)]="review.rating">
-  </div>
-  <div>
-    <label for="comment">Comment:</label>
-    <textarea name="comment" [(ngModel)]="review.comment"></textarea>
-  </div>
-  <button type="submit">Submit</button>
+<form>
+  <label for="rating">Rating:</label>
+  <input type="number" name="rating" [(ngModel)]="rating" required>
+
+  <label for="comment">Comment:</label>
+  <textarea name="comment" [(ngModel)]="comment" required></textarea>
+
+  <button (click)="saveProductReview()">Submit</button>
 </form>

@@ -1,14 +1,48 @@
+
 .user-auth h1{
     margin-top: 50px;
     margin-bottom: 80px;
-    color: blueviolet;  
-    text-align: center; 
+    color:#Ff4b2b;;
+    text-align: center;
 }
 
 .user-auth {
     margin-bottom: 100px;
 }
 .user-auth a{
-    color: blueviolet;
+    color: rgb(60, 0, 255);
     cursor: pointer;
 }
+
+button {
+  border-radius: 10px;
+  background: #Ff4b2b;
+  color: white;
+}
+.social-container {
+	margin: 20px 0;
+  text-align: center;
+
+}
+
+.social-container a {
+	border: 1px solid #DDDDDD;
+	border-radius: 50%;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 5px;
+	height: 40px;
+	width: 40px;
+  text-decoration: none;
+  color:#Ff4b2b ;
+}
+.another-login{
+  font-size: 13px;
+  text-align: center;
+}
+.clickhere{
+  font-size: 13px;
+  text-align: center;
+}
+

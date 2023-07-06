@@ -1,7 +1,7 @@
 .nav {
   display: flex;
   justify-content: space-between;
-  background-color: rgb(255, 166, 0);
+  background-color:#Ff4b2b;
 }
 .nav a {
   text-decoration: none;
@@ -16,12 +16,19 @@
   margin-top: -3%;
 }
 .seller{
-  margin-left: 62%;
+  margin-right: 3%;
   font-size: 14px;
 }
 .login{
   margin-right: 5%;
   font-size: 14px;
+
+
+}
+.login-1{
+  width: 100px;
+  margin-top: 5%;
+
 }
 
 .nav h1 {
@@ -106,7 +113,7 @@ div ul li a{
 
   .wrapper span{
   position: absolute;
-  top: -4px;
+  top: -6px;
   right: -7px;
   font-size: 13px;
   }

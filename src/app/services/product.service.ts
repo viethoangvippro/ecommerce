@@ -30,6 +30,19 @@ export class ProductService {
     return this.http.get<any[]>(this.apiUrl);
   }
 
+  private api = "http://localhost:3000/reviews";
+  saveProductReview(review: any, userId: any): Observable<any> {
+    review.userId = userId;
+    return this.http.post<any>(`${this.api}`, review);
+  }
+
+  private baseUrl = "http://localhost:3000";
+  addProductReview(review: any) {
+
+    return this.http.post(`${this.baseUrl}/reviews`, review);
+  }
+
+
   updateProduct(product: product) {
     return this.http.put<product>(
       `http://localhost:3000/products/${product.id}`,
@@ -79,10 +92,7 @@ export class ProductService {
   }
 
 
-  private baseUrl = "http://localhost:3000";
-  addProductReview(review: any) {
-    return this.http.post(`${this.baseUrl}/reviews`, review);
-  }
+
 
   getCartList(userId: number) {
     return this.http
