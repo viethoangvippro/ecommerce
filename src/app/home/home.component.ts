@@ -13,10 +13,7 @@ export class HomeComponent implements OnInit {
  popularProducts:any|product[];
  trendyProducts:any | product[];
   constructor(private product:ProductService) {
-    const myScript = document.createElement('script');
-    myScript.src = '/assets/js/main.js';
-    myScript.src = '/assets/js/mixitup.min.js';
-    document.body.appendChild(myScript);
+    
   }
 
   ngOnInit(): void {

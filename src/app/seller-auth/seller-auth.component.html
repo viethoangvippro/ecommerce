@@ -1,21 +1,72 @@
 <div class="seller-auth">
   <div *ngIf="!showLogin" class="sign-up">
     <h1>Quản lý đăng ký</h1>
-    <form #sellerSignUp="ngForm" (ngSubmit)="signUp(sellerSignUp.value)" class="common-form">
+    <form
+      #sellerSignUp="ngForm"
+      (ngSubmit)="signUp(sellerSignUp.value)"
+      class="common-form"
+    >
+    <p class="error-p">{{ authError }}</p>
       <input
         type="text"
         class="form-input"
         placeholder="Nhập tên"
         name="name"
         ngModel
+        required
+        #username="ngModel"
       />
+      <p class="invalid-input">
+        <span *ngIf="username.invalid && username.touched"
+          >Tên không được để trống</span
+        >
+        </p>
       <input
         type="password"
         class="form-input"
         placeholder="Nhập mật khẩu"
         name="password"
         ngModel
+        #password="ngModel"
+        required
       />
+      <p class="invalid-input">
+        <span *ngIf="password.invalid && password.touched"
+          >Mật khẩu không được để trống</span
+        >
+      </p>
+      <input
+        type="text"
+        class="form-input"
+        placeholder="Nhập email"
+        name="email"
+        ngModel
+        required
+        email
+        #email="ngModel"
+      />
+      <p class="invalid-input">
+        <span *ngIf="email.invalid && email.touched"
+          >Email không được để trống</span
+        >
+      </p>
+      <button class="form-button mb-3 "  [disabled]="sellerSignUp.invalid">Đăng ký</button>
+
+      <span class="mb-4 clickhere"
+        >Bạn đã có tài khoản?
+        <a class="auth-toggle-link clickhere" (click)="openLogin()">Nhấp vào đây</a></span
+      >
+    </form>
+  </div>
+
+  <div *ngIf="showLogin" class="login">
+    <h1>Quản lý đăng nhập</h1>
+    <p class="error-p">{{ authError }}</p>
+    <form
+      #sellerLogin="ngForm"
+      (ngSubmit)="login(sellerLogin.value)"
+      class="common-form"
+    >
       <input
         type="text"
         class="form-input"
@@ -23,23 +74,6 @@
         name="email"
         ngModel
       />
-      <button class="form-button mb-3">Đăng ký</button>
-
-      <span class="mb-4">Bạn đã có tài khoản? <a class="auth-toggle-link" (click)="openLogin()">Nhấp vào đây</a></span>
-    </form>
-  </div>
-
-  <div *ngIf="showLogin" class="login">
-    <h1>Quản lý đăng nhập</h1>
-    <p class="error-p">{{authError}}</p>
-    <form #sellerLogin="ngForm" (ngSubmit)="login(sellerLogin.value)" class="common-form">
-      <input
-      type="text"
-      class="form-input"
-      placeholder="Nhập email"
-      name="email"
-      ngModel
-    />
       <input
         type="password"
         class="form-input"
@@ -48,8 +82,12 @@
         ngModel
       />
       <button class="form-button mb-3">Đăng nhập -</button>
-     <span class="mb-4">Bạn chưa có tài khoản? <a class="auth-toggle-link" (click)="openSignUp()">Nhấp vào đây</a></span>
-
+      <span class="mb-4 clickhere"
+        >Bạn chưa có tài khoản?
+        <a class="auth-toggle-link" (click)="openSignUp()"
+          >Nhấp vào đây</a
+        ></span
+      >
     </form>
   </div>
 </div>

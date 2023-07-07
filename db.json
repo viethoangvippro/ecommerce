@@ -58,14 +58,12 @@
   "products": [
     {
       "name": "MSI Bravo 15",
-      "price": "22000000",
+      "price": "21000000",
       "category": "Laptop",
       "color": "Black",
       "description": "MSI Gaming Bravo 15 B5DD (084VN) gây ấn tượng với người dùng bởi phong cách thiết kế hầm hố, năng động chuẩn gaming cùng cấu hình vượt trội, đáp ứng tốt đa tác vụ từ văn phòng cơ bản đến đồ họa - kỹ thuật chuyên sâu.",
       "image": "https://laptop88.vn/media/product/6780_msi_bravo_15_b5dd_265vn_r5_5600h_919c422d73604315a617fb4a79299da1_master.png",
-      "id": 1,
-      "rating": 4.333333333333333,
-      "numReviews": 3
+      "id": 1
     },
     {
       "name": "Laptop HP VICTUS 15 ",
@@ -146,6 +144,24 @@
       "image": "https://cdn.ankhang.vn/media/product/22858_laptop_msi_creator_m16_b13ve_830vn_1.jpg",
       "id": 13,
       "rating": 4.5
+    },
+    {
+      "name": "Samsung m 40 abc",
+      "price": "22000000",
+      "category": "Laptop",
+      "color": "green",
+      "description": "1233",
+      "image": "https://www.acervietnam.com.vn/wp-content/uploads/2023/03/Laptop-Gaming-Quoc-Dan-Nitro-16-Phoenix-RTX-4050-5.png",
+      "id": 14
+    },
+    {
+      "name": "Samsung m 40 abc",
+      "price": "22000000",
+      "category": "Laptop",
+      "color": "pink",
+      "description": "f",
+      "image": "https://laptopaz.vn/media/product/2463_laptopaz_hp_victus16_man15_6inch_4.jpg",
+      "id": 15
     }
   ],
   "users": [
@@ -235,6 +251,12 @@
       "comment": "hay",
       "productId": 1,
       "id": 7
+    },
+    {
+      "rating": 5,
+      "comment": "4",
+      "productId": 1,
+      "id": 8
     }
   ],
   "orders": [

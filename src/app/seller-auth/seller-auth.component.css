@@ -4,11 +4,39 @@
 .sign-up h1, .login h1{
     margin-top: 50px;
     margin-bottom: 80px;
-    color: blueviolet;   
+    color: blueviolet;
 }
 .auth-toggle-link{
     color: blueviolet;
     font-size: 14px;
     margin-top: 20px;
     text-align: left;
+}
+.seller-auth h1{
+  margin-top: 50px;
+  margin-bottom: 80px;
+  color:#Ff4b2b;;
+  text-align: center;
+}
+
+.user-auth {
+  margin-bottom: 100px;
+}
+.user-auth a{
+  color: rgb(60, 0, 255);
+  cursor: pointer;
+}
+
+button {
+border-radius: 10px;
+background: #Ff4b2b;
+color: white;
+}
+.clickhere{
+  font-size: 13px;
+  text-align: center;
+}
+
+input{
+  border: 1px solid #Ff4b2b;
 }
