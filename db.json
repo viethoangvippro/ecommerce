@@ -58,7 +58,6 @@
   "products": [
     {
       "name": "MSI Bravo 15",
-      "price": "21000000",
       "category": "Laptop",
       "color": "Black",
       "description": "MSI Gaming Bravo 15 B5DD (084VN) gây ấn tượng với người dùng bởi phong cách thiết kế hầm hố, năng động chuẩn gaming cùng cấu hình vượt trội, đáp ứng tốt đa tác vụ từ văn phòng cơ bản đến đồ họa - kỹ thuật chuyên sâu.",
@@ -257,6 +256,18 @@
       "comment": "4",
       "productId": 1,
       "id": 8
+    },
+    {
+      "rating": 4,
+      "comment": "Hay",
+      "productId": 1,
+      "id": 9
+    },
+    {
+      "rating": 4,
+      "comment": "Hya",
+      "productId": 1,
+      "id": 10
     }
   ],
   "orders": [

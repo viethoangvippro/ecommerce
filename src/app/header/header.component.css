@@ -16,7 +16,8 @@
   margin-top: -3%;
 }
 .seller{
-  margin-right: 3%;
+  margin-right: -3%;
+  margin-top: 2%;
   font-size: 14px;
 }
 .login{
@@ -26,8 +27,8 @@
 
 }
 .login-1{
-  width: 100px;
-  margin-top: 5%;
+  width: 200px;
+  margin-top: 3%;
 
 }
 
@@ -100,10 +101,11 @@ h1 a{
   color: blueviolet;
 }
 div ul li a{
- color: black;
+ color: rgb(255, 255, 255);
 }
 .bi-search{
-  color: black;
+  color: rgb(0, 0, 0);
+
 }
 .wrapper{
   position: relative;

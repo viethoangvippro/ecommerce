@@ -1,6 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 
@@ -50,7 +50,7 @@ import { ProductReviewsComponent } from './product-reviews/product-reviews.compo
     HttpClientModule,
     FontAwesomeModule,
     NgbModule,
-
+    ReactiveFormsModule,
     NgxPaginationModule
   ],
   providers: [],

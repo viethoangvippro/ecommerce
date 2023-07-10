@@ -2,17 +2,22 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { product } from '../data-type';
 import { ProductService } from '../services/product.service';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-seller-update-product',
   templateUrl: './seller-update-product.component.html',
   styleUrls: ['./seller-update-product.component.css'],
+
 })
 export class SellerUpdateProductComponent implements OnInit {
   productData: undefined | product;
   productMessage: undefined | string;
   constructor(private route: ActivatedRoute, private product: ProductService,private router: Router) {}
-
+  priceControl = new FormControl('', [
+    Validators.required,
+    Validators.pattern('^[0-9]*$')
+  ]);
   ngOnInit(): void {
     let productId = this.route.snapshot.paramMap.get('id');
     console.warn(productId);
@@ -30,7 +35,7 @@ export class SellerUpdateProductComponent implements OnInit {
       if (result) {
         this.productMessage = 'Product has updated';
         this.router.navigate(['/seller-home'])
-        
+
       }
     });
     setTimeout(() => {
@@ -38,4 +43,6 @@ export class SellerUpdateProductComponent implements OnInit {
     }, 3000);
     console.warn(data);
   }
+
+
 }
