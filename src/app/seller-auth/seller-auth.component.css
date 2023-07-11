@@ -25,6 +25,7 @@
 .user-auth a{
   color: rgb(60, 0, 255);
   cursor: pointer;
+
 }
 
 button {
@@ -35,6 +36,7 @@ color: white;
 .clickhere{
   font-size: 13px;
   text-align: center;
+  text-decoration: none;
 }
 
 input{

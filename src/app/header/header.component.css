@@ -16,15 +16,18 @@
   margin-top: -3%;
 }
 .seller{
-  margin-right: -3%;
   margin-top: 2%;
   font-size: 14px;
 }
-.login{
-  margin-right: 5%;
+.product{
   font-size: 14px;
-
-
+  margin-top: 17px;
+  margin-left: 5%;
+}
+.login{
+  font-size: 14px;
+  margin-left: 4%;
+  margin-right: 4%;
 }
 .login-1{
   width: 200px;

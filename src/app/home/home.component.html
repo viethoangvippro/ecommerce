@@ -42,16 +42,16 @@
   <section class="row">
     <div class="col-sm-3" *ngFor="let item of trendyProducts | paginate : { itemsPerPage: 8, currentPage: p }">
       <div class="product-item" style="border-radius: 5px; border: 2px solid black;">
-        <img src="{{ item.image }}" alt="" />
+       <a href="" routerLink="/details/{{ item.id }}"><img  src="{{ item.image }}" alt="" /></a>
         <div class="product-details">
           <a href="" routerLink="/details/{{ item.id }}"><h6 class="name-head" >{{
             item.name
           }}</h6></a>
           <div class="product-price">
-            <h6>Giá sản phẩm: {{ item.price }} VNĐ</h6>
+            <h6> {{ item.price | currency:currencyCode:currencyFormat }} </h6>
           </div>
           <div class="product-color">
-            <h6>Màu: {{ item.color }}</h6>
+
           </div>
         </div>
         <div class="product-footer">
@@ -87,7 +87,7 @@
         <div class="text">
           MSI Gaming Bravo 15 B5DD (084VN) gây ấn tượng với người dùng bởi phong cách thiết kế hầm hố, năng động chuẩn gaming cùng cấu hình vượt trội, đáp ứng tốt đa tác vụ từ văn phòng cơ bản đến đồ họa - kỹ thuật chuyên sâu.
         </div>
-        <button>Xem thêm</button>
+        <button >Xem thêm</button>
       </div>
     </div>
 

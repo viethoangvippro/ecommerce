@@ -23,6 +23,10 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { MyOrdersComponent } from './my-orders/my-orders.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ProductReviewsComponent } from './product-reviews/product-reviews.component';
+import { ProductComponent } from './product/product.component';
+
+import { RouterModule } from '@angular/router';
+import { ProductModule } from './product/product.module';
 
 @NgModule({
   declarations: [
@@ -41,6 +45,8 @@ import { ProductReviewsComponent } from './product-reviews/product-reviews.compo
     CheckoutComponent,
     MyOrdersComponent,
     ProductReviewsComponent,
+    ProductComponent,
+
 
   ],
   imports: [
@@ -51,7 +57,7 @@ import { ProductReviewsComponent } from './product-reviews/product-reviews.compo
     FontAwesomeModule,
     NgbModule,
     ReactiveFormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,RouterModule,ProductModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -12,8 +12,10 @@ export class HomeComponent implements OnInit {
   pageSize: string | number | undefined ;
  popularProducts:any|product[];
  trendyProducts:any | product[];
+ currencyCode = 'VND';
+  currencyFormat = 'symbol';
   constructor(private product:ProductService) {
-    
+
   }
 
   ngOnInit(): void {

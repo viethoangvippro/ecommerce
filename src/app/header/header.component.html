@@ -13,6 +13,8 @@
 </nav>
 <nav class="nav p-3">
   <h1><a routerLink="/" class="text-white">Htv3store</a> </h1>
+
+
   <div *ngIf="menuType!=='seller'" class="nav-search">
     <input type="text"
     #searchInput
@@ -26,6 +28,7 @@
         <a (mousedown)="redirectToDetails(item.id)" >{{item.name}}</a>
       </li>
     </ul>
+
   </div>
  <div [ngSwitch]="menuType">
   <ul *ngSwitchCase="'default'">
@@ -35,6 +38,7 @@
       <span class="text-white">{{cartItems}}</span>
     </div>
     <div class="login-1">
+
       <a routerLink="user-auth" class="login text-white" >Đăng nhập</a>
 
       <a routerLink="seller-auth" class="seller text-white">Quản lý</a>
@@ -42,6 +46,8 @@
   </ul>
   <ul *ngSwitchCase="'user'" >
     <li><a routerLink="">Trang chủ</a></li>
+    <a routerLink="product" class=" product text-white">Sản phẩm</a>
+
     <li><a>{{userName | titlecase}}</a></li>
     <li><a routerLink="my-orders" >Đơn hàng của tôi</a></li>
 

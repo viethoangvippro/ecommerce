@@ -18,6 +18,8 @@ export class SellerUpdateProductComponent implements OnInit {
     Validators.required,
     Validators.pattern('^[0-9]*$')
   ]);
+  nameControl = new FormControl('', Validators.required);
+
   ngOnInit(): void {
     let productId = this.route.snapshot.paramMap.get('id');
     console.warn(productId);
@@ -25,6 +27,7 @@ export class SellerUpdateProductComponent implements OnInit {
       this.product.getProduct(productId).subscribe((data) => {
         console.warn(data);
         this.productData = data;
+
       });
   }
   submit(data: any) {

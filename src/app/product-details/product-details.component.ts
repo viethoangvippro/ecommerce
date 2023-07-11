@@ -13,7 +13,8 @@ export class ProductDetailsComponent implements OnInit {
   productQuantity:number=1;
   removeCart=false;
   cartData:product|undefined;
-
+  currencyCode = 'VND';
+  currencyFormat = 'symbol';
   constructor(private activeRoute:ActivatedRoute, private product:ProductService) { }
   products: any[] = [];
 
