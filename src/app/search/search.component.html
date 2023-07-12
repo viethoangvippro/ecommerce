@@ -1,11 +1,27 @@
-<div class="row search-item" *ngFor="let item of searchResult">
-    <div class="col-sm-3">
-      <a routerLink="/details/{{item.id}}">  <img src="{{item.image}}" alt=""></a>
-    </div>
-    <div class="col-sm-8 details">
-        <h6>  <a routerLink="/details/{{item.id}}"> {{item.name}} </a></h6>
-        <p><b>Price:{{item.price}}</b></p>
-        <p><span>Color:{{item.color}}</span><span>Category: {{item.category}}</span></p>
-        <p>{{item.description}}</p>
-    </div>
-</div>
+
+<div class="container p-5">
+  <h1 class="mb-5" style="color: #Ff4b2b ; text-align: center;">Kết quả tìm kiếm</h1>
+  <section class="row">
+    <div class="col-sm-3" *ngFor="let item of searchResult">
+
+      <div class="product-item" style="border-radius: 5px; border: 2px solid black;">
+       <a href="" routerLink="/details/{{ item.id }}"><img  src="{{ item.image }}" alt="" /></a>
+        <div class="product-details">
+          <a href="" routerLink="/details/{{ item.id }}"><h6 class="name-head" >{{
+            item.name
+          }}</h6></a>
+          <div class="product-price">
+            <h6> {{ item.price | currency:currencyCode:currencyFormat }} </h6>
+          </div>
+          <div class="product-color">
+
+          </div>
+        </div>
+        <div class="product-footer">
+          <a routerLink="/details/{{ item.id }}" class="btn btn-outline-success">Xem Chi tiết</a>
+          <a href="" routerLink="/details/{{ item.id }}" class="btn btn-outline-danger">Mua ngay</a>
+        </div>
+      </div>
+
+
+

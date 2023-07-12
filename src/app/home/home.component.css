@@ -56,7 +56,20 @@ body {
   align-items: center;
   background: #cecece;
 }
-
+.sort{
+  margin-left: 1040px;
+}
+.sort button{
+  margin-left: 3px;
+  justify-content: end;
+  background-color: white;
+  border: 1px solid #Ff4b2b;
+  padding: 5px;
+}
+.sort button:hover{
+  background-color: #Ff4b2b;
+  color: white;
+}
 .card {
   height: 350px;
   width: 100%;

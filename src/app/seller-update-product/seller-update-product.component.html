@@ -85,7 +85,7 @@
     </style>
   </head>
   <body>
-    <h2 class="container mt-6">Cập nhật sản phẩm</h2>
+    <h2 class="container mt-6 p-4" style="color: #Ff4b2b; text-align: center;">Cập nhật sản phẩm</h2>
     <p class="message-p">{{ productMessage }}</p>
 
     <div class="container">
@@ -95,11 +95,11 @@
         <input type="text" id="fname" name="name"
         ngModel="{{ productData?.name }}" placeholder="Nhập tên sản phẩm">
 
-        <label for="lname">Giá sản phẩm</label>
+        <label for="lname" >Giá sản phẩm</label>
 
 
         <input type="text" name="price"
-        ngModel="{{ productData?.price }}" [formControl]="nameControl" placeholder="Nhập giá sản phẩm">
+        ngModel="{{ productData?.price }}"  placeholder="Nhập giá sản phẩm">
         <p *ngIf="nameControl.invalid && (nameControl.dirty || nameControl.touched)">
           Name is required.
         </p>

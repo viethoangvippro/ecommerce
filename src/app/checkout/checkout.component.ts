@@ -9,7 +9,8 @@ import { ProductService } from '../services/product.service';
   styleUrls: ['./checkout.component.css']
 })
 export class CheckoutComponent implements OnInit {
-
+  currencyCode = 'VND';
+  currencyFormat = 'symbol';
   totalPrice: number | undefined;
   cartData: cart[] | undefined;
   orderMsg: string | undefined;
@@ -51,11 +52,11 @@ export class CheckoutComponent implements OnInit {
 
       this.product.orderNow(orderData).subscribe((result) => {
         if (result) {
-          this.orderMsg = "Order has been placed";
+          this.orderMsg = "Đặt hàng thành công";
           setTimeout(() => {
             this.orderMsg = undefined;
             this.router.navigate(['/my-orders'])
-          }, 4000);
+          }, 1000);
 
         }
 

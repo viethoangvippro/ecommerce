@@ -8,3 +8,16 @@
     margin-top: 15px;
     margin-bottom: 15px;
 }
+.common-form{
+  width: 500px;
+}
+.common-form input{
+  border: 1px solid #Ff4b2b;
+}
+.common-form textarea{
+  border: 1px solid #Ff4b2b;
+  height: 100px;
+}
+.buynow:hover{
+  background-color: #Ff4b2b;
+}

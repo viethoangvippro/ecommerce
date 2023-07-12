@@ -63,7 +63,9 @@
       "color": "Black",
       "description": "MSI Gaming Bravo 15 B5DD (084VN) gây ấn tượng với người dùng bởi phong cách thiết kế hầm hố, năng động chuẩn gaming cùng cấu hình vượt trội, đáp ứng tốt đa tác vụ từ văn phòng cơ bản đến đồ họa - kỹ thuật chuyên sâu.",
       "image": "https://laptop88.vn/media/product/6780_msi_bravo_15_b5dd_265vn_r5_5600h_919c422d73604315a617fb4a79299da1_master.png",
-      "id": 1
+      "id": 1,
+      "rating": 3,
+      "numReviews": 1
     },
     {
       "name": "Laptop HP VICTUS 15 ",
@@ -73,7 +75,7 @@
       "description": "Laptop HP VICTUS 15 fa0155TX i5 12450H (81P00PA) hứa hẹn mang đến trải nghiệm làm việc và giải trí tuyệt vời nhờ bộ vi xử lý Intel thế hệ 12 mạnh mẽ, card đồ họa NVIDIA RTX 30-series và màn hình 144 Hz siêu mượt mà.",
       "image": "https://nguyenvu-store-medias.tn-cdn.net/2022/03/HP-VICTUS-16-e0177AX-4R0U9PA-nguyenvustore-1.png",
       "id": 3,
-      "rating": 4.5
+      "rating": 4
     },
     {
       "name": " Nitro 16 Phoenix",
@@ -93,7 +95,7 @@
       "description": "Laptop Asus TUF Gaming F15 FX506LHB i5 10300H (HN188W) được trang bị bộ vi xử lý Intel dòng H mạnh mẽ, card đồ họa rời NVIDIA và ổ cứng SSD tốc độ cao, tất cả tạo nên một \"cỗ máy\" mạnh mẽ, đáp ứng tốt nhu cầu chơi game ở mức độ cấu hình cao.",
       "image": "https://dlcdnwebimgs.asus.com/gain/f93bdd99-47d7-4f97-8800-5a83d0bd46a6/",
       "id": 8,
-      "rating": 4.5
+      "rating": 5
     },
     {
       "name": "Acer Nitro 5 ",
@@ -126,14 +128,13 @@
       "rating": 4.5
     },
     {
-      "name": "Laptop gaming Gigabyte G5",
-      "price": "17990000",
+      "name": "Gaming Gigabyte G5",
+      "price": "22000000",
       "category": "Laptop",
       "color": "Black",
       "description": "Laptop gaming Gigabyte G5 GD 51VN123SO là một trong những siêu phẩm mới được ra mắt thời gian gần đây. Hiệu năng ổn định có thể cân mọi tựa game khó nhằn, chất lượng màn hình hiển thị tuyệt vời đã đưa Gigabyte G5 GD lên một tầm cao mới và hứa hẹn trở thành một trong những hot item thời gian sắp tới.",
       "image": "https://br.atsit.in/vi/wp-content/uploads/2021/09/gigabyte-g5-kc.jpg",
-      "id": 12,
-      "rating": 4.5
+      "id": 12
     },
     {
       "name": "Laptop MSI Creator M16 ",
@@ -204,10 +205,11 @@
       "color": "Black",
       "description": "Laptop HP VICTUS 15 fa0155TX i5 12450H (81P00PA) hứa hẹn mang đến trải nghiệm làm việc và giải trí tuyệt vời nhờ bộ vi xử lý Intel thế hệ 12 mạnh mẽ, card đồ họa NVIDIA RTX 30-series và màn hình 144 Hz siêu mượt mà.",
       "image": "https://nguyenvu-store-medias.tn-cdn.net/2022/03/HP-VICTUS-16-e0177AX-4R0U9PA-nguyenvustore-1.png",
+      "rating": 4,
       "quantity": 1,
       "productId": 3,
       "userId": 5,
-      "id": 8
+      "id": 1
     }
   ],
   "category": [
@@ -221,13 +223,6 @@
     }
   ],
   "reviews": [
-    {
-      "rating": 5,
-      "comment": "213",
-      "productId": "123",
-      "userId": "123456",
-      "id": 1
-    },
     {
       "rating": 4,
       "comment": "San pham tuyet voi",
@@ -291,6 +286,24 @@
       "comment": "a",
       "productId": 1,
       "id": 12
+    },
+    {
+      "rating": 4,
+      "comment": "a",
+      "productId": 1,
+      "id": 13
+    },
+    {
+      "rating": 4,
+      "comment": "a",
+      "productId": 1,
+      "id": 14
+    },
+    {
+      "rating": 3,
+      "comment": "a",
+      "productId": 1,
+      "id": 15
     }
   ],
   "orders": [
@@ -317,6 +330,14 @@
       "totalPrice": 650,
       "userId": 4,
       "id": 4
+    },
+    {
+      "email": "hoangkai25@gmail.com",
+      "contact": "0397064432",
+      "address": "233 Trần phú",
+      "totalPrice": 22025000,
+      "userId": 5,
+      "id": 5
     }
   ]
 }

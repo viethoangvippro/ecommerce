@@ -11,7 +11,8 @@ export class MyOrdersComponent implements OnInit {
 
   orderData:order[]|undefined
   constructor(private product:ProductService) { }
-
+  currencyCode = 'VND';
+  currencyFormat = 'symbol';
   ngOnInit(): void {
     this.getOrderList()
   }

@@ -9,59 +9,59 @@
     </svg>
   </span>
 
-
 </nav>
 <nav class="nav p-3">
   <h1><a routerLink="/" class="text-white">Htv3store</a> </h1>
+    <div *ngIf="menuType!=='seller'" class="nav-search">
+      <input type="text"
+      #searchInput
+      (keyup)="searchProduct($event)" (blur)="hideSearch()" placeholder="Tìm kiếm sản phẩm" />
+      <button (click)="submitSearch(searchInput.value)" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search " viewBox="0 0 16 16">
+        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+      </svg></button>
+      <ul class="suggested-search" *ngIf="searchResult">
+        <li *ngFor="let item of searchResult">
+          <a (mousedown)="redirectToDetails(item.id)" >{{item.name}}</a>
+        </li>
+      </ul>
+    </div>
 
-
-  <div *ngIf="menuType!=='seller'" class="nav-search">
-    <input type="text"
-    #searchInput
-    (keyup)="searchProduct($event)" (blur)="hideSearch()" placeholder="Tìm kiếm sản phẩm" />
-    <button (click)="submitSearch(searchInput.value)" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search " viewBox="0 0 16 16">
-      <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-    </svg></button>
-
-    <ul class="suggested-search" *ngIf="searchResult">
-      <li *ngFor="let item of searchResult">
-        <a (mousedown)="redirectToDetails(item.id)" >{{item.name}}</a>
-      </li>
-    </ul>
-
-  </div>
  <div [ngSwitch]="menuType">
   <ul *ngSwitchCase="'default'">
 
-    <div class="wrapper">
-      <i class="fa text-white" style="font-size:24px">&#xf07a;</i>
-      <span class="text-white">{{cartItems}}</span>
-    </div>
-    <div class="login-1">
 
+    <div class="login-1">
+      <a routerLink="product" class=" product text-white">Trang chủ</a>
+      <a routerLink="product" class=" product text-white">Sản phẩm</a>
+      <a routerLink="product" class=" product text-white">Về chúng tôi</a>
+      <a routerLink="product" class=" product text-white">Liên hệ</a>
       <a routerLink="user-auth" class="login text-white" >Đăng nhập</a>
 
       <a routerLink="seller-auth" class="seller text-white">Quản lý</a>
     </div>
+    <div class="wrapper">
+      <i class="fa text-white" style="font-size:20px">&#xf07a;</i>
+      <span class="text-white">{{cartItems}}</span>
+    </div>
   </ul>
-  <ul *ngSwitchCase="'user'" >
-    <li><a routerLink="">Trang chủ</a></li>
+  <ul *ngSwitchCase="'user'" class="user">
+    <li><a routerLink="" class="home">Trang chủ</a></li>
     <a routerLink="product" class=" product text-white">Sản phẩm</a>
 
-    <li><a>{{userName | titlecase}}</a></li>
-    <li><a routerLink="my-orders" >Đơn hàng của tôi</a></li>
 
-    <li><a [routerLink]="cartItems>0?'cart-page':null">Giỏ hàng({{cartItems}})</a></li>
+    <li><a routerLink="my-orders" class="home">Đơn hàng của tôi</a></li>
 
-    <li><a (click)="userLogout()" >Đăng xuất</a></li>
+    <li><a class="home" [routerLink]="cartItems>0?'cart-page':null"><i class="fa text-white" style="font-size:20px">&#xf07a;</i>({{cartItems}})</a></li>
+    <li ><a class="home"  style="font-weight: bold;">{{userName | titlecase}}</a></li>
+    <li><a class="home" (click)="userLogout()" >Đăng xuất</a></li>
 
 
   </ul>
   <ul *ngSwitchCase="'seller'" >
-    <li><a routerLink="seller-add-product">Thêm sản phẩm</a></li>
-    <li><a routerLink="seller-home">Danh sách sản phẩm</a></li>
-    <li><a (click)="logout()">Đăng xuất</a></li>
-    <li><a >{{sellerName | titlecase}}</a></li>
+    <li><a routerLink="seller-add-product" class="home">Thêm sản phẩm</a></li>
+    <li><a routerLink="seller-home" class="home">Danh sách sản phẩm</a></li>
+    <li><a (click)="logout()" class="home">Đăng xuất</a></li>
+    <li><a class="home" style="font-weight: bold;">{{sellerName | titlecase}}</a></li>
   </ul>
  </div>
 </nav>

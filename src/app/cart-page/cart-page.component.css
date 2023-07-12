@@ -5,9 +5,7 @@
 .cart-page h1{
     text-align: center;
 }
-.details {
-   
-}
+
 .details img{
     height: 100px;
 }
@@ -20,7 +18,7 @@
     border: 1px solid #ddd;
     padding: 15px;
     margin-bottom: 15px;
-    
+
 }
 .summary h3{
     text-align: center;
@@ -34,4 +32,8 @@
 .summary ul li{
     display: flex;
     justify-content: space-between;
+}
+.form-button:hover{
+  background-color: #Ff4b2b;
+  color: #ddd;
 }

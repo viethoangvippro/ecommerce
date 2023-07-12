@@ -1,8 +1,8 @@
 <div class="checkout container">
-  <h1>Thanh toán</h1>
+  <h1 style="color:#Ff4b2b">THANH TOÁN</h1>
   <div class="row mb-5">
     <div class="col-sm-7">
-      <h3>Thêm địa chỉ vận chuyển</h3>
+      <h3 style="color:#Ff4b2b">Thêm địa chỉ vận chuyển</h3>
       <p class="message-p">{{orderMsg}}</p>
       <form #orderData="ngForm" class="common-form" (ngSubmit)="orderNow(orderData.value)">
         <input
@@ -10,28 +10,48 @@
           class="form-input"
           name="email"
           placeholder="Nhập email "
-          ngModel
+          ngModel  required
+          #email="ngModel"
         />
-        <input
-          type="text"
-          class="form-input"
-          name="address"
-          placeholder="Nhập địa chỉ"
-          ngModel
-        />
+        <p class="invalid-input">
+          <span *ngIf="email.invalid && email.touched"
+            >Tên không được để trống</span
+          >
+          </p>
+
         <input
           type="text"
           class="form-input"
           name="contact"
           placeholder="Nhập thông tin liên hệ"
-          ngModel
+          ngModel  required
+          #phone="ngModel"
         />
-        <button class="form-button">Mua ngay</button>
+        <p class="invalid-input">
+          <span *ngIf="phone.invalid && phone.touched"
+            >Tên không được để trống</span
+          >
+          </p>
+          <textarea
+          type="text"
+          class="form-input"
+          name="address"
+          placeholder="Nhập địa chỉ"
+          ngModel  required
+          #address="ngModel"
+        ></textarea>
+        <p class="invalid-input">
+          <span *ngIf="address.invalid && address.touched"
+            >Tên không được để trống</span
+          >
+          </p>
+        <button class="btn btn-secondary buynow" [disabled]="orderData.invalid">Mua ngay</button>
       </form>
+
     </div>
     <div class="col-sm-5">
-        <h3>Tổng tiền thanh toán: {{totalPrice}} VNĐ</h3>
-        <h4>Phương thức thanh toán : <b>Thanh toán khi nhận hàng</b></h4>
+        <h3 style="color:#Ff4b2b">Tổng tiền thanh toán: {{totalPrice | currency:currencyCode:currencyFormat}} </h3>
+        <h4 style="color:#Ff4b2b">Phương thức thanh toán : <b>Thanh toán khi nhận hàng</b></h4>
     </div>
   </div>
 </div>

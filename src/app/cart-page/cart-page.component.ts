@@ -10,6 +10,8 @@ import { ProductService } from '../services/product.service';
 })
 export class CartPageComponent implements OnInit {
   cartData: cart[] | undefined;
+  currencyCode = 'VND';
+  currencyFormat = 'symbol';
   priceSummary: priceSummary = {
     price: 0,
     discount: 0,

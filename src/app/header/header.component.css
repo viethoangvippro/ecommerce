@@ -18,11 +18,12 @@
 .seller{
   margin-top: 2%;
   font-size: 14px;
+
 }
 .product{
   font-size: 14px;
   margin-top: 17px;
-  margin-left: 5%;
+  margin-left: 3%;
 }
 .login{
   font-size: 14px;
@@ -30,7 +31,7 @@
   margin-right: 4%;
 }
 .login-1{
-  width: 200px;
+  width: 600px;
   margin-top: 3%;
 
 }
@@ -47,7 +48,9 @@
   margin-right: 5%;
   margin-top: 5px;
 }
-
+.home{
+  font-size: 14px;
+}
 .nav .nav-search input {
     flex: 1;
     color: blueviolet;
@@ -112,8 +115,13 @@ div ul li a{
 }
 .wrapper{
   position: relative;
-  margin-top: 10px;
-  margin-right: 50px;
+  margin-top: 17px;
+  margin-right: 10px;
+  margin-left: -45px;
+}
+.user{
+  width: 600px;
+
 }
 
   .wrapper span{

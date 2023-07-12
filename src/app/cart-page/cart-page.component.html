@@ -1,7 +1,7 @@
 
 <div class="cart-page">
-<h1>
-    Giỏ hàng của bạn
+<h1 class="mb-4" style="color: #Ff4b2b;">
+    GIỎ HÀNG CỦA BẠN
 </h1>
 <div class="container">
   <div class="row">
@@ -14,26 +14,26 @@
               <span> {{cart.name}}</span>
           </li>
           <li>
-              <span> Giá sản phẩm : {{cart.price}}</span>
+              <span> Giá sản phẩm : {{cart.price | currency:currencyCode:currencyFormat}}</span>
           </li>
           <li>
               <span> Số lượng : {{cart.quantity}}</span>
           </li>
           <li >
-            <button class="form-button"(click)="removeToCart(cart.id)" >Xoá</button>
+            <button class="form-button btn-secondary"(click)="removeToCart(cart.id)" >Xoá</button>
           </li>
       </ul>
 
   </div>
   <div class="col-sm-4 summary">
-  <h3>Chi tiết thanh toán</h3>
+  <h3  style="color: #Ff4b2b;">Chi tiết thanh toán</h3>
   <ul>
-      <li> <span>Giá sản phẩm:</span><span>{{priceSummary.price}} VNĐ</span></li>
-      <li> <span>Thuế:</span><span>{{priceSummary.tax}} VNĐ</span></li>
-      <li> <span>Phí vận chuyển:</span><span>{{priceSummary.delivery}} VNĐ</span></li>
-      <li> <span>Mã giảm giá:</span><span>{{priceSummary.discount}} VNĐ</span></li>
-      <li> <span><h4>Tổng tiền</h4></span> <span><h4>{{priceSummary.total}} VNĐ</h4></span></li>
-      <button (click)="checkout()" class="form-button max-width" >Thanh toán</button>
+      <li> <span>Giá sản phẩm:</span><span>{{priceSummary.price| currency:currencyCode:currencyFormat}} </span></li>
+      <li> <span>Thuế:</span><span>{{priceSummary.tax| currency:currencyCode:currencyFormat}} </span></li>
+      <li> <span>Phí vận chuyển:</span><span>{{priceSummary.delivery| currency:currencyCode:currencyFormat}} </span></li>
+      <li> <span>Mã giảm giá:</span><span>{{priceSummary.discount| currency:currencyCode:currencyFormat}} </span></li>
+      <li> <span><h4>Tổng tiền</h4></span> <span><h4>{{priceSummary.total| currency:currencyCode:currencyFormat}} </h4></span></li>
+      <button (click)="checkout()" class="form-button max-width btn-secondary" >Thanh toán</button>
   </ul>
   </div>
   </div>
