@@ -72,7 +72,7 @@ this.showLogin=true;
 
    setTimeout(() => {
     this.product.getCartList(userId)
-   }, 2000);
+   }, 1000);
 
   }
 }

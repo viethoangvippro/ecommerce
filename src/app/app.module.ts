@@ -27,6 +27,7 @@ import { ProductComponent } from './product/product.component';
 
 import { RouterModule } from '@angular/router';
 import { ProductModule } from './product/product.module';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { ProductModule } from './product/product.module';
     MyOrdersComponent,
     ProductReviewsComponent,
     ProductComponent,
+    AboutComponent,
 
 
   ],

@@ -19,7 +19,6 @@ export class HomeComponent implements OnInit {
   constructor(private product:ProductService) {
 
   }
-
   sortByName(): void {
     this.product.getProducts().subscribe(trendyProducts => {
       this.trendyProducts = trendyProducts.sort((a, b) => (a.name > b.name) ? 1 : -1);
@@ -39,11 +38,6 @@ export class HomeComponent implements OnInit {
       this.sortOrder = this.sortOrder === 'asc' ? 'desc' : 'asc';
     });
     }
-
-
-
-
-
 
   sortByPrice():void{
     this.product.getProducts().subscribe(trendyProducts => {

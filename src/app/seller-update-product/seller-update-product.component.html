@@ -96,14 +96,11 @@
         ngModel="{{ productData?.name }}" placeholder="Nhập tên sản phẩm">
 
         <label for="lname" >Giá sản phẩm</label>
-
-
         <input type="text" name="price"
         ngModel="{{ productData?.price }}"  placeholder="Nhập giá sản phẩm">
         <p *ngIf="nameControl.invalid && (nameControl.dirty || nameControl.touched)">
           Name is required.
         </p>
-
 
         <label for="email">Danh mục</label>
         <input type="text" name="category"

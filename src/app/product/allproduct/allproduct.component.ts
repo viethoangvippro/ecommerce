@@ -18,15 +18,6 @@ export class AllproductComponent implements OnInit {
   id:any;
   constructor(private product: ProductService) { }
 
-  ngOnInit(): void {
-    this.product.categoryList().subscribe(data =>{
-        this.listCategory = data;
-    }
-    )
-    this.product.productList().subscribe(data =>{
-      this.productList = data;
-    })
-  }
   sortByName(): void {
     this.product.getProducts().subscribe(trendyProducts => {
       this.trendyProducts = trendyProducts.sort((a, b) => (a.name > b.name) ? 1 : -1);
@@ -54,6 +45,15 @@ export class AllproductComponent implements OnInit {
   sortByRating():void{
     this.product.getProducts().subscribe(trendyProducts =>{
       this.trendyProducts = trendyProducts.sort((a,b) => a.rating - b.rating);
+    })
+  }
+  ngOnInit(): void {
+    this.product.categoryList().subscribe(data =>{
+        this.listCategory = data;
+    }
+    )
+    this.product.productList().subscribe(data =>{
+      this.productList = data;
     })
   }
 

@@ -14,6 +14,8 @@ export class SellerUpdateProductComponent implements OnInit {
   productData: undefined | product;
   productMessage: undefined | string;
   constructor(private route: ActivatedRoute, private product: ProductService,private router: Router) {}
+
+
   priceControl = new FormControl('', [
     Validators.required,
     Validators.pattern('^[0-9]*$')
@@ -36,14 +38,14 @@ export class SellerUpdateProductComponent implements OnInit {
     }
     this.product.updateProduct(data).subscribe((result) => {
       if (result) {
-        this.productMessage = 'Product has updated';
+        this.productMessage = 'Cập nhật sản phẩm thành công';
         this.router.navigate(['/seller-home'])
 
       }
     });
     setTimeout(() => {
       this.productMessage = undefined;
-    }, 3000);
+    }, 1000);
     console.warn(data);
   }
 

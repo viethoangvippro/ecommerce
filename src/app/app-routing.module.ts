@@ -14,6 +14,7 @@ import { SellerUpdateProductComponent } from './seller-update-product/seller-upd
 import { UserAuthComponent } from './user-auth/user-auth.component';
 import { ProductReviewsComponent } from './product-reviews/product-reviews.component';
 import { ProductComponent } from './product/product.component';
+import { AboutComponent } from './about/about.component';
 
 
 
@@ -61,6 +62,9 @@ const routes: Routes = [
     component:ProductReviewsComponent,
     path:'product-reviews'
   },{ path: 'product', loadChildren: () => import('./product/product.module').then(m => m.ProductModule) },
+  {
+    path:'about',component:AboutComponent
+  },
 ];
 
 @NgModule({
