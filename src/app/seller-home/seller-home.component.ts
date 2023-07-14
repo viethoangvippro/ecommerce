@@ -18,6 +18,7 @@ export class SellerHomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.list();
+
   }
 
   deleteProduct(id: number) {
@@ -26,17 +27,19 @@ export class SellerHomeComponent implements OnInit {
         this.productMessage = 'Product is deleted';
 
         this.list();
+
       }
     });
     setTimeout(() => {
       this.productMessage = undefined;
-    }, 3000);
+    }, 2000);
   }
 
   list() {
     this.product.productList().subscribe((result) => {
       if (result) {
         this.productList = result;
+
       }
     });
   }

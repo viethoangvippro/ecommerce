@@ -2,7 +2,7 @@ import { category } from './../data-type';
 import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
 import { cart, order, product } from '../data-type';
-import { Observable } from 'rxjs';
+import { Observable, Observer } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -21,8 +21,8 @@ export class ProductService {
     return this.http.get<category[]>('http://localhost:3000/category')
   }
 
-  getProductById(id:number){
-    return this.http.get<category[]>(`http://localhost:3000/category/${id}`)
+  getProductById(categoryId:any) :Observable<any>{
+    return this.http.get<category[]>(`http://localhost:3000/products?categoryId=${categoryId}`)
   }
 
 

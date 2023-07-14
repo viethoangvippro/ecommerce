@@ -13,15 +13,22 @@ export class ProductByCategoryComponent implements OnInit {
   productList: product | any;
   listCategory: any;
   p:any;
+  currencyCode = 'VND';
+  currencyFormat = 'symbol';
   constructor(private activatedRoute: ActivatedRoute, private ProductsService: ProductService){
 
   }
   ngOnInit(): void{
     this.activatedRoute.params.subscribe(data => {
       this.searchCategory = data['id'];
-      this.ProductsService.getProduct(this.searchCategory).subscribe(categoryData =>{
+      this.ProductsService.getProductById(this.searchCategory).subscribe(categoryData =>{
         this.productList = categoryData;
       })
     });
+    this.ProductsService.categoryList().subscribe(data =>{
+      this.listCategory = data;
+  }
+  )
 
-  }}
+}
+}

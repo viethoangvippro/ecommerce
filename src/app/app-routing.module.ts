@@ -15,6 +15,7 @@ import { UserAuthComponent } from './user-auth/user-auth.component';
 import { ProductReviewsComponent } from './product-reviews/product-reviews.component';
 import { ProductComponent } from './product/product.component';
 import { AboutComponent } from './about/about.component';
+import { SellerComponent } from './seller/seller.component';
 
 
 
@@ -30,6 +31,10 @@ const routes: Routes = [
   {
     component:SellerHomeComponent,
     path:'seller-home',
+    canActivate:[AuthGuard]
+  },{
+    component:SellerComponent,
+    path:'seller',
     canActivate:[AuthGuard]
   },{
     component:SellerAddProductComponent,

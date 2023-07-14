@@ -97,7 +97,7 @@
 
         <label for="lname" >Giá sản phẩm</label>
         <input type="text" name="price"
-        ngModel="{{ productData?.price }}"  placeholder="Nhập giá sản phẩm">
+        ngModel="{{ productData?.price }}" #nameControl="ngModel" required placeholder="Nhập giá sản phẩm">
         <p *ngIf="nameControl.invalid && (nameControl.dirty || nameControl.touched)">
           Name is required.
         </p>
