@@ -6,53 +6,77 @@
       (ngSubmit)="signUp(sellerSignUp.value)"
       class="common-form"
     >
-    <p class="error-p">{{ authError }}</p>
-      <input
-        type="text"
-        class="form-input"
-        placeholder="Nhập tên"
-        name="name"
-        ngModel
-        required
-        #username="ngModel"
-      />
-      <p class="invalid-input">
-        <span *ngIf="username.invalid && username.touched"
-          >Tên không được để trống</span
-        >
-        </p>
-      <input
-        type="password"
-        class="form-input"
-        placeholder="Nhập mật khẩu"
-        name="password"
-        ngModel
-        #password="ngModel"
-        required
-      />
-      <p class="invalid-input">
-        <span *ngIf="password.invalid && password.touched"
-          >Mật khẩu không được để trống</span
-        >
-      </p>
-      <input
-        type="text"
-        class="form-input"
-        placeholder="Nhập email"
-        name="email"
-        ngModel
-        required
-        email
-        #email="ngModel"
-      />
-      <p class="invalid-input">
-        <span *ngIf="email.invalid && email.touched"
-          >Email không được để trống</span
-        >
-      </p>
-      <button class="form-button mb-3 "  [disabled]="sellerSignUp.invalid">Đăng ký</button>
 
-      <span class="mb-4 clickhere"
+    <div class="form-control">
+      <input type="value" name="name"
+      ngModel
+      required
+      #username="ngModel"/>
+      <label>
+        <span style="transition-delay: 0ms">H</span
+        ><span style="transition-delay: 50ms">ọ</span
+        ><span style="transition-delay: 100ms"> </span
+        ><span style="transition-delay: 100ms">T</span
+        ><span style="transition-delay: 150ms">ê</span
+        ><span style="transition-delay: 150ms">n</span
+          >
+      </label>
+    </div>
+    <p class="invalid-input">
+      <span *ngIf="username.invalid && username.touched"
+        >Tên không được để trống</span
+      >
+    </p>
+
+    <div class="form-control">
+      <input type="value" name="email"
+
+      ngModel
+      required
+      email
+      #email="ngModel"/>
+      <label>
+        <span style="transition-delay: 0ms">E</span
+        ><span style="transition-delay: 50ms">m</span
+        ><span style="transition-delay: 100ms">a</span
+        ><span style="transition-delay: 100ms">i</span
+        ><span style="transition-delay: 150ms">l</span
+        >
+      </label>
+    </div>
+    <p class="invalid-input">
+      <span *ngIf="email.invalid && email.touched"
+        >Email không được để trống</span
+      >
+    </p>
+
+    <div class="form-control">
+      <input type="value"  name="password"
+
+      ngModel
+      #password="ngModel"
+      required/>
+      <label>
+        <span style="transition-delay: 0ms">M</span
+        ><span style="transition-delay: 50ms">ậ</span
+        ><span style="transition-delay: 100ms">t</span
+        ><span style="transition-delay: 150ms"> </span
+        ><span style="transition-delay: 200ms">K</span
+        ><span style="transition-delay: 250ms">h</span
+        ><span style="transition-delay: 300ms">ẩ</span
+        ><span style="transition-delay: 350ms">u</span>
+      </label>
+    </div>
+    <p class="invalid-input">
+      <span *ngIf="password.invalid && password.touched"
+        >Mật khẩu không được để trống</span
+      >
+    </p>
+
+    <button class="button" [disabled]="sellerSignUp.invalid">
+      Đăng ký
+    </button>
+      <span class="clickhere"
         >Bạn đã có tài khoản?
         <a class="auth-toggle-link clickhere" (click)="openLogin()">Nhấp vào đây</a></span
       >
@@ -67,22 +91,55 @@
       (ngSubmit)="login(sellerLogin.value)"
       class="common-form"
     >
-      <input
-        type="text"
-        class="form-input"
-        placeholder="Nhập email"
-        name="email"
+      <div class="form-control">
+        <input type="value" required="" name="email"
         ngModel
-      />
-      <input
-        type="password"
-        class="form-input"
-        placeholder="Nhập mật khẩu"
-        name="password"
+        email
+        #email="ngModel"
+        required/>
+        <label>
+          <span style="transition-delay: 0ms">E</span
+          ><span style="transition-delay: 50ms">m</span
+          ><span style="transition-delay: 100ms">a</span
+          ><span style="transition-delay: 100ms">i</span
+          ><span style="transition-delay: 150ms">l</span
+          >
+        </label>
+      </div>
+      <p class="invalid-input">
+        <span *ngIf="email.invalid && email.touched"
+          >Email không được để trống</span
+        >
+      </p>
+      <div class="form-control">
+        <input type="password"  name="password"
+
         ngModel
-      />
-      <button class="form-button mb-3">Đăng nhập -</button>
-      <span class="mb-4 clickhere"
+        minlength="2"
+        maxlength="20"
+        #password="ngModel"
+        required/>
+        <label>
+          <span style="transition-delay: 0ms">M</span
+          ><span style="transition-delay: 50ms">ậ</span
+          ><span style="transition-delay: 100ms">t</span
+          ><span style="transition-delay: 150ms"> </span
+          ><span style="transition-delay: 200ms">K</span
+          ><span style="transition-delay: 250ms">h</span
+          ><span style="transition-delay: 300ms">ẩ</span
+          ><span style="transition-delay: 350ms">u</span>
+        </label>
+      </div>
+      <p class="invalid-input">
+        <span *ngIf="password.invalid && password.touched"
+          >Mật khẩu không được để trống</span
+        >
+      </p>
+
+      <button class="button" [disabled]="sellerLogin.invalid">
+        Đăng nhập
+      </button>
+      <span class="clickhere"
         >Bạn chưa có tài khoản?
         <a class="auth-toggle-link clickhere" (click)="openSignUp()"
           >Nhấp vào đây</a

@@ -29,6 +29,7 @@ import { RouterModule } from '@angular/router';
 import { ProductModule } from './product/product.module';
 import { AboutComponent } from './about/about.component';
 import { SellerComponent } from './seller/seller.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { SellerComponent } from './seller/seller.component';
     ProductComponent,
     AboutComponent,
     SellerComponent,
+    ContactComponent,
 
 
   ],

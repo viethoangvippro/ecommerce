@@ -4,45 +4,74 @@
       <ul>
         <li class="border p-2">
           <h4>Danh mục sản phẩm</h4>
-          <hr>
-          <a href="" style="margin-left: 5%;" href="category/{{item.id}}" *ngFor="let item of listCategory">
-            {{item.name}} <br>
+          <hr />
+          <a
+            href=""
+            style="margin-left: 5%"
+            href="category/{{ item.id }}"
+            *ngFor="let item of listCategory"
+          >
+            {{ item.name }} <br />
           </a>
         </li>
       </ul>
     </div>
-    <div class="col-lg-9 ">
-      <h3 class="mb-4" style="text-align: center;">Danh sách sản phẩm</h3>
+    <div class="col-lg-9">
+      <h3 class="mb-4" style="text-align: center">Danh sách sản phẩm</h3>
       <!-- <div class="sort">
         <button (click)="sortByName1()">Theo tên</button>
         <button (click)="sortByPrice()">Theo giá</button>
         <button (click)="sortByRating()">Thịnh hành</button>
       </div> -->
       <section class="row">
-        <div class="col-sm-4" *ngFor="let item of productList | paginate : { itemsPerPage: 6, currentPage: p }">
-          <div class="product-item" style="border-radius: 5px; border: 2px solid black;">
-            <a href="" routerLink="/details/{{ item.id }}"><img src="{{ item.image }}" alt="" /></a>
+        <div
+          class="col-sm-4"
+          *ngFor="
+            let item of productList
+              | paginate : { itemsPerPage: 6, currentPage: p }
+          "
+        >
+          <div
+            class="product-item"
+            style="border-radius: 5px; border: 2px solid black"
+          >
+            <a href="" routerLink="/details/{{ item.id }}"
+              ><img src="{{ item.image }}" alt=""
+            /></a>
             <div class="product-details">
-              <a href="" routerLink="/details/{{ item.id }}"><h6 class="name-head" >{{
-                item.name
-              }}</h6></a>
+              <a href="" routerLink="/details/{{ item.id }}"
+                ><h6 class="name-head">{{ item.name }}</h6></a
+              >
               <div class="product-price">
-                <h6>Giá sản phẩm: {{ item.price | currency:currencyCode:currencyFormat}} </h6>
+                <h6>
+                  Giá sản phẩm:
+                  {{ item.price | currency : currencyCode : currencyFormat }}
+                </h6>
               </div>
-              <div class="product-color">
-
-              </div>
+              <div class="product-color"></div>
             </div>
             <div class="product-footer">
-              <a routerLink="/details/{{ item.id }}" class="btn btn-outline-success">Xem Chi tiết</a>
-              <a href="" routerLink="/details/{{ item.id }}" class="btn btn-outline-danger">Mua ngay</a>
+              <a
+                routerLink="/details/{{ item.id }}"
+                class="btn btn-outline-success"
+                >Xem Chi tiết</a
+              >
+              <a
+                href=""
+                routerLink="/details/{{ item.id }}"
+                class="btn btn-outline-danger"
+                >Mua ngay</a
+              >
             </div>
           </div>
-
         </div>
       </section>
-      <pagination-controls style="text-align: center;" (pageChange)="p = $event"></pagination-controls>
+      <pagination-controls
+        previousLabel="Trước"
+        nextLabel="Tiếp"
+        style="text-align: center"
+        (pageChange)="p = $event"
+      ></pagination-controls>
     </div>
-
   </div>
 </div>

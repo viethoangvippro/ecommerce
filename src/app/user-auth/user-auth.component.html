@@ -1,56 +1,80 @@
 <div class="user-auth">
   <div *ngIf="!showLogin" class="sign-up">
-    <h1 class="h1">Đăng ký</h1>
+    <h1 class="h1">Đăng ký tài khoản</h1>
     <form
       #userSignUp="ngForm"
       class="common-form"
       (ngSubmit)="signUp(userSignUp.value)"
     >
       <p class="error-p">{{ authError }}</p>
-      <input
-        type="text"
-        class="form-input"
-        name="name"
-        placeholder="Nhập tên"
+
+      <div class="form-control">
+        <input type="value" name="name"
         ngModel
         required
-        #username="ngModel"
-      />
+        #username="ngModel"/>
+        <label>
+          <span style="transition-delay: 0ms">H</span
+          ><span style="transition-delay: 50ms">ọ</span
+          ><span style="transition-delay: 100ms"> </span
+          ><span style="transition-delay: 100ms">T</span
+          ><span style="transition-delay: 150ms">ê</span
+          ><span style="transition-delay: 150ms">n</span
+            >
+        </label>
+      </div>
       <p class="invalid-input">
         <span *ngIf="username.invalid && username.touched"
           >Tên không được để trống</span
         >
       </p>
-      <input
-        type="text"
-        class="form-input"
-        name="email"
-        placeholder="Nhập email"
+
+      <div class="form-control">
+        <input type="value" name="email"
+
         ngModel
         required
         email
-        #email="ngModel"
-      />
+        #email="ngModel"/>
+        <label>
+          <span style="transition-delay: 0ms">E</span
+          ><span style="transition-delay: 50ms">m</span
+          ><span style="transition-delay: 100ms">a</span
+          ><span style="transition-delay: 100ms">i</span
+          ><span style="transition-delay: 150ms">l</span
+          >
+        </label>
+      </div>
       <p class="invalid-input">
         <span *ngIf="email.invalid && email.touched"
           >Email không được để trống</span
         >
       </p>
-      <input
-        type="password"
-        class="form-input"
-        name="password"
-        placeholder="Nhập mật khẩu"
+
+      <div class="form-control">
+        <input type="value"  name="password"
+
         ngModel
         #password="ngModel"
-        required
-      />
+        required/>
+        <label>
+          <span style="transition-delay: 0ms">M</span
+          ><span style="transition-delay: 50ms">ậ</span
+          ><span style="transition-delay: 100ms">t</span
+          ><span style="transition-delay: 150ms"> </span
+          ><span style="transition-delay: 200ms">K</span
+          ><span style="transition-delay: 250ms">h</span
+          ><span style="transition-delay: 300ms">ẩ</span
+          ><span style="transition-delay: 350ms">u</span>
+        </label>
+      </div>
       <p class="invalid-input">
         <span *ngIf="password.invalid && password.touched"
           >Mật khẩu không được để trống</span
         >
       </p>
-      <button class="form-button mb-4" [disabled]="userSignUp.invalid">
+
+      <button class="button" [disabled]="userSignUp.invalid">
         Đăng ký
       </button>
       <p class="clickhere">
@@ -68,38 +92,54 @@
       (ngSubmit)="login(userLogin.value)"
     >
       <p class="error-p">{{ authError }}</p>
-      <input
-        type="text"
-        class="form-input"
-        name="email"
-        placeholder="Nhập email"
+
+      <div class="form-control">
+        <input type="value" required="" name="email"
         ngModel
         email
         #email="ngModel"
-        required
-      />
+        required/>
+        <label>
+          <span style="transition-delay: 0ms">E</span
+          ><span style="transition-delay: 50ms">m</span
+          ><span style="transition-delay: 100ms">a</span
+          ><span style="transition-delay: 100ms">i</span
+          ><span style="transition-delay: 150ms">l</span
+          >
+        </label>
+      </div>
       <p class="invalid-input">
         <span *ngIf="email.invalid && email.touched"
           >Email không được để trống</span
         >
       </p>
-      <input
-        type="password"
-        class="form-input"
-        name="password"
-        placeholder="Nhập mật khẩu"
+
+      <div class="form-control">
+        <input type="password"  name="password"
+
         ngModel
         minlength="2"
         maxlength="20"
         #password="ngModel"
-        required
-      />
+        required/>
+        <label>
+          <span style="transition-delay: 0ms">M</span
+          ><span style="transition-delay: 50ms">ậ</span
+          ><span style="transition-delay: 100ms">t</span
+          ><span style="transition-delay: 150ms"> </span
+          ><span style="transition-delay: 200ms">K</span
+          ><span style="transition-delay: 250ms">h</span
+          ><span style="transition-delay: 300ms">ẩ</span
+          ><span style="transition-delay: 350ms">u</span>
+        </label>
+      </div>
       <p class="invalid-input">
         <span *ngIf="password.invalid && password.touched"
           >Mật khẩu không được để trống</span
         >
       </p>
-      <button [disabled]="userLogin.invalid" class="form-button mb-4">
+
+      <button class="button" [disabled]="userLogin.invalid">
         Đăng nhập
       </button>
       <p class="clickhere">

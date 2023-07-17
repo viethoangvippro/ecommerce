@@ -1,7 +1,9 @@
 <div class="product-list container">
-  <h1 style="color:#Ff4b2b ; text-align: center;" class="p-4">Danh sách sản phẩm</h1>
+  <h1 style="color: #ff4b2b; text-align: center" class="p-4">
+    Danh sách sản phẩm
+  </h1>
   <p class="message-p">{{ productMessage }}</p>
-  <table class="mb-3" style="width: 100%;">
+  <table class="mb-3" style="width: 100%">
     <thead>
       <tr>
         <th>Ảnh sản phẩm</th>
@@ -14,7 +16,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of productList | paginate : { itemsPerPage: 8, currentPage: p }">
+      <tr
+        *ngFor="
+          let item of productList
+            | paginate : { itemsPerPage: 8, currentPage: p }
+        "
+      >
         <td><img src="{{ item.image }}" /></td>
         <td>{{ item.name }}</td>
         <td>{{ item.price }}</td>
@@ -23,12 +30,20 @@
         <td>{{ item.description }}</td>
         <td>
           <fa-icon (click)="deleteProduct(item.id)" [icon]="icon"></fa-icon>
-          <a class="adjust-update-link" routerLink="/seller-update-product/{{item.id}}"> <fa-icon  [icon]="iconEdit"></fa-icon></a>
-
+          <a
+            class="adjust-update-link"
+            routerLink="/seller-update-product/{{ item.id }}"
+          >
+            <fa-icon [icon]="iconEdit"></fa-icon
+          ></a>
         </td>
       </tr>
     </tbody>
   </table>
-  <pagination-controls style="text-align: center;" (pageChange)="p = $event"></pagination-controls>
-
+  <pagination-controls
+    previousLabel="Trước"
+    nextLabel="Tiếp"
+    style="text-align: center"
+    (pageChange)="p = $event"
+  ></pagination-controls>
 </div>

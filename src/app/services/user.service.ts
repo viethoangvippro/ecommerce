@@ -10,6 +10,13 @@ import { Observable, map } from 'rxjs';
 export class UserService {
 invalidUserAuth= new EventEmitter<boolean>(false)
   constructor(private http: HttpClient, private router:Router) { }
+
+  private apiUrl = 'http://localhost:3000/contacts';
+
+  addContact(name: string, email: string, phone: string, comment: string) {
+    return this.http.post(this.apiUrl, { name, email, phone, comment });
+  }
+
   userSignUp(user:signUp){
    this.http.post('http://localhost:3000/users',user,{observe:'response'})
    .subscribe((result)=>{

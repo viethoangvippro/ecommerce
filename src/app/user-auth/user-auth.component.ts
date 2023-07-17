@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { cart, login, product, signUp } from '../data-type';
 import { ProductService } from '../services/product.service';
 import { UserService } from '../services/user.service';
-
+declare const FB: any;
 @Component({
   selector: 'app-user-auth',
   templateUrl: './user-auth.component.html',
@@ -11,7 +11,14 @@ import { UserService } from '../services/user.service';
 export class UserAuthComponent implements OnInit {
   showLogin:boolean=true
   authError:string="";
-  constructor(private user: UserService, private product:ProductService) {}
+  constructor(private user: UserService, private product:ProductService) {
+    FB.init({
+      appId      : 'tviehoang',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v3.3'
+    });
+  }
 
   ngOnInit(): void {
     this.user.userAuthReload();
@@ -21,6 +28,16 @@ export class UserAuthComponent implements OnInit {
     this.user.userSignUp(data);
   }
 
+  loginWithFacebook(): void {
+    FB.login((response: any) => {
+      console.log('login response', response);
+      if (response.authResponse) {
+        // Lưu token của user vào database hoặc xử lý các thao tác khác cần thiết
+      } else {
+        console.log('User cancelled login or did not fully authorize.');
+      }
+    }, {scope: 'email'});
+  }
 
   login(data: login) {
     this.user.userLogin(data)
