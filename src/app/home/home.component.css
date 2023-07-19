@@ -14,6 +14,11 @@
     height: 300px;
     object-fit: contain;
 }
+.product-item img:hover{
+
+  transform: scale(1.1);
+  transition: 0.5s;
+}
 
 .product-item .product-details {
     border-top: 1px solid #ccc;
@@ -45,10 +50,7 @@
   text-decoration: none;
 }
 
-.product-item:hover{
-  box-shadow: 5px 5px 5px 5px #888888;
-  transition: 0.3s;
-}
+
 
 body {
   display: flex;

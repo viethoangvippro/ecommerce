@@ -18,14 +18,14 @@ export class SellerService {
       console.warn(result)
       if(result){
         localStorage.setItem('seller',JSON.stringify(result.body))
-        this.router.navigate(['seller-home'])
+        this.router.navigate(['seller'])
       }
     })
-  } 
+  }
   reloadSeller(){
     if(localStorage.getItem('seller')){
       this.isSellerLoggedIn.next(true)
-      this.router.navigate(['seller-home'])
+      this.router.navigate(['seller'])
     }
   }
   userLogin(data:login){
@@ -35,9 +35,9 @@ export class SellerService {
     if(result && result.body && result.body.length===1){
       this.isLoginError.emit(false)
       localStorage.setItem('seller',JSON.stringify(result.body))
-      this.router.navigate(['seller-home'])
+      this.router.navigate(['seller'])
     }else{
-      console.warn("login failed");
+      console.warn("Đăng nhập không thành công");
       this.isLoginError.emit(true)
     }
    })

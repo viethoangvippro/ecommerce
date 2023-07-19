@@ -51,33 +51,54 @@ ngModel
 
   </form>
 </div> -->
-<div class="container">
-  <h2 class="container mt-6 p-4" style="color: #Ff4b2b; text-align: center;">Thêm sản phẩm</h2>
-  <form #addProduct="ngForm"
-  (ngSubmit)="submit(addProduct.value)">
-    <label for="fname" >Tên sản phẩm</label>
-    <input type="text"  name="name"
-    ngModel placeholder="Nhập tên sản phẩm">
+<div class="admin-page">
+  <div class="admin-nav " style="  font-size: 20px;">
+    <a href="seller" class="all-product">Sản phẩm</a><br>
+    <a href="seller-add-product" class="add-product" style="margin-left: 15px;">Thêm sản phẩm</a><br>
+    <a href="seller-category" class="all-product">Danh mục</a><br>
+    <a href="seller-add-category" class="add-product" style="margin-left: 15px;">Thêm danh mục</a><br>
+    <a href="seller-order" class="all-product">Đơn hàng</a><br>
+    <a href="seller-contact" class="all-product">Phản hồi</a><br>
+  </div>
+  <div class="admin-content">
+    <div class="">
+      <h2 class=" mt-6 p-4" style="color: #Ff4b2b; text-align: center;">Thêm sản phẩm</h2>
+      <form #addProduct="ngForm"
+      (ngSubmit)="submit(addProduct.value)">
+        <label for="fname" >Tên sản phẩm</label>
+        <input type="text"  name="name"
+        ngModel placeholder="Nhập tên sản phẩm">
 
-    <label for="lname">Giá sản phẩm</label>
-    <input type="text"name="price"
-    ngModel placeholder="Nhập giá sản phẩm">
+        <label for="lname">Giá sản phẩm</label>
+        <input type="text"name="price"
+        ngModel placeholder="Nhập giá sản phẩm">
 
-    <label for="email">Danh mục</label>
-    <input type="text" name="category"
-    ngModel placeholder="Nhập danh mục sản phẩm">
+        <label for="email">Danh mục</label>
 
-    <label for="color">Màu sản phẩm</label>
-    <input type="text" name="color"
-    ngModel placeholder="Nhập màu sản phẩm">
+        <select id="category" name="category" ngModel>
+          <option *ngFor="let category of categories" [value]="category.name">{{ category.name }}</option>
+        </select>
 
-    <label for="description">Mô tả chi tiết</label>
-    <textarea name="description"
-    ngModel placeholder="Nhập mô tả sản phẩm" style="height:200px"></textarea>
-    <label for="color">Ảnh sản phẩm</label>
-    <input type="text" name="image"
-    ngModel placeholder="Nhập ảnh sản phẩm">
 
-    <button type="submit" class="mb-4">Thêm sản phẩm</button>
-  </form>
+
+
+        <label for="color">Màu sản phẩm</label>
+        <input type="text" name="color"
+        ngModel placeholder="Nhập màu sản phẩm">
+
+        <label for="description">Mô tả chi tiết</label>
+        <textarea name="description"
+        ngModel placeholder="Nhập mô tả sản phẩm" style="height:200px"></textarea>
+        <label for="color">Ảnh sản phẩm</label>
+        <input type="text" name="image"
+        ngModel placeholder="Nhập ảnh sản phẩm">
+
+        <button type="submit" class="mb-4">Thêm sản phẩm</button>
+      </form>
+    </div>
+
+  </div>
 </div>
+
+
+

@@ -1,6 +1,7 @@
+
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { product } from '../data-type';
+import { category, product } from '../data-type';
 import { ProductService } from '../services/product.service';
 import { FormControl, Validators } from '@angular/forms';
 
@@ -13,6 +14,8 @@ import { FormControl, Validators } from '@angular/forms';
 export class SellerUpdateProductComponent implements OnInit {
   productData: undefined | product;
   productMessage: undefined | string;
+  categories: category[] = [];
+  products: product[]=[];
   constructor(private route: ActivatedRoute, private product: ProductService,private router: Router) {}
 
 
@@ -31,15 +34,30 @@ export class SellerUpdateProductComponent implements OnInit {
         this.productData = data;
 
       });
+
+      this.getCategories();
+      this.getProducts();
+  }
+
+  getCategories(): void {
+    this.product.categoryList()
+      .subscribe(categories => this.categories = categories);
+  }
+
+  getProducts(): void {
+    this.product.productList()
+      .subscribe(products => this.products = products);
   }
   submit(data: any) {
     if (this.productData) {
       data.id = this.productData.id;
+      data.categoryId = this.productData.categoryId;
     }
     this.product.updateProduct(data).subscribe((result) => {
       if (result) {
         this.productMessage = 'Cập nhật sản phẩm thành công';
-        this.router.navigate(['/seller-home'])
+        alert('Cập nhật sản phẩm thành công');
+        this.router.navigate(['/seller'])
 
       }
     });

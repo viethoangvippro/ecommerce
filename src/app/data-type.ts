@@ -12,6 +12,7 @@ export interface product{
   name:string,
   price:number,
   category:string,
+  categoryId:string,
   color:string,
   image:string,
   description:string,
@@ -47,10 +48,18 @@ export interface order {
   contact:string,
   totalPrice:number,
   userId:string,
-  id:number|undefined
+  id:number|undefined,
+  status:string,
 }
 
 export interface category {
   id: number ,
   name: string
+}
+export interface contact {
+  id: number ,
+  name: string,
+  phone:number,
+  comment:string,
+  email:string
 }

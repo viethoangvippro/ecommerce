@@ -1,93 +1,42 @@
 {
   "seller": [
     {
-      "name": "Truong Hoang ",
-      "email": "hoang1@seller.com",
-      "password": "abc@123",
-      "id": 2
-    },
-    {
-      "name": "Viet",
-      "password": "viet1@123",
-      "email": "viet1@test.com",
-      "id": 3
-    },
-    {
-      "name": "VietHoang",
-      "password": "viet123@123",
-      "email": "viet123@test.com",
-      "id": 4
-    },
-    {
-      "name": "chuong",
-      "password": "abc123",
-      "email": "chuong@test.com",
-      "id": 5
-    },
-    {
-      "name": "hoang2",
-      "password": "abc123",
-      "email": "hoang2@test.com",
-      "id": 6
-    },
-    {
-      "name": "viet1",
-      "password": "abc@123",
-      "email": "viet1@test.com",
-      "id": 7
-    },
-    {
-      "name": "kinh",
-      "password": "abc@123",
-      "email": "kinh@test.com",
-      "id": 8
-    },
-    {
       "name": "DichHong",
       "password": "hoang",
       "email": "hoangkai25@gmail.com",
-      "id": 9
-    },
-    {
-      "name": "hoang",
-      "password": "hoang",
-      "email": "hoang@gmail.com",
-      "id": 10
+      "id": 1
     }
   ],
   "products": [
     {
       "name": "MSI Bravo 15",
-      "price": "22000000",
+      "price": "25000000",
       "category": "Laptop",
       "color": "Black",
       "description": "MSI Gaming Bravo 15 B5DD (084VN) gây ấn tượng với người dùng bởi phong cách thiết kế hầm hố, năng động chuẩn gaming cùng cấu hình vượt trội, đáp ứng tốt đa tác vụ từ văn phòng cơ bản đến đồ họa - kỹ thuật chuyên sâu.",
       "image": "https://laptop88.vn/media/product/6780_msi_bravo_15_b5dd_265vn_r5_5600h_919c422d73604315a617fb4a79299da1_master.png",
       "id": 1,
-      "rating": 4,
-      "numReviews": 1
+      "categoryId": 2
     },
     {
       "name": "Laptop HP VICTUS 15 ",
       "price": "20990000",
       "category": "Laptop",
-      "categoryId": 1,
       "color": "Black",
       "description": "Laptop HP VICTUS 15 fa0155TX i5 12450H (81P00PA) hứa hẹn mang đến trải nghiệm làm việc và giải trí tuyệt vời nhờ bộ vi xử lý Intel thế hệ 12 mạnh mẽ, card đồ họa NVIDIA RTX 30-series và màn hình 144 Hz siêu mượt mà.",
       "image": "https://nguyenvu-store-medias.tn-cdn.net/2022/03/HP-VICTUS-16-e0177AX-4R0U9PA-nguyenvustore-1.png",
       "id": 3,
-      "rating": 4
+      "categoryId": 1
     },
     {
       "name": " Nitro 16 Phoenix",
       "price": "29990000",
       "category": "Laptop",
-      "categoryId": 1,
       "color": "Black",
       "description": "Laptop Gaming Quốc Dân là một thuật ngữ được sử dụng để chỉ những chiếc laptop chơi game có cấu hình mạnh mẽ và thiết kế đẹp mắt, phù hợp với nhu cầu của người chơi game. Acer Nitro 16 Phoenix là một chiếc laptop chơi game ấn tượng với thiết kế cấu trúc gaming từ bên ngoài cho đến vỏ hộp. ",
       "image": "https://www.acervietnam.com.vn/wp-content/uploads/2023/03/7-768x591.png",
       "id": 4,
-      "rating": 4.9
+      "categoryId": 2
     },
     {
       "name": "Asus TUF Gaming F15",
@@ -108,8 +57,7 @@
       "color": "Gray",
       "description": "Phá cách với diện mạo mạnh mẽ đến từ laptop Acer Nitro 5 Gaming AN515 45 R6EV R5 5600H (NH.QBMSV.006) mang đến cho người dùng hiệu năng ổn định, hỗ trợ bạn trong mọi tác vụ hằng ngày hay chiến những trận game cực căng một cách mượt mà.",
       "image": "https://no1computer.vn/images/products/2022/11/30/large/acer-nitro-5-rtx-3050-h1_1669799440.jpg",
-      "id": 9,
-      "rating": 4.5
+      "id": 9
     },
     {
       "name": " Lenovo Gaming Legion 5 ",
@@ -155,41 +103,16 @@
       "rating": 4.5
     },
     {
-      "name": "Samsung m 40 abc",
+      "name": "Việt Trương",
       "price": "22000000",
       "category": "Laptop",
-      "categoryId": 1,
       "color": "green",
-      "description": "1233",
-      "image": "https://www.acervietnam.com.vn/wp-content/uploads/2023/03/Laptop-Gaming-Quoc-Dan-Nitro-16-Phoenix-RTX-4050-5.png",
+      "description": "123",
+      "image": "",
       "id": 14
     }
   ],
   "users": [
-    {
-      "name": "Hoang",
-      "email": "hoang@user.com",
-      "password": "abc123",
-      "id": 1
-    },
-    {
-      "name": "Viet",
-      "email": "viet@user.com",
-      "password": "abc123",
-      "id": 2
-    },
-    {
-      "name": "truong",
-      "email": "truong@user.com",
-      "password": "abc123",
-      "id": 3
-    },
-    {
-      "name": "chuong",
-      "email": "truong@user.com",
-      "password": "abc123",
-      "id": 4
-    },
     {
       "name": "dichhong",
       "email": "tviehoang@gmail.com",
@@ -197,21 +120,7 @@
       "id": 5
     }
   ],
-  "cart": [
-    {
-      "name": "Laptop HP VICTUS 15 ",
-      "price": "20990000",
-      "category": "Laptop",
-      "color": "Black",
-      "description": "Laptop HP VICTUS 15 fa0155TX i5 12450H (81P00PA) hứa hẹn mang đến trải nghiệm làm việc và giải trí tuyệt vời nhờ bộ vi xử lý Intel thế hệ 12 mạnh mẽ, card đồ họa NVIDIA RTX 30-series và màn hình 144 Hz siêu mượt mà.",
-      "image": "https://nguyenvu-store-medias.tn-cdn.net/2022/03/HP-VICTUS-16-e0177AX-4R0U9PA-nguyenvustore-1.png",
-      "rating": 4,
-      "quantity": 1,
-      "productId": 3,
-      "userId": 5,
-      "id": 1
-    }
-  ],
+  "cart": [],
   "category": [
     {
       "id": 1,
@@ -254,36 +163,13 @@
   ],
   "orders": [
     {
-      "email": "viet@user.com",
-      "address": "noida sector x",
-      "contact": "9999",
-      "totalPrice": 104750,
-      "userId": 1,
-      "id": 1
-    },
-    {
-      "email": "truong@test.com",
-      "address": "noida sector x",
-      "contact": "8877",
-      "totalPrice": 6100,
-      "userId": 1,
-      "id": 3
-    },
-    {
       "email": "tviehoang@gmail.com",
-      "address": "233 Trần Phú",
-      "contact": "No",
-      "totalPrice": 650,
-      "userId": 4,
-      "id": 4
-    },
-    {
-      "email": "hoangkai25@gmail.com",
       "contact": "0397064432",
-      "address": "233 Trần phú",
-      "totalPrice": 22025000,
+      "address": "123",
+      "totalPrice": 44025000,
       "userId": 5,
-      "id": 5
+      "status": "Chờ xác nhận",
+      "id": 6
     }
   ],
   "contacts": [
@@ -314,6 +200,13 @@
       "phone": "12123123",
       "comment": "123",
       "id": 8
+    },
+    {
+      "name": "Việt Trương",
+      "email": "tviehoang@gmail.com",
+      "phone": "0397064432",
+      "comment": "Shop quá hay",
+      "id": 9
     }
   ]
 }

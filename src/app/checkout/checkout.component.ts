@@ -14,6 +14,7 @@ export class CheckoutComponent implements OnInit {
   totalPrice: number | undefined;
   cartData: cart[] | undefined;
   orderMsg: string | undefined;
+
   constructor(private product: ProductService, private router: Router) { }
 
   ngOnInit(): void {
@@ -41,7 +42,8 @@ export class CheckoutComponent implements OnInit {
         ...data,
         totalPrice: this.totalPrice,
         userId,
-        id: undefined
+        id: undefined,
+        status: 'Chờ xác nhận'
       }
 
       this.cartData?.forEach((item) => {

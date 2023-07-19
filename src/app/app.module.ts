@@ -31,6 +31,15 @@ import { AboutComponent } from './about/about.component';
 import { SellerComponent } from './seller/seller.component';
 import { ContactComponent } from './contact/contact.component';
 
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { SellerCategoryComponent } from './seller-category/seller-category.component';
+import { SellerOrderComponent } from './seller-order/seller-order.component';
+import { SellerAddCategoryComponent } from './seller-add-category/seller-add-category.component';
+import { SellerContactComponent } from './seller-contact/seller-contact.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,6 +61,11 @@ import { ContactComponent } from './contact/contact.component';
     AboutComponent,
     SellerComponent,
     ContactComponent,
+    ConfirmDialogComponent,
+    SellerCategoryComponent,
+    SellerOrderComponent,
+    SellerAddCategoryComponent,
+    SellerContactComponent,
 
 
   ],
@@ -63,7 +77,10 @@ import { ContactComponent } from './contact/contact.component';
     FontAwesomeModule,
     NgbModule,
     ReactiveFormsModule,
-    NgxPaginationModule,RouterModule,ProductModule
+    NgxPaginationModule,RouterModule,ProductModule,
+    MatIconModule,
+    MatDialogModule,
+    NoopAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

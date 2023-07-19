@@ -28,7 +28,7 @@
             <span>{{order.totalPrice | currency:currencyCode:currencyFormat}}</span>
         </div>
         <div class="col-sm-3">
-            <span>Chờ xác nhận</span>
+            <span>{{order.status}}</span>
         </div>
         <div class="col-sm-2">
             <button class="btn btn-secondary cancel"  (click)="cancelOrder(order.id)">Huỷ đơn hàng</button>

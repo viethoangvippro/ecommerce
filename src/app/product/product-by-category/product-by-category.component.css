@@ -20,7 +20,11 @@
   border-bottom: 1px solid #ccc;
   padding: 15px;
 }
+.product-item img:hover{
 
+  transform: scale(1.1);
+  transition: 0.5s;
+}
 .product-item .name-head{
   font-size: 20px;
   font-weight: 600;

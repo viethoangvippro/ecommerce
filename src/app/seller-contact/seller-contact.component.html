@@ -10,36 +10,36 @@
   <div class="admin-content">
     <div class="product-list">
       <h1 style="color: #ff4b2b; text-align: center" class="">
-        Danh sách sản phẩm
+        Phản hồi từ khách hàng
       </h1>
-      <p class="message-p">{{ productMessage }}</p>
-      <table class="mb-3" style="width: 100%">
+
+      <table class="mb-3" style="width: 100%; text-align: center;">
         <thead>
           <tr>
-            <th>Ảnh sản phẩm</th>
-            <th>Tên sản phẩm</th>
-            <th>Giá sản phẩm</th>
-            <th>Màu sản phẩm</th>
-            <th>Danh mục</th>
-            <th>Mô tả sản phẩm</th>
+            <th>Id</th>
+            <th>Tên khách hàng</th>
+            <th>Email</th>
+            <th>Số điện thoại</th>
+            <th>Phản hồi từ khách hàng</th>
+
             <th>Hành động</th>
           </tr>
         </thead>
         <tbody>
           <tr
             *ngFor="
-              let item of trendyProducts
-                | paginate : { itemsPerPage: 4, currentPage: p }
+              let item of contactList
             "
           >
-            <td><img src="{{ item.image }}" /></td>
-            <td>{{ item.name }}</td>
-            <td>{{ item.price }}</td>
-            <td>{{ item.color }}</td>
-            <td>{{ item.category }}</td>
-            <td>{{ item.description }}</td>
+          <td>{{ item.id }}</td>
+            <td>{{item.name }} </td>
+            <td>{{ item.email }}</td>
+            <td>{{ item.phone }}</td>
+            <td>{{ item.comment }}</td>
+
+
             <td>
-              <fa-icon (click)="deleteProduct(item.id)" [icon]="icon"></fa-icon>
+              <!-- <fa-icon (click)="deleteProduct(item.id)" [icon]="icon"></fa-icon> -->
               <a
                 class="adjust-update-link"
                 routerLink="/seller-update-product/{{ item.id }}"
@@ -50,14 +50,12 @@
           </tr>
         </tbody>
       </table>
-      <pagination-controls
+      <!-- <pagination-controls
         previousLabel="Trước"
         nextLabel="Tiếp"
         style="text-align: center;"
         (pageChange)="p = $event"
-      ></pagination-controls>
+      ></pagination-controls> -->
     </div>
-
   </div>
 </div>
-

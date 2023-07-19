@@ -1,35 +1,31 @@
+import { order } from './../data-type';
 import { Component, OnInit } from '@angular/core';
-import { product } from '../data-type';
 import { ProductService } from '../services/product.service';
 import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-seller',
-  templateUrl: './seller.component.html',
-  styleUrls: ['./seller.component.css']
+  selector: 'app-seller-order',
+  templateUrl: './seller-order.component.html',
+  styleUrls: ['./seller-order.component.css']
 })
-export class SellerComponent implements OnInit {
-  productList: any | product[];
-  trendyProducts:any| product[];
-  p:any;
-  pageSize: string | number | undefined ;
-
-  productMessage: undefined | string;
+export class SellerOrderComponent implements OnInit {
+  orderList : order[] =[];
   icon = faTrash;
   iconEdit=faEdit;
+  productMessage: any;
+  currencyCode = 'VND';
+  currencyFormat = 'symbol';
   constructor(private product: ProductService,private router: Router) { }
 
   ngOnInit(): void {
-    this.product.trendyProducts().subscribe(data =>{
-      this.trendyProducts =data;
-    })
+    this.list();
   }
   deleteProduct(id: number) {
     this.product.deleteProduct(id).subscribe((result) => {
       if (result) {
         this.productMessage = 'Xoá sản phẩm thành công';
-        alert('Xoá sản phẩm thành công'); 
+
         this.list();
         this.router.navigate(["/seller-home"])
       }
@@ -39,13 +35,10 @@ export class SellerComponent implements OnInit {
       this.router.navigate(["/seller"])
     }, 500);
   }
-  list() {
-    this.product.productList().subscribe((result) => {
-      if (result) {
-        this.productList = result;
-
-      }
-    });
+  list(){
+    this.product.getOrder().subscribe(data => {
+      this.orderList = data
+    })
   }
 
 }

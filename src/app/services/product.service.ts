@@ -1,4 +1,5 @@
-import { category } from './../data-type';
+
+import { category, contact } from './../data-type';
 import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
 import { cart, order, product } from '../data-type';
@@ -29,7 +30,9 @@ export class ProductService {
   deleteProduct(id: number) {
     return this.http.delete(`http://localhost:3000/products/${id}`);
   }
-
+  deleteProduct1(name: product) {
+    return this.http.delete(`http://localhost:3000/products/${name}`);
+  }
   getProduct(id: string) {
     return this.http.get<product>(`http://localhost:3000/products/${id}`);
   }
@@ -101,9 +104,6 @@ export class ProductService {
     return this.http.post('http://localhost:3000/cart', cartData);
   }
 
-
-
-
   getCartList(userId: number) {
     return this.http
       .get<product[]>('http://localhost:3000/cart?userId=' + userId, {
@@ -123,6 +123,9 @@ export class ProductService {
     let userData = userStore && JSON.parse(userStore);
     return this.http.get<cart[]>('http://localhost:3000/cart?userId=' + userData.id);
   }
+  getContact(){
+    return this.http.get<contact[]>('http://localhost:3000/contacts')
+  }
 
   orderNow(data: order) {
     return this.http.post('http://localhost:3000/orders', data);
@@ -131,6 +134,10 @@ export class ProductService {
     let userStore = localStorage.getItem('user');
     let userData = userStore && JSON.parse(userStore);
     return this.http.get<order[]>('http://localhost:3000/orders?userId=' + userData.id);
+  }
+
+  getOrder(){
+    return this.http.get<order[]>('http://localhost:3000/orders');
   }
 
   deleteCartItems(cartId: number) {

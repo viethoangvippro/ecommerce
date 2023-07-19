@@ -51,44 +51,73 @@
     <button class="form-button">Update Product</button>
   </form>
 </div> -->
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Update Form</title>
-    <style>
-      /* Style cho input fields và buttons */
-      input[type=text], select, textarea {
-        width: 100%;
-        padding: 12px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-        margin-top: 6px;
-        margin-bottom: 16px;
-      }
+<!-- <div class="add-product">
+  <h1>Add New Product</h1>
+  <p class="message-p">{{addProductMessage}}</p>
+  <form #addProduct="ngForm"
+  (ngSubmit)="submit(addProduct.value)"
+   class="common-form">
+    <input
+      type="text"
+      class="form-input"
+      placeholder="Enter Product Name"
+      name="name"
+      ngModel
+    />
+    <input
+    type="text"
+    class="form-input"
+    placeholder="Enter Product Price"
+    name="price"
+    ngModel
+  />
+  <input
+  type="text"
+  class="form-input"
+  placeholder="Enter Product Category"
+  name="category"
+  ngModel
+/>
+<input
+type="text"
+class="form-input"
+placeholder="Enter Product Color"
+name="color"
+ngModel
+/>
+<textarea
+type="text"
+class="form-input"
+placeholder="Enter Product Description"
+name="description"
+ngModel
+></textarea>
 
-      button[type=submit] {
-        background-color: #4CAF50;
-        color: white;
-        padding: 12px 20px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-      }
+<input
+type="text"
+class="form-input"
+placeholder="Enter Product Image URL"
+name="image"
+ngModel
+/>
+<button class="form-button">Add Product</button>
 
-      button[type=submit]:hover {
-        background-color: #45a049;
-      }
-
-      /* Style cho container */
-
-    </style>
-  </head>
-  <body>
-    <h2 class="container mt-6 p-4" style="color: #Ff4b2b; text-align: center;">Cập nhật sản phẩm</h2>
+  </form>
+</div> -->
+<div class="admin-page">
+  <div class="admin-nav " style="  font-size: 20px;">
+    <a href="seller" class="all-product">Sản phẩm</a><br>
+    <a href="seller-add-product" class="add-product" style="margin-left: 15px;">Thêm sản phẩm</a><br>
+    <a href="seller-category" class="all-product">Danh mục</a><br>
+    <a href="seller-add-category" class="add-product" style="margin-left: 15px;">Thêm danh mục</a><br>
+    <a href="seller-order" class="all-product">Đơn hàng</a><br>
+    <a href="seller-contact" class="all-product">Phản hồi</a><br>
+  </div>
+  <div class="admin-content">
+    <h2 class=" mt-6 p-4" style="color: #Ff4b2b; text-align: center;">Cập nhật sản phẩm</h2>
     <p class="message-p">{{ productMessage }}</p>
 
-    <div class="container">
+    <div class="">
       <form #addProduct="ngForm"
       (ngSubmit)="submit(addProduct.value)">
         <label for="fname" >Tên sản phẩm</label>
@@ -102,9 +131,10 @@
           Name is required.
         </p>
 
-        <label for="email">Danh mục</label>
-        <input type="text" name="category"
-        ngModel="{{ productData?.category }}" placeholder="Danh mục">
+
+        <select id="category" name="category" ngModel="{{ productData?.category }}">
+          <option *ngFor="let category of categories"  [value]="category.name">{{ category.name }}</option>
+        </select>
 
         <label for="color">Màu sản phẩm</label>
         <input type="text" name="color"
@@ -120,5 +150,13 @@
         <button type="submit" class="mb-4">Cập nhật</button>
       </form>
     </div>
-  </body>
-</html>
+  </div>
+</div>
+
+
+
+
+
+
+
+

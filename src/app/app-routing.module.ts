@@ -17,6 +17,10 @@ import { ProductComponent } from './product/product.component';
 import { AboutComponent } from './about/about.component';
 import { SellerComponent } from './seller/seller.component';
 import { ContactComponent } from './contact/contact.component';
+import { SellerCategoryComponent } from './seller-category/seller-category.component';
+import { SellerOrderComponent } from './seller-order/seller-order.component';
+import { SellerAddCategoryComponent } from './seller-add-category/seller-add-category.component';
+import { SellerContactComponent } from './seller-contact/seller-contact.component';
 
 
 
@@ -44,6 +48,22 @@ const routes: Routes = [
   },{
     component:SellerUpdateProductComponent,
     path:'seller-update-product/:id',
+    canActivate:[AuthGuard]
+  },{
+    component:SellerCategoryComponent,
+    path:'seller-category',
+    canActivate:[AuthGuard]
+  },{
+    component:SellerAddCategoryComponent,
+    path:'seller-add-category',
+    canActivate:[AuthGuard]
+  },{
+    component:SellerContactComponent,
+    path:'seller-contact',
+    canActivate:[AuthGuard]
+  },{
+    component:SellerOrderComponent,
+    path:'seller-order',
     canActivate:[AuthGuard]
   },
   {

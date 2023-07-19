@@ -7,39 +7,40 @@
     <a href="seller-order" class="all-product">Đơn hàng</a><br>
     <a href="seller-contact" class="all-product">Phản hồi</a><br>
   </div>
-  <div class="admin-content">
+  <div class="admin-content" >
     <div class="product-list">
       <h1 style="color: #ff4b2b; text-align: center" class="">
-        Danh sách sản phẩm
+        Danh sách đặt hàng
       </h1>
-      <p class="message-p">{{ productMessage }}</p>
-      <table class="mb-3" style="width: 100%">
+
+      <table class="mb-3" style="width: 100%; text-align: center;">
         <thead>
           <tr>
-            <th>Ảnh sản phẩm</th>
-            <th>Tên sản phẩm</th>
-            <th>Giá sản phẩm</th>
-            <th>Màu sản phẩm</th>
-            <th>Danh mục</th>
-            <th>Mô tả sản phẩm</th>
+            <th>Id</th>
+            <th>Email</th>
+            <th>Địa chỉ nhận hàng</th>
+            <th>Thông tin liên hệ</th>
+            <th>Tiền thanh toán</th>
+
+            <th>Trạng thái</th>
             <th>Hành động</th>
           </tr>
         </thead>
         <tbody>
           <tr
             *ngFor="
-              let item of trendyProducts
-                | paginate : { itemsPerPage: 4, currentPage: p }
+              let item of orderList
             "
           >
-            <td><img src="{{ item.image }}" /></td>
-            <td>{{ item.name }}</td>
-            <td>{{ item.price }}</td>
-            <td>{{ item.color }}</td>
-            <td>{{ item.category }}</td>
-            <td>{{ item.description }}</td>
+          <td>{{ item.id }}</td>
+            <td>{{item.email }} </td>
+            <td>{{ item.address }}</td>
+            <td>{{ item.contact }}</td>
+            <td>{{ item.totalPrice | currency : currencyCode : currencyFormat}}</td>
+
+            <td>{{ item.status }}</td>
             <td>
-              <fa-icon (click)="deleteProduct(item.id)" [icon]="icon"></fa-icon>
+              <!-- <fa-icon (click)="deleteProduct(item.id)" [icon]="icon"></fa-icon> -->
               <a
                 class="adjust-update-link"
                 routerLink="/seller-update-product/{{ item.id }}"
@@ -50,14 +51,12 @@
           </tr>
         </tbody>
       </table>
-      <pagination-controls
+      <!-- <pagination-controls
         previousLabel="Trước"
         nextLabel="Tiếp"
         style="text-align: center;"
         (pageChange)="p = $event"
-      ></pagination-controls>
+      ></pagination-controls> -->
     </div>
-
   </div>
 </div>
-
