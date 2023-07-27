@@ -7,7 +7,8 @@
 }
 
 .details img{
-    height: 100px;
+  width: 90px;
+   height: 100px;
 }
 .details ul{
     padding: 0;
@@ -18,7 +19,15 @@
     border: 1px solid #ddd;
     padding: 15px;
     margin-bottom: 15px;
+    text-align: center;
+}
 
+.details1 ul{
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
 }
 .summary h3{
     text-align: center;
@@ -37,3 +46,109 @@
   background-color: #Ff4b2b;
   color: #ddd;
 }
+
+
+.button1 {
+  position: relative;
+  overflow: hidden;
+  outline: none;
+  cursor: pointer;
+  border-radius: 50px;
+  background-color: hsl(255deg 50% 40%);
+  border: solid 4px hsl(50deg 100% 50%);
+  font-family: inherit;
+  left: 50%;
+  margin-top: 5%;
+ }
+
+ .default-btn,.hover-btn {
+  background-color: hsl(255deg 50% 40%);
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 20px;
+  border-radius: 50px;
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: all .3s ease;
+ }
+ .button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  border: 0px solid transparent;
+  background-color: rgba(100,77,237,0.08);
+  border-radius: 1.25em;
+  transition: all 0.2s linear;
+ }
+
+ .button:hover {
+  box-shadow: 3.4px 2.5px 4.9px rgba(0, 0, 0, 0.025),
+   8.6px 6.3px 12.4px rgba(0, 0, 0, 0.035),
+   17.5px 12.8px 25.3px rgba(0, 0, 0, 0.045),
+   36.1px 26.3px 52.2px rgba(0, 0, 0, 0.055),
+   99px 72px 143px rgba(0, 0, 0, 0.08);
+ }
+
+ .tooltip {
+  position: relative;
+  display: inline-block;
+ }
+
+ .tooltip .tooltiptext {
+  visibility: hidden;
+  width: 4em;
+  background-color: rgba(0, 0, 0, 0.253);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: 25%;
+  left: 110%;
+ }
+
+ .tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent rgba(0, 0, 0, 0.253) transparent transparent;
+ }
+
+ .tooltip:hover .tooltiptext {
+  visibility: visible;
+ }
+ .hover-btn {
+  position: absolute;
+  inset: 0;
+  background-color: hsl(255deg 50% 49%);
+  transform: translate(0%,100%);
+ }
+
+ .default-btn span {
+  color: hsl(0, 0%, 100%);
+ }
+
+ .hover-btn span {
+  color: hsl(50deg 100% 50%);
+ }
+
+ button:hover .default-btn {
+  transform: translate(0%,-100%);
+ }
+
+ button:hover .hover-btn {
+  transform: translate(0%,0%);
+ }

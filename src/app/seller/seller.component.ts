@@ -29,14 +29,14 @@ export class SellerComponent implements OnInit {
     this.product.deleteProduct(id).subscribe((result) => {
       if (result) {
         this.productMessage = 'Xoá sản phẩm thành công';
-        alert('Xoá sản phẩm thành công'); 
+        alert('Xoá sản phẩm thành công');
         this.list();
         this.router.navigate(["/seller-home"])
       }
     });
     setTimeout(() => {
       this.productMessage = undefined;
-      this.router.navigate(["/seller"])
+
     }, 500);
   }
   list() {

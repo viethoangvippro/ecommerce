@@ -8,7 +8,48 @@
     <a href="seller-contact" class="all-product">Phản hồi</a><br>
   </div>
   <div class="admin-content">
-d
+    <div class="product-list">
+      <h1 style="color: #ff4b2b; text-align: center" class="">
+        Danh sách sản phẩm
+      </h1>
+      <p class="message-p">{{ productMessage }}</p>
+      <table class="mb-3" style="width: 100%;justify-content: center;text-align: center;">
+        <thead>
+          <tr>
+            <th>Ảnh danh mục</th>
+            <th>Tên danh mục</th>
+            <th>Hành động</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="
+              let item of categoryList
+                | paginate : { itemsPerPage: 4, currentPage: p }
+            "
+          >
+            <td><img src="{{ item.image }}" /></td>
+            <td>{{ item.name }}</td>
+
+            <td>
+              <fa-icon (click)="deleteCategory(item.id)" [icon]="icon"></fa-icon>
+              <a
+                class="adjust-update-link"
+                routerLink="/seller-update-category/{{ item.id }}"
+              >
+                <fa-icon  [icon]="iconEdit"></fa-icon
+              ></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <pagination-controls
+        previousLabel="Trước"
+        nextLabel="Tiếp"
+        style="text-align: center;"
+        (pageChange)="p = $event"
+      ></pagination-controls>
+    </div>
 
   </div>
 </div>

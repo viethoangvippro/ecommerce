@@ -39,6 +39,8 @@ import { SellerCategoryComponent } from './seller-category/seller-category.compo
 import { SellerOrderComponent } from './seller-order/seller-order.component';
 import { SellerAddCategoryComponent } from './seller-add-category/seller-add-category.component';
 import { SellerContactComponent } from './seller-contact/seller-contact.component';
+import { SellerUpdateCategoryComponent } from './seller-update-category/seller-update-category.component';
+import { SellerUpdateOrderComponent } from './seller-update-order/seller-update-order.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +68,8 @@ import { SellerContactComponent } from './seller-contact/seller-contact.componen
     SellerOrderComponent,
     SellerAddCategoryComponent,
     SellerContactComponent,
+    SellerUpdateCategoryComponent,
+    SellerUpdateOrderComponent,
 
 
   ],

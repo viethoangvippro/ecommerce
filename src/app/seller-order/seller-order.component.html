@@ -12,16 +12,15 @@
       <h1 style="color: #ff4b2b; text-align: center" class="">
         Danh sách đặt hàng
       </h1>
-
+      
       <table class="mb-3" style="width: 100%; text-align: center;">
         <thead>
           <tr>
-            <th>Id</th>
+            <th>Mã đơn hàng</th>
             <th>Email</th>
             <th>Địa chỉ nhận hàng</th>
             <th>Thông tin liên hệ</th>
             <th>Tiền thanh toán</th>
-
             <th>Trạng thái</th>
             <th>Hành động</th>
           </tr>
@@ -43,7 +42,7 @@
               <!-- <fa-icon (click)="deleteProduct(item.id)" [icon]="icon"></fa-icon> -->
               <a
                 class="adjust-update-link"
-                routerLink="/seller-update-product/{{ item.id }}"
+                routerLink="/seller-update-order/{{ item.id }}"
               >
                 <fa-icon [icon]="iconEdit"></fa-icon
               ></a>
@@ -51,12 +50,12 @@
           </tr>
         </tbody>
       </table>
-      <!-- <pagination-controls
+      <pagination-controls
         previousLabel="Trước"
         nextLabel="Tiếp"
         style="text-align: center;"
         (pageChange)="p = $event"
-      ></pagination-controls> -->
+      ></pagination-controls>
     </div>
   </div>
 </div>

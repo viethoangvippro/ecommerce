@@ -32,8 +32,8 @@
           "
         >
           <div
-            class="product-item"
-            style="border-radius: 5px; border: 2px solid black"
+            class="product-item card"
+
           >
             <a href="" routerLink="/details/{{ item.id }}"
               ><img src="{{ item.image }}" alt=""
@@ -50,16 +50,16 @@
               </div>
               <div class="product-color"></div>
             </div>
-            <div class="product-footer">
+            <div class="product-footer p-3">
               <a
                 routerLink="/details/{{ item.id }}"
-                class="btn btn-outline-success"
+                class="btn btn1"
                 >Xem Chi tiết</a
               >
               <a
                 href=""
                 routerLink="/details/{{ item.id }}"
-                class="btn btn-outline-danger"
+                class="btn btn2"
                 >Mua ngay</a
               >
             </div>

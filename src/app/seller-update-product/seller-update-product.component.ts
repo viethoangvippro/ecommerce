@@ -1,4 +1,5 @@
 
+
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { category, product } from '../data-type';
@@ -34,7 +35,6 @@ export class SellerUpdateProductComponent implements OnInit {
         this.productData = data;
 
       });
-
       this.getCategories();
       this.getProducts();
   }

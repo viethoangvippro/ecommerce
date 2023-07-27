@@ -21,8 +21,8 @@ import { SellerCategoryComponent } from './seller-category/seller-category.compo
 import { SellerOrderComponent } from './seller-order/seller-order.component';
 import { SellerAddCategoryComponent } from './seller-add-category/seller-add-category.component';
 import { SellerContactComponent } from './seller-contact/seller-contact.component';
-
-
+import { SellerUpdateCategoryComponent } from './seller-update-category/seller-update-category.component';
+import { SellerUpdateOrderComponent } from './seller-update-order/seller-update-order.component';
 
 const routes: Routes = [
   {
@@ -34,73 +34,102 @@ const routes: Routes = [
     path: 'seller-auth',
   },
   {
-    component:SellerHomeComponent,
-    path:'seller-home',
-    canActivate:[AuthGuard]
-  },{
-    component:SellerComponent,
-    path:'seller',
-    canActivate:[AuthGuard]
-  },{
-    component:SellerAddProductComponent,
-    path:'seller-add-product',
-    canActivate:[AuthGuard]
-  },{
-    component:SellerUpdateProductComponent,
-    path:'seller-update-product/:id',
-    canActivate:[AuthGuard]
-  },{
-    component:SellerCategoryComponent,
-    path:'seller-category',
-    canActivate:[AuthGuard]
-  },{
-    component:SellerAddCategoryComponent,
-    path:'seller-add-category',
-    canActivate:[AuthGuard]
-  },{
-    component:SellerContactComponent,
-    path:'seller-contact',
-    canActivate:[AuthGuard]
-  },{
-    component:SellerOrderComponent,
-    path:'seller-order',
-    canActivate:[AuthGuard]
+    component: SellerHomeComponent,
+    path: 'seller-home',
+    canActivate: [AuthGuard],
+  },
+  {
+    component: SellerComponent,
+    path: 'seller',
+    canActivate: [AuthGuard],
+  },
+  {
+    component: SellerAddProductComponent,
+    path: 'seller-add-product',
+    canActivate: [AuthGuard],
+  },
+  {
+    component: SellerUpdateProductComponent,
+    path: 'seller-update-product/:id',
+    canActivate: [AuthGuard],
+  },
+  {
+    component: SellerCategoryComponent,
+    path: 'seller-category',
+    canActivate: [AuthGuard],
+  },
+  {
+    component: SellerAddCategoryComponent,
+    path: 'seller-add-category',
+    canActivate: [AuthGuard],
+  },
+  {
+    component: SellerUpdateOrderComponent,
+    path: 'seller-update-order/:id',
+    canActivate: [AuthGuard],
+  },
+  {
+    component: SellerContactComponent,
+    path: 'seller-contact',
+    canActivate: [AuthGuard],
+  },
+  {
+    component: SellerUpdateCategoryComponent,
+    path: 'seller-update-category/:id',
+    canActivate: [AuthGuard],
+  },
+  {
+    component: SellerOrderComponent,
+    path: 'seller-order',
+    canActivate: [AuthGuard],
   },
   {
     component: SearchComponent,
-    path:'search/:query'
-  },{
-    component:ProductDetailsComponent,
-    path:'details/:productId'
-  },{
-    component:UserAuthComponent,
-    path:'user-auth'
-  },{
-    component:CartPageComponent,
-    path:'cart-page'
-  },{
-    component:CheckoutComponent,
-    path:'checkout'
-  },{
-    component:MyOrdersComponent,
-    path:'my-orders'
-  },{
-    component:ProductReviewsComponent,
-    path:'product-reviews'
-  },{ path: 'product', loadChildren: () => import('./product/product.module').then(m => m.ProductModule) },
-  {
-    path:'about',component:AboutComponent
+    path: 'search/:query',
   },
   {
-    path:'contact',component:ContactComponent
-  }
+    component: ProductDetailsComponent,
+    path: 'details/:productId',
+  },
+  {
+    component: UserAuthComponent,
+    path: 'user-auth',
+  },
+  {
+    component: CartPageComponent,
+    path: 'cart-page',
+  },
+  {
+    component: CheckoutComponent,
+    path: 'checkout',
+  },
+  {
+    component: MyOrdersComponent,
+    path: 'my-orders',
+  },
+  {
+    component: ProductReviewsComponent,
+    path: 'product-reviews/:id',
+
+  },
+  {
+    path: 'product',
+    loadChildren: () =>
+      import('./product/product.module').then((m) => m.ProductModule),
+  },
+  {
+    path: 'about',
+    component: AboutComponent,
+  },
+  {
+    path: 'contact',
+    component: ContactComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-   declarations: [
-
-  ],
+  declarations: [],
 })
 export class AppRoutingModule {}

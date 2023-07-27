@@ -8,7 +8,30 @@
     <a href="seller-contact" class="all-product">Phản hồi</a><br>
   </div>
   <div class="admin-content">
+    <div class="">
+      <h2 class=" mt-6 p-4" style="color: #Ff4b2b; text-align: center;">THÊM DANH MỤC</h2>
+      <form #addCategory="ngForm"
+      (ngSubmit)="submit(addCategory.value)">
+        <label for="fname" >Tên danh mục</label>
+        <input type="text" #name="ngModel" name="name"
+        ngModel placeholder="Nhập tên danh mục" required>
+        <p class="invalid-input"><br>
+          <span  *ngIf="name.invalid && name.touched"
+            >Tên danh mục không được để trống</span
+          >
+        </p>
+        <label for="lname">Ảnh danh mục</label><br>
+        <input type="text" #image="ngModel" class="image" name="image"
+        ngModel placeholder="Nhập ảnh danh mục"required>
+        <br>
+        <p class="invalid-input"><br>
+          <span  *ngIf="image.invalid && image.touched"
+            >Ảnh danh mục không được để trống</span
+          >
+        </p>
 
-b
+        <button type="submit" class="mb-4" [disabled]="addCategory.invalid">Thêm danh mục</button>
+      </form>
+    </div>
   </div>
 </div>

@@ -24,7 +24,10 @@ h1{
     border-radius: 4px;
     cursor: pointer;
   }
-
+.color{
+  width: 120px;
+  height: 35px;
+}
   button[type=submit]:hover {
     background-color: #45a049;
   }
@@ -88,5 +91,13 @@ h1{
   }
   .adjust-update-link{
     margin-left: 10px;
+  }
+
+  .price{
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid rgb(198, 198, 198);
+    margin-bottom: 15px;
   }
 

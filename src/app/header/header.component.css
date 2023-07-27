@@ -8,12 +8,25 @@
   color: black;
 
 }
+.logo{
+  width: 100px;
+  height: 50px;
+
+}
 .nav span{
   font-size: 14px;
   margin-left: 10%;
 }
 .nav span svg{
   margin-top: -3%;
+}
+.h2{
+  margin-top: 5px;
+}
+.bi-bag-heart-fill{
+  margin-top: -13px;
+  margin-left: 15px;
+  margin-right: 10px;
 }
 .seller{
   margin-top: 2%;
@@ -30,11 +43,7 @@
   margin-left: 4%;
   margin-right: 4%;
 }
-.login-1{
-  width: 600px;
-  margin-top: 2%;
 
-}
 
 .nav h1 {
   color: blueviolet;
@@ -110,11 +119,11 @@ div ul li a{
  color: rgb(255, 255, 255);
 }
 .bi-search{
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
 }
 .wrapper{
   position: relative;
-  margin-top: 17px;
+  margin-top: 13px;
   margin-right: 10px;
   margin-left: -45px;
 }
@@ -122,10 +131,10 @@ div ul li a{
   width: 600px;
 
 }
-
   .wrapper span{
   position: absolute;
   top: -6px;
   right: -7px;
   font-size: 13px;
   }
+

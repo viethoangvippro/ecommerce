@@ -16,11 +16,16 @@ export class SellerOrderComponent implements OnInit {
   productMessage: any;
   currencyCode = 'VND';
   currencyFormat = 'symbol';
+  p:any;
   constructor(private product: ProductService,private router: Router) { }
 
   ngOnInit(): void {
     this.list();
   }
+  
+
+
+
   deleteProduct(id: number) {
     this.product.deleteProduct(id).subscribe((result) => {
       if (result) {

@@ -12,7 +12,7 @@ export interface product{
   name:string,
   price:number,
   category:string,
-  categoryId:string,
+  categoryId:number,
   color:string,
   image:string,
   description:string,
@@ -48,13 +48,14 @@ export interface order {
   contact:string,
   totalPrice:number,
   userId:string,
-  id:number|undefined,
+  id:number|any,
   status:string,
 }
 
 export interface category {
   id: number ,
-  name: string
+  name: string,
+  image:string,
 }
 export interface contact {
   id: number ,
@@ -62,4 +63,10 @@ export interface contact {
   phone:number,
   comment:string,
   email:string
+}
+export interface reviews{
+  id : number;
+  rating: number;
+  comment:string;
+  productId : number;
 }

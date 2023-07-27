@@ -10,13 +10,14 @@
   "products": [
     {
       "name": "MSI Bravo 15",
-      "price": "25000000",
-      "category": "Laptop",
+      "price": 22000000,
       "color": "Black",
-      "description": "MSI Gaming Bravo 15 B5DD (084VN) gây ấn tượng với người dùng bởi phong cách thiết kế hầm hố, năng động chuẩn gaming cùng cấu hình vượt trội, đáp ứng tốt đa tác vụ từ văn phòng cơ bản đến đồ họa - kỹ thuật chuyên sâu.",
+      "description": "a MSI Gaming Bravo 15 B5DD (084VN) gây ấn tượng với người dùng bởi phong cách thiết kế hầm hố, năng động chuẩn gaming cùng cấu hình vượt trội, đáp ứng tốt đa tác vụ từ văn phòng cơ bản đến đồ họa - kỹ thuật chuyên sâu.",
       "image": "https://laptop88.vn/media/product/6780_msi_bravo_15_b5dd_265vn_r5_5600h_919c422d73604315a617fb4a79299da1_master.png",
       "id": 1,
-      "categoryId": 2
+      "categoryId": 1,
+      "rating": 3.5,
+      "numReviews": 4
     },
     {
       "name": "Laptop HP VICTUS 15 ",
@@ -26,7 +27,9 @@
       "description": "Laptop HP VICTUS 15 fa0155TX i5 12450H (81P00PA) hứa hẹn mang đến trải nghiệm làm việc và giải trí tuyệt vời nhờ bộ vi xử lý Intel thế hệ 12 mạnh mẽ, card đồ họa NVIDIA RTX 30-series và màn hình 144 Hz siêu mượt mà.",
       "image": "https://nguyenvu-store-medias.tn-cdn.net/2022/03/HP-VICTUS-16-e0177AX-4R0U9PA-nguyenvustore-1.png",
       "id": 3,
-      "categoryId": 1
+      "categoryId": 1,
+      "rating": 4.25,
+      "numReviews": 4
     },
     {
       "name": " Nitro 16 Phoenix",
@@ -36,7 +39,9 @@
       "description": "Laptop Gaming Quốc Dân là một thuật ngữ được sử dụng để chỉ những chiếc laptop chơi game có cấu hình mạnh mẽ và thiết kế đẹp mắt, phù hợp với nhu cầu của người chơi game. Acer Nitro 16 Phoenix là một chiếc laptop chơi game ấn tượng với thiết kế cấu trúc gaming từ bên ngoài cho đến vỏ hộp. ",
       "image": "https://www.acervietnam.com.vn/wp-content/uploads/2023/03/7-768x591.png",
       "id": 4,
-      "categoryId": 2
+      "categoryId": 1,
+      "rating": 4,
+      "numReviews": 1
     },
     {
       "name": "Asus TUF Gaming F15",
@@ -57,7 +62,9 @@
       "color": "Gray",
       "description": "Phá cách với diện mạo mạnh mẽ đến từ laptop Acer Nitro 5 Gaming AN515 45 R6EV R5 5600H (NH.QBMSV.006) mang đến cho người dùng hiệu năng ổn định, hỗ trợ bạn trong mọi tác vụ hằng ngày hay chiến những trận game cực căng một cách mượt mà.",
       "image": "https://no1computer.vn/images/products/2022/11/30/large/acer-nitro-5-rtx-3050-h1_1669799440.jpg",
-      "id": 9
+      "id": 9,
+      "rating": null,
+      "numReviews": null
     },
     {
       "name": " Lenovo Gaming Legion 5 ",
@@ -68,7 +75,8 @@
       "description": "Laptop Gaming Lenovo Legion 5 15ARH7 R5 là chìa khóa sẽ mở ra cánh cửa đến với thế giới game AAA đỉnh cao, với bộ vi xử lý AMD Ryzen 6000 series mới nhất và GPU RTX 30 series. Một thiết kế cực “chiến” nhưng lại mỏng nhẹ đến không ngờ giúp chiếc laptop gaming luôn ở bên bạn để thoải mái chơi game mọi lúc mọi nơi.",
       "image": "https://www.lenovo.com/medias/Legion5-15-AMD-88GMY501444-725x515.png?context=bWFzdGVyfHJvb3R8MjI5NDI2fGltYWdlL3BuZ3xoMDUvaDZiLzExNjQ5NjIxMjk1MTM0LnBuZ3wzMjNjNjdhNWYyYjFmMGRmMGY4MzIxZDhlYTM0ZjNkZjhjYjc4ZGY2MzdmMmYwZmRkOTAyYWUzZTZkYTU2ZmMw",
       "id": 10,
-      "rating": 4.5
+      "rating": 3,
+      "numReviews": 1
     },
     {
       "name": "Laptop Dell Alienware",
@@ -89,27 +97,107 @@
       "color": "Black",
       "description": "Laptop gaming Gigabyte G5 GD 51VN123SO là một trong những siêu phẩm mới được ra mắt thời gian gần đây. Hiệu năng ổn định có thể cân mọi tựa game khó nhằn, chất lượng màn hình hiển thị tuyệt vời đã đưa Gigabyte G5 GD lên một tầm cao mới và hứa hẹn trở thành một trong những hot item thời gian sắp tới.",
       "image": "https://br.atsit.in/vi/wp-content/uploads/2021/09/gigabyte-g5-kc.jpg",
-      "id": 12
+      "id": 12,
+      "rating": 4.5,
+      "numReviews": 2
     },
     {
       "name": "Laptop MSI Creator M16 ",
-      "price": "38990000",
+      "price": "22000000",
       "category": "Mouse",
-      "categoryId": 2,
       "color": "Gray",
       "description": "Laptop MSI Creator M16 B13VE 830VN dựa trên triết lý thiết kế lấy con người làm trọng tâm, áp dụng tỷ lệ vàng trong thiết kế sản phẩm với công nghệ tiên tiến hàng đầu. Nó là bước ngoặt mới của công nghệ kết hợp với nghệ thuật. \n\n",
       "image": "https://cdn.ankhang.vn/media/product/22858_laptop_msi_creator_m16_b13ve_830vn_1.jpg",
       "id": 13,
-      "rating": 4.5
+      "categoryId": 1
     },
     {
       "name": "Việt Trương",
       "price": "22000000",
+      "category": "Mouse",
+      "color": "red",
+      "description": "123",
+      "image": "https://www.acervietnam.com.vn/wp-content/uploads/2023/03/Laptop-Gaming-Quoc-Dan-Nitro-16-Phoenix-RTX-4050-5.png",
+      "id": 14,
+      "categoryId": 2
+    },
+    {
+      "name": "Samsung m 40 abc",
+      "price": "22000000",
+      "category": "Mouse",
+      "color": "red",
+      "description": "32",
+      "image": "https://www.acervietnam.com.vn/wp-content/uploads/2023/03/Laptop-Gaming-Quoc-Dan-Nitro-16-Phoenix-RTX-4050-5.png",
+      "id": 15,
+      "categoryId": 2
+    },
+    {
+      "name": "Việt Trương",
+      "price": "22000000",
+      "category": "Mouse",
+      "color": "white",
+      "description": "213",
+      "image": "https://laptopaz.vn/media/product/2463_laptopaz_hp_victus16_man15_6inch_4.jpg",
+      "id": 16,
+      "categoryId": 2
+    },
+    {
+      "name": "Việt Trương",
+      "price": "22000000",
+      "category": "Mouse",
+      "color": "white",
+      "description": "213",
+      "image": "https://laptopaz.vn/media/product/2463_laptopaz_hp_victus16_man15_6inch_4.jpg",
+      "id": 17,
+      "categoryId": 2
+    },
+    {
+      "name": "Việt Trương",
+      "price": "22000000",
+      "category": "Mouse",
+      "color": "white",
+      "description": "213",
+      "image": "https://laptopaz.vn/media/product/2463_laptopaz_hp_victus16_man15_6inch_4.jpg",
+      "id": 18,
+      "categoryId": 2
+    },
+    {
+      "name": "Samsung m 40 abc",
+      "price": "22000000",
       "category": "Laptop",
+      "categoryId": 2,
+      "color": "Black",
+      "description": "123",
+      "image": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/t/_/t_m_12.png",
+      "id": 21
+    },
+    {
+      "name": "MSI Bravo 15",
+      "price": "22000000",
+      "category": "Laptop",
+      "categoryId": 1,
       "color": "green",
       "description": "123",
-      "image": "",
-      "id": 14
+      "image": "https://cdn.tgdd.vn/Products/Images/44/254338/msi-gaming-bravo-15-b5dd-r5-084vn-271021-100733-600x600.jpg",
+      "id": 22
+    },
+    {
+      "name": "Samsung m 40 abc",
+      "price": 22000000,
+      "categoryId": "1",
+      "color": "#980b0b",
+      "description": "hay",
+      "image": "https://laptop88.vn/media/product/6780_msi_bravo_15_b5dd_265vn_r5_5600h_919c422d73604315a617fb4a79299da1_master.png",
+      "id": 23
+    },
+    {
+      "name": " Nitro 16 Phoenix",
+      "price": 25000000,
+      "categoryId": "6",
+      "color": "#a40e0e",
+      "description": "San pham qua hay qua dinh cao",
+      "image": "https://cdn.tgdd.vn/Products/Images/44/254338/msi-gaming-bravo-15-b5dd-r5-084vn-271021-100733-600x600.jpg",
+      "id": 24
     }
   ],
   "users": [
@@ -117,18 +205,70 @@
       "name": "dichhong",
       "email": "tviehoang@gmail.com",
       "password": "hoang2912",
+      "confirmPassword": "hoang2912",
       "id": 5
+    },
+    {
+      "name": "dichhong",
+      "email": "hoang@user.com",
+      "password": "123123",
+      "confirmPassword": "123123",
+      "id": 6
+    },
+    {
+      "name": "Việt Trương",
+      "email": "tviehoang1@gmail.com",
+      "password": "123123",
+      "confirmPassword": "123123",
+      "id": 7
     }
   ],
-  "cart": [],
+  "cart": [
+    {
+      "name": "MSI Bravo 15",
+      "price": 22000000,
+      "color": "Black",
+      "description": "a MSI Gaming Bravo 15 B5DD (084VN) gây ấn tượng với người dùng bởi phong cách thiết kế hầm hố, năng động chuẩn gaming cùng cấu hình vượt trội, đáp ứng tốt đa tác vụ từ văn phòng cơ bản đến đồ họa - kỹ thuật chuyên sâu.",
+      "image": "https://laptop88.vn/media/product/6780_msi_bravo_15_b5dd_265vn_r5_5600h_919c422d73604315a617fb4a79299da1_master.png",
+      "categoryId": 1,
+      "rating": 3.5,
+      "numReviews": 4,
+      "quantity": 1,
+      "productId": 1,
+      "userId": 7,
+      "id": 1
+    }
+  ],
   "category": [
     {
       "id": 1,
-      "name": "Laptop"
+      "name": "Laptop",
+      "image": "https://t3.ftcdn.net/jpg/02/49/82/50/360_F_249825007_f5dzNTBuUZoV5nERUWTlPDoU3cvLIBzn.jpg"
     },
     {
       "id": 2,
-      "name": "Mouse"
+      "name": "Chuột",
+      "image": "https://img.freepik.com/premium-vector/computer-mouse-icon-vector-illustration-design_598213-7333.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Bàn phím",
+      "image": "https://media.istockphoto.com/id/1125417505/vi/vec-to/bi%E1%BB%83u-t%C6%B0%E1%BB%A3ng-d%C3%A2y-b%C3%A0n-ph%C3%ADm-kh%C3%A1i-ni%E1%BB%87m-logo-keyboard-wire-h%E1%BB%A3p-th%E1%BB%9Di-trang-tr%C3%AAn-n%E1%BB%81n-tr%E1%BA%AFng-t%E1%BB%AB-b%E1%BB%99-s%C6%B0u.jpg?s=612x612&w=0&k=20&c=2tYQr26sv73F0HCAWfTld7djLnatsK2AaqZzaf079UU="
+    },
+    {
+      "name": "PC Gaming ",
+      "image": "https://thumbs.dreamstime.com/b/computer-logo-pc-vector-technology-223043110.jpg",
+      "id": 4
+    },
+    {
+      "id": 5,
+      "name": "Tai nghe",
+      "image": "https://media.istockphoto.com/id/1276595528/vi/vec-to/bi%E1%BB%83u-t%C6%B0%E1%BB%A3ng-tai-nghe-bi%E1%BB%83u-t%C6%B0%E1%BB%A3ng-nh%E1%BA%A1c-logo-nh%E1%BA%A1c-dj.jpg?s=170667a&w=0&k=20&c=0-Nqk-zFnCKG0BMrwTObi_wVZi5nsHd-wFa3b473fiA="
+    },
+    {
+      "id": 6,
+      "name": "Màn hình",
+      "image": "https://img.freepik.com/premium-vector/monitor-logo-vector-illustration_414847-488.jpg?w=2000"
     }
   ],
   "reviews": [
@@ -159,17 +299,158 @@
       "comment": "a",
       "productId": 1,
       "id": 6
+    },
+    {
+      "rating": 4,
+      "comment": "Shop dinh",
+      "productId": 1,
+      "id": 7
+    },
+    {
+      "rating": 4,
+      "comment": "DInh",
+      "productId": 1,
+      "id": 8
+    },
+    {
+      "rating": 4,
+      "comment": "DInh",
+      "productId": 1,
+      "id": 9
+    },
+    {
+      "rating": 3,
+      "comment": "1",
+      "productId": 1,
+      "id": 10
+    },
+    {
+      "rating": 3,
+      "comment": "123",
+      "productId": 9,
+      "id": 11
+    },
+    {
+      "rating": 3,
+      "comment": "hay",
+      "productId": 10,
+      "id": 12
+    },
+    {
+      "rating": 3,
+      "comment": "123123",
+      "productId": 10,
+      "id": 13
+    },
+    {
+      "rating": 3,
+      "comment": "123",
+      "productId": 3,
+      "id": 14
+    },
+    {
+      "rating": 3,
+      "comment": "123",
+      "productId": 3,
+      "id": 15
+    },
+    {
+      "rating": 3,
+      "comment": "123",
+      "productId": 3,
+      "id": 16
+    },
+    {
+      "rating": 3,
+      "comment": "123",
+      "productId": 3,
+      "id": 17
+    },
+    {
+      "rating": 3,
+      "comment": "123",
+      "productId": 3,
+      "id": 18
+    },
+    {
+      "rating": 3,
+      "comment": "123",
+      "productId": 3,
+      "id": 19
+    },
+    {
+      "rating": 3,
+      "comment": "123",
+      "productId": 3,
+      "id": 20
+    },
+    {
+      "rating": 5,
+      "comment": "hahahaah",
+      "productId": 3,
+      "id": 21
+    },
+    {
+      "rating": 5,
+      "comment": "123",
+      "productId": 3,
+      "id": 22
+    },
+    {
+      "rating": 4,
+      "comment": "1",
+      "productId": 4,
+      "id": 23
+    },
+    {
+      "rating": 4,
+      "comment": "123",
+      "productId": 4,
+      "id": 24
+    },
+    {
+      "rating": 4,
+      "comment": "123",
+      "productId": 3,
+      "id": 25
+    },
+    {
+      "rating": 4,
+      "comment": "Hay",
+      "productId": 12,
+      "id": 26
+    },
+    {
+      "rating": 4,
+      "comment": "Hay",
+      "productId": 12,
+      "id": 27
+    },
+    {
+      "rating": 5,
+      "comment": "gaa",
+      "productId": 12,
+      "id": 28
     }
   ],
   "orders": [
     {
+      "status": "Đang giao hàng",
+      "id": 6,
       "email": "tviehoang@gmail.com",
       "contact": "0397064432",
-      "address": "123",
-      "totalPrice": 44025000,
-      "userId": 5,
-      "status": "Chờ xác nhận",
-      "id": 6
+      "address": "233 Trần Phú",
+      "totalPrice": 40000000,
+      "userId": 5
+    },
+    {
+      "status": "Đang giao hàng",
+      "id": 7,
+      "email": "hoang@user.com",
+      "contact": "0397064432",
+      "address": "178 Trần phú",
+      "totalPrice": 142995000,
+      "userId": 6
     }
   ],
   "contacts": [
@@ -207,6 +488,13 @@
       "phone": "0397064432",
       "comment": "Shop quá hay",
       "id": 9
+    },
+    {
+      "name": "Phan Viết Báo",
+      "email": "baoconbao123@gmail.com",
+      "phone": "0316495562",
+      "comment": "Shop quá đỉnh cao. Tôi chưa bao giờ mà sử dụng 1 trang web đỉnh cao như vậy",
+      "id": 10
     }
   ]
 }

@@ -12,10 +12,11 @@ import { Router } from '@angular/router';
 })
 export class SellerAddProductComponent implements OnInit {
   addProductMessage: string | undefined;
+  productData: any|product;
 
   constructor(private product: ProductService,private router: Router) {}
   categories: category[] = [];
-
+  products: product[]=[];
   ngOnInit(): void {
     this.getCategories();
   }
@@ -29,7 +30,7 @@ export class SellerAddProductComponent implements OnInit {
     this.product.addProduct(data).subscribe((result) => {
       console.warn(result);
       if (result) {
-        this.addProductMessage = 'Thêm sản phẩm thành công';
+
         alert('Thêm sản phẩm thành công');
         this.router.navigate(['/seller'])
       }

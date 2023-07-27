@@ -2,7 +2,25 @@ import { Component, OnInit } from '@angular/core';
 import { cart, login, product, signUp } from '../data-type';
 import { ProductService } from '../services/product.service';
 import { UserService } from '../services/user.service';
-declare const FB: any;
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+
+
+
+function passwordMatch(controlName: string, matchingControlName: string) {
+  return (formGroup: FormGroup) => {
+    const control = formGroup.controls[controlName];
+    const matchingControl = formGroup.controls[matchingControlName];
+    if (matchingControl.errors && !matchingControl.errors['passwordMismatch']) {
+      return;
+    }
+    if (control.value !== matchingControl.value) {
+      matchingControl.setErrors({ passwordMismatch: true });
+    } else {
+      matchingControl.setErrors(null);
+    }
+  };
+}
 @Component({
   selector: 'app-user-auth',
   templateUrl: './user-auth.component.html',
@@ -11,38 +29,44 @@ declare const FB: any;
 export class UserAuthComponent implements OnInit {
   showLogin: boolean = true;
   authError: string = '';
-  constructor(private user: UserService, private product: ProductService) {
-    FB.init({
-      appId: 'tviehoang',
-      cookie: true,
-      xfbml: true,
-      version: 'v3.3',
+  signupForm: FormGroup;
+  constructor(private fb: FormBuilder,private user: UserService, private product: ProductService,private http: HttpClient) {
+    this.signupForm = this.fb.group({
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      confirmPassword: ['', Validators.required]
+    }, {
+      validator: passwordMatch('password', 'confirmPassword')
     });
+  }
+
+  onSubmit() {
+    const formData = {
+      email: this.signupForm.value.email,
+      password: this.signupForm.value.password
+    };
+    this.http.post('http://localhost:3000/users', formData).subscribe(
+      response => {
+        console.log(response);
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 
 
 
   ngOnInit(): void {
     this.user.userAuthReload();
+
   }
 
   signUp(data: signUp) {
     this.user.userSignUp(data);
   }
 
-  loginWithFacebook(): void {
-    FB.login(
-      (response: any) => {
-        console.log('login response', response);
-        if (response.authResponse) {
-          // Lưu token của user vào database hoặc xử lý các thao tác khác cần thiết
-        } else {
-          console.log('User cancelled login or did not fully authorize.');
-        }
-      },
-      { scope: 'email' }
-    );
-  }
 
   login(data: login) {
     this.user.userLogin(data);

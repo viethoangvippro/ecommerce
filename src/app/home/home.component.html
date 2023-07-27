@@ -1,16 +1,125 @@
-<ngb-carousel class="mb-5 bg-dark" *ngIf="popularProducts">
-  <ng-template *ngFor="let item of popularProducts" ngbSlide>
-    <div class="picsum-img-wrapper">
-      <a routerLink="/details/{{ item.id }}">
-        <img
-          class="product-header-image"
-          src="{{ item.image }}"
-          alt="Random first slide"
-        />
-      </a>
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-md-8">
+      <ngb-carousel class="mb-5 bg-dark" *ngIf="popularProducts">
+        <ng-template *ngFor="let item of popularProducts" ngbSlide>
+          <div class="picsum-img-wrapper">
+            <a routerLink="/details/{{ item.id }}">
+              <img
+                class="product-header-image"
+                src="{{ item.image }}"
+                alt="Random first slide"
+              />
+            </a>
+          </div>
+        </ng-template>
+      </ngb-carousel>
     </div>
-  </ng-template>
-</ngb-carousel>
+    <div class="col-md-4" style="margin-left: -15px">
+      <div class="row">
+        <img src="../../assets/image/shopee1.jpg" class="img1" alt="" />
+      </div>
+      <div class="row">
+        <img src="../../assets/image/shopee2.jpg" alt="" />
+      </div>
+    </div>
+  </div>
+  <div
+    class="row mb-5 icon"
+    style="
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      font-size: 13px;
+    "
+  >
+    <div class="col-md-1">
+      <img
+        src="https://cf.shopee.vn/file/e4a404283b3824c211c1549aedd28d5f_xhdpi"
+        alt=""
+      /><br /><br />Khung giờ săn sale
+    </div>
+    <div class="col-md-1">
+      <img
+        src="https://cf.shopee.vn/file/vn-50009109-c7a2e1ae720f9704f92f72c9ef1a494a_xhdpi"
+        alt=""
+      /><br /><br />
+      Miễn phí ship toàn quốc
+    </div>
+    <div class="col-md-1">
+      <img
+        src="https://cf.shopee.vn/file/vn-50009109-11d9732a464d895d3699ca40431d0bfd_xhdpi"
+        alt=""
+      /><br /><br />Voucher giảm giá
+    </div>
+    <div class="col-md-1">
+      <img
+        src="https://cf.shopee.vn/file/vn-50009109-852300c407c5e79bf5dc1854aa0cfeef_xhdpi"
+        alt=""
+      /><br /><br />Hàng hiệu giảm 50%
+    </div>
+    <div class="col-md-1">
+      <img
+        src="https://cf.shopee.vn/file/vn-50009109-8a387d78a7ad954ec489d3ef9abd60b4_xhdpi"
+        alt=""
+      /><br /><br />Mã giảm giá tới 70%
+    </div>
+    <div class="col-md-1">
+      <img
+        src="https://cf.shopee.vn/file/vn-50009109-1975fb1af4ae3c22878d04f6f440b6f9_xhdpi"
+        alt=""
+      /><br /><br />Bắt trend - Giá sốc
+    </div>
+    <div class="col-md-1">
+      <img
+        src="https://cf.shopee.vn/file/9df57ba80ca225e67c08a8a0d8cc7b85_xhdpi"
+        alt=""
+      /><br /><br />Nạp thẻ dịch vụ
+    </div>
+    <div class="col-md-1">
+      <img
+        src="https://cf.shopee.vn/file/vn-50009109-485641d1582cdd6181f1725fb5421fee_xhdpi"
+        alt=""
+      /><br /><br />Chọn số trúng thưởng
+    </div>
+    <div class="col-md-1">
+      <img
+        src="https://cf.shopee.vn/file/a08ab28962514a626195ef0415411585_xhdpi"
+        alt=""
+      /><br /><br />Hàng quốc tế giá rẻ
+    </div>
+    <div class="col-md-1">
+      <img
+        src="https://cf.shopee.vn/file/b3535d7e56c58c4ebe9a87672d38cc5e_xhdpi"
+        alt=""
+      /><br /><br />Hàng nào cũng rẻ
+    </div>
+  </div>
+</div>
+
+<section class="container row mb-5">
+  <span>DANH MỤC</span><hr>
+  <div
+    class="col-sm-2 mt-3"
+    *ngFor="
+      let item of categoryList"
+  >
+    <div class="product-item1" >
+      <a href="category/{{ item.id }}"
+        ><img src="{{ item.image }}" alt=""
+      /></a>
+      <div class="product-details1">
+        <a href="category/{{ item.id }}"
+          ><h6 class="name-head" style="color: #ff4b2b">
+            {{ item.name }}
+          </h6></a
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
 <!-- <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
   <div class="carousel-inner">
@@ -56,10 +165,7 @@
           | paginate : { itemsPerPage: 8, currentPage: p }
       "
     >
-      <div
-        class="product-item"
-        style="border-radius: 5px; border: 2px solid black"
-      >
+      <div class="product-item card1">
         <a href="" routerLink="/details/{{ item.id }}"
           ><img src="{{ item.image }}" alt=""
         /></a>
@@ -75,13 +181,10 @@
           <div class="product-color"></div>
         </div>
         <div class="product-footer">
-          <a routerLink="/details/{{ item.id }}" class="btn btn-outline-success"
+          <a routerLink="/details/{{ item.id }}" class="btn btn1"
             >Xem Chi tiết</a
           >
-          <a
-            href=""
-            routerLink="/details/{{ item.id }}"
-            class="btn btn-outline-danger"
+          <a href="" routerLink="/details/{{ item.id }}" class="btn btn2"
             >Mua ngay</a
           >
         </div>

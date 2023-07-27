@@ -118,43 +118,26 @@ ngModel
     <p class="message-p">{{ productMessage }}</p>
 
     <div class="">
-      <form #addProduct="ngForm"
-      (ngSubmit)="submit(addProduct.value)">
+      <form #updateForm="ngForm"
+      (ngSubmit)="submit(updateForm.value)">
         <label for="fname" >Tên sản phẩm</label>
-        <input type="text" id="fname"#name="ngModel" name="name"
-        ngModel="{{ productData?.name }}"required placeholder="Nhập tên sản phẩm">
+        <input type="text" id="fname" #name="ngModel" name="name"
+        ngModel="{{ categoryData?.name }}"required placeholder="Nhập tên sản phẩm">
         <p class="invalid-input"> <br>
         <span class="invalid-input"*ngIf="name.invalid && (name.dirty || name.touched)">
           Tên sản phẩm không được để trống.
         </span>
         </p>
-        <label for="lname" >Giá sản phẩm</label>
-        <input type="number"  class="price" name="price"
-        ngModel="{{ productData?.price }}" #price="ngModel" required placeholder="Nhập giá sản phẩm">
-        <p class="invalid-input"> <br><br>
-        <span class="invalid-input"*ngIf="price.invalid && (price.dirty || price.touched)">
-          Tên sản phẩm không được để trống.
-        </span>
-      </p>
-        <label for="color">Màu sản phẩm</label>
-        <input type="text" name="color"#color="ngModel"
-        ngModel="{{ productData?.color }}"required placeholder="Màu sản phẩm">
-        <p class="invalid-input" > <br>
-        <span class="invalid-input"*ngIf="color.invalid && (color.dirty || color.touched)">
-          Tên sản phẩm không được để trống.
-        </span></p>
-        <label for="description">Mô tả chi tiết</label>
-        <textarea name="description"
-        ngModel="{{ productData?.description }}" placeholder="Mô tả chi tiết" style="height:200px"></textarea>
+
         <label for="color">Ảnh sản phẩm</label>
         <input type="text" name="image"#image="ngModel"
-        ngModel="{{ productData?.image }}"required placeholder="Ảnh sản phẩm">
+        ngModel="{{ categoryData?.image }}"required placeholder="Ảnh sản phẩm">
         <p class="invalid-input" > <br>
         <span *ngIf="image.invalid && (image.dirty || image.touched)">
           Tên sản phẩm không được để trống.
         </span>
         </p>
-        <button type="submit"  [disabled]="addProduct.invalid">Cập nhật</button>
+        <button type="submit"  [disabled]="updateForm.invalid">Cập nhật</button>
       </form>
     </div>
   </div>

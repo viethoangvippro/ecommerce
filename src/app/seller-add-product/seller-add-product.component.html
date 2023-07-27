@@ -62,38 +62,54 @@ ngModel
   </div>
   <div class="admin-content">
     <div class="">
-      <h2 class=" mt-6 p-4" style="color: #Ff4b2b; text-align: center;">Thêm sản phẩm</h2>
+      <h2 class=" mt-6 p-4" style="color: #Ff4b2b; text-align: center;">THÊM SẢN PHẨM</h2>
       <form #addProduct="ngForm"
       (ngSubmit)="submit(addProduct.value)">
         <label for="fname" >Tên sản phẩm</label>
-        <input type="text"  name="name"
-        ngModel placeholder="Nhập tên sản phẩm">
-
-        <label for="lname">Giá sản phẩm</label>
-        <input type="text"name="price"
-        ngModel placeholder="Nhập giá sản phẩm">
-
-        <label for="email">Danh mục</label>
-
-        <select id="category" name="category" ngModel>
-          <option *ngFor="let category of categories" [value]="category.name">{{ category.name }}</option>
-        </select>
-
-
-
-
-        <label for="color">Màu sản phẩm</label>
-        <input type="text" name="color"
-        ngModel placeholder="Nhập màu sản phẩm">
-
+        <input type="text" #name="ngModel" name="name"
+        ngModel placeholder="Nhập tên sản phẩm" required>
+        <p class="invalid-input"><br>
+          <span  *ngIf="name.invalid && name.touched"
+            >Tên sản phẩm không được để trống</span
+          >
+        </p>
+        <label for="lname">Giá sản phẩm</label><br>
+        <input type="number"#password="ngModel" class="price" name="price"
+        ngModel placeholder="Nhập giá sản phẩm"required>
+        <br>
+        <p class="invalid-input"><br>
+          <span  *ngIf="password.invalid && password.touched"
+            >Giá sản phẩm không được để trống</span
+          >
+        </p>
+        <label for="idcat">Mã danh mục</label>
+        <input type="text"#idCat="ngModel" name="categoryId"
+        ngModel placeholder="Mã danh mục"required>
+        <p class="invalid-input"><br>
+          <span  *ngIf="idCat.invalid && idCat.touched"
+            >Mã danh mục không được để trống</span
+          >
+        </p>
+        <label for="color">Màu sản phẩm: </label> <br>
+        <input type="color" class="color" #color="ngModel" name="color"
+        ngModel placeholder="Nhập màu sản phẩm"required>
+        <p class="invalid-input"><br>
+          <span  *ngIf="color.invalid && color.touched"
+            >Màu sản phẩm không được để trống</span
+          >
+        </p>
         <label for="description">Mô tả chi tiết</label>
         <textarea name="description"
         ngModel placeholder="Nhập mô tả sản phẩm" style="height:200px"></textarea>
         <label for="color">Ảnh sản phẩm</label>
-        <input type="text" name="image"
-        ngModel placeholder="Nhập ảnh sản phẩm">
-
-        <button type="submit" class="mb-4">Thêm sản phẩm</button>
+        <input type="text" #image="ngModel" name="image"
+        ngModel placeholder="Nhập ảnh sản phẩm"required>
+        <p class="invalid-input"><br>
+          <span  *ngIf="image.invalid && image.touched"
+            >Ảnh sản phẩm không được để trống</span
+          >
+        </p>
+        <button type="submit" class="mb-4 " [disabled]="addProduct.invalid">Thêm sản phẩm</button>
       </form>
     </div>
 

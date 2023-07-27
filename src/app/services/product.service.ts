@@ -44,17 +44,25 @@ export class ProductService {
   }
 
   private api = "http://localhost:3000/reviews";
-  saveProductReview(review: any, userId: any): Observable<any> {
-    review.userId = userId;
+  saveProductReview(review: any,productId :any): Observable<any> {
+    review.productId = productId;
     return this.http.post<any>(`${this.api}`, review);
+  }
+
+  getProductReview(): Observable<any> {
+
+    return this.http.get<any>(`${this.api}`);
   }
 
   private baseUrl = "http://localhost:3000";
   addProductReview(review: any) {
-
     return this.http.post(`${this.baseUrl}/reviews`, review);
   }
-
+  submitReview(productId: number, userId: number, rating: number, review: string): Observable<any> {
+    const url = `${this.baseUrl}/reviews`;
+    const payload = { productId, userId, rating, review };
+    return this.http.post(url, payload);
+  }
 
   updateProduct(product: product) {
     return this.http.put<product>(
@@ -150,8 +158,6 @@ export class ProductService {
     return this.http.delete('http://localhost:3000/orders/'+orderId)
 
   }
-
-
 
 
 

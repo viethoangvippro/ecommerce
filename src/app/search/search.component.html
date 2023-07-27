@@ -4,7 +4,7 @@
   <section class="row">
     <div class="col-sm-3" *ngFor="let item of searchResult">
 
-      <div class="product-item" style="border-radius: 5px; border: 2px solid black;">
+      <div class="product-item card" >
        <a href="" routerLink="/details/{{ item.id }}"><img  src="{{ item.image }}" alt="" /></a>
         <div class="product-details">
           <a href="" routerLink="/details/{{ item.id }}"><h6 class="name-head" >{{
@@ -18,8 +18,8 @@
           </div>
         </div>
         <div class="product-footer">
-          <a routerLink="/details/{{ item.id }}" class="btn btn-outline-success">Xem Chi tiết</a>
-          <a href="" routerLink="/details/{{ item.id }}" class="btn btn-outline-danger">Mua ngay</a>
+          <a routerLink="/details/{{ item.id }}" class="btn btn1">Xem Chi tiết</a>
+          <a href="" routerLink="/details/{{ item.id }}" class="btn btn2">Mua ngay</a>
         </div>
       </div>
 

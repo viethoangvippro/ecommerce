@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { product } from '../data-type';
+import { category, product } from '../data-type';
 import { ProductService } from '../services/product.service';
 
 @Component({
@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
   pageSize: string | number | undefined ;
  popularProducts:any|product[];
  trendyProducts:any | product[];
+ categoryList:any |category[];
  currencyCode = 'VND';
   currencyFormat = 'symbol';
   sortOrder: 'asc' | 'desc' = 'asc';
@@ -58,6 +59,9 @@ export class HomeComponent implements OnInit {
 
     this.product.trendyProducts().subscribe((data)=>{
       this.trendyProducts=data;
+    })
+    this.product.categoryList().subscribe((data) =>{
+      this.categoryList = data;
     })
   }
 }
