@@ -1,3 +1,4 @@
+import { priceSummary } from './../data-type';
 import { Component, OnInit } from '@angular/core';
 import { category, product } from '../data-type';
 import { ProductService } from '../services/product.service';
@@ -14,8 +15,10 @@ export class HomeComponent implements OnInit {
  trendyProducts:any | product[];
  categoryList:any |category[];
  currencyCode = 'VND';
-  currencyFormat = 'symbol';
+  currencyFormat = 'symbol-narrow';
+
   sortOrder: 'asc' | 'desc' = 'asc';
+  newProduct:any[] | any;
 
   constructor(private product:ProductService) {
 
@@ -42,7 +45,7 @@ export class HomeComponent implements OnInit {
 
   sortByPrice():void{
     this.product.getProducts().subscribe(trendyProducts => {
-      this.trendyProducts = trendyProducts.sort((a, b) => a.price - b.price);
+      this.trendyProducts = trendyProducts.sort((a, b) => a.priceDiscount - b.priceDiscount);
     });
   }
 
@@ -62,6 +65,10 @@ export class HomeComponent implements OnInit {
     })
     this.product.categoryList().subscribe((data) =>{
       this.categoryList = data;
+    });
+    this.product.getProducts().subscribe((data) =>{
+      this.newProduct = data.slice(-8);
     })
+
   }
 }

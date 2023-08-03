@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { cart, login, product, signUp } from '../data-type';
+import { User, cart, login, product, signUp } from '../data-type';
 import { ProductService } from '../services/product.service';
 import { UserService } from '../services/user.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -30,6 +30,11 @@ export class UserAuthComponent implements OnInit {
   showLogin: boolean = true;
   authError: string = '';
   signupForm: FormGroup;
+  errorMessage : any;
+  users: User = {
+    email: '', password: '',
+    id: 0 , name:''
+  };
   constructor(private fb: FormBuilder,private user: UserService, private product: ProductService,private http: HttpClient) {
     this.signupForm = this.fb.group({
       name: ['', Validators.required],
@@ -46,9 +51,20 @@ export class UserAuthComponent implements OnInit {
       email: this.signupForm.value.email,
       password: this.signupForm.value.password
     };
-    this.http.post('http://localhost:3000/users', formData).subscribe(
+    this.user.checkEmail(this.users.email).subscribe(
       response => {
-        console.log(response);
+        if (response.exists) {
+          this.errorMessage = 'Email already exists';
+        } else {
+          this.user.register(this.users).subscribe(
+            response => {
+              console.log(response);
+            },
+            error => {
+              console.log(error);
+            }
+          );
+        }
       },
       error => {
         console.log(error);

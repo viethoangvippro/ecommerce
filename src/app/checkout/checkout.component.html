@@ -1,84 +1,90 @@
-<div class="checkout container">
-  <h1 style="color: #ff4b2b">THANH TOÁN</h1>
-  <div class="row mb-5">
-    <div class="col-sm-7">
-      <h3 style="color: #ff4b2b">Thêm địa chỉ nhận hàng</h3>
-      <p class="message-p">{{ orderMsg }}</p>
-      <form
-        #orderData="ngForm"
-        class="common-form"
-        (ngSubmit)="orderNow(orderData.value)"
-      >
-        <div class="inputbox">
-          <input
-            type="text"
-            class="form-input"
-            name="email"
-            ngModel
-            required
-            #email="ngModel"
-          />
-          <span>Email</span>
-          <i></i>
-        </div>
-        <br />
-        <p class="invalid-input">
-          <span *ngIf="email.invalid && email.touched"
-            >Email không được để trống</span
-          >
-        </p>
+<div class="container-fluid p-3" style="background-color: #ececec">
+  <div class="container mb-3">
+    <div class="row" style="background-color: #ffffff; border-radius: 3px">
+      <div class="checkout">
+        <h1 style="color: #ff4b2b">THANH TOÁN</h1>
+        <div class="row mb-5">
+          <div class="col-sm-7">
+            <h3 style="color: #ff4b2b">Thêm địa chỉ nhận hàng</h3>
+            <p class="message-p">{{ orderMsg }}</p>
+            <form
+              #orderData="ngForm"
+              class="common-form"
+              (ngSubmit)="orderNow(orderData.value)"
+            >
+              <div class="inputbox">
+                <input
+                  type="text"
+                  class="form-input"
+                  name="email"
+                  ngModel
+                  required
+                  #email="ngModel"
+                />
+                <span>Email</span>
+                <i></i>
+              </div>
+              <br />
+              <p class="invalid-input">
+                <span *ngIf="email.invalid && email.touched"
+                  >Email không được để trống</span
+                >
+              </p>
 
-        <div class="inputbox">
-          <input
-            type="text"
-            class="form-input"
-            name="contact"
-            ngModel
-            required
-            #phone="ngModel"
-          />
-          <span>Thông tin liên hệ</span>
-          <i></i>
-        </div>
-        <br />
-        <p class="invalid-input">
-          <span *ngIf="phone.invalid && phone.touched"
-            >Thông tin liên hệ không được để trống</span
-          >
-        </p>
+              <div class="inputbox">
+                <input
+                  type="text"
+                  class="form-input"
+                  name="contact"
+                  ngModel
+                  required
+                  #phone="ngModel"
+                />
+                <span>Thông tin liên hệ</span>
+                <i></i>
+              </div>
+              <br />
+              <p class="invalid-input">
+                <span *ngIf="phone.invalid && phone.touched"
+                  >Thông tin liên hệ không được để trống</span
+                >
+              </p>
 
-        <div class="inputbox">
-          <input
-            type="text"
-            class="form-input"
-            name="address"
-            ngModel
-            required
-            #address="ngModel"
-          />
-          <span>Địa chỉ</span>
-          <i></i>
-        </div>
-        <br />
+              <div class="inputbox">
+                <input
+                  type="text"
+                  class="form-input"
+                  name="address"
+                  ngModel
+                  required
+                  #address="ngModel"
+                />
+                <span>Địa chỉ</span>
+                <i></i>
+              </div>
+              <br />
 
-        <p class="invalid-input">
-          <span *ngIf="address.invalid && address.touched"
-            >Địa chỉ không được để trống</span
-          >
-        </p>
-        <button class="button offset-4" [disabled]="orderData.invalid">
-          Mua ngay
-        </button>
-      </form>
-    </div>
-    <div class="col-sm-5">
-      <h3 style="color: #ff4b2b">
-        Tổng tiền thanh toán:
-        {{ totalPrice | currency : currencyCode : currencyFormat }}
-      </h3>
-      <h4 style="color: #ff4b2b">
-        Phương thức thanh toán : <b>Thanh toán khi nhận hàng</b>
-      </h4>
+              <p class="invalid-input">
+                <span *ngIf="address.invalid && address.touched"
+                  >Địa chỉ không được để trống</span
+                >
+              </p>
+              <button class="button offset-4" [disabled]="orderData.invalid">
+                Mua ngay
+              </button>
+            </form>
+          </div>
+          <div class="col-sm-5">
+            <h3 style="color: #ff4b2b">
+              Tổng tiền thanh toán:
+              {{ totalPrice | currency : currencyCode : currencyFormat }}
+            </h3>
+            <h4 style="color: #ff4b2b">
+              Phương thức thanh toán : <b>Thanh toán khi nhận hàng</b>
+            </h4>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

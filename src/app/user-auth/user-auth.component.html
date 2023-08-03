@@ -1,190 +1,208 @@
-<div class="user-auth">
-  <div *ngIf="!showLogin" class="sign-up">
-    <h1 class="h1">Đăng ký tài khoản</h1>
-    <form
-      [formGroup]="signupForm"
-      class="common-form"
-      (ngSubmit)="signUp(signupForm.value)"
-    >
-      <p class="error-p">{{ authError }}</p>
+<div class="container-fluid p-3" style="background-color: #ececec">
+  <div class="container product-details p-3">
+    <div class="row p-3" style="background-color: #ffffff; border-radius: 3px; width: 500px; margin-left: 400px;">
+      <div class="user-auth">
+        <div *ngIf="!showLogin" class="sign-up">
+          <h1 class="h1">Đăng ký tài khoản</h1>
+          <form
+            [formGroup]="signupForm"
+            class="common-form"
+            (ngSubmit)="signUp(signupForm.value)"
+          >
+            <p class="error-p">{{ authError }}</p>
 
-      <div class="form-control">
-        <input
-          type="value"
-          name="name"
-          ngModel
-          required
-          formControlName="name"
-        />
-        <label>
-          <span style="transition-delay: 0ms">H</span
-          ><span style="transition-delay: 50ms">ọ</span
-          ><span style="transition-delay: 100ms"> </span
-          ><span style="transition-delay: 100ms">T</span
-          ><span style="transition-delay: 150ms">ê</span
-          ><span style="transition-delay: 150ms">n</span>
-        </label>
-      </div>
-      <!-- <p class="invalid-input">
+            <div class="form-control">
+              <input
+                type="value"
+                name="name"
+                ngModel
+                required
+                formControlName="name"
+              />
+              <label>
+                <span style="transition-delay: 0ms">H</span
+                ><span style="transition-delay: 50ms">ọ</span
+                ><span style="transition-delay: 100ms"> </span
+                ><span style="transition-delay: 100ms">T</span
+                ><span style="transition-delay: 150ms">ê</span
+                ><span style="transition-delay: 150ms">n</span>
+              </label>
+            </div>
+            <!-- <p class="invalid-input">
         <span *ngIf="username.invalid && username.touched"
           >Tên không được để trống</span
         >
       </p> -->
 
-      <div class="form-control">
-        <input
-          type="value"
-          name="email"
-          ngModel
-          required
-          email
-          formControlName="email"
-        />
-        <label>
-          <span style="transition-delay: 0ms">E</span
-          ><span style="transition-delay: 50ms">m</span
-          ><span style="transition-delay: 100ms">a</span
-          ><span style="transition-delay: 100ms">i</span
-          ><span style="transition-delay: 150ms">l</span>
-        </label>
-      </div>
-      <!-- <p class="invalid-input">
+            <div class="form-control">
+              <input
+                type="value"
+                name="email"
+                ngModel
+                required
+                email
+                formControlName="email"
+              />
+              <label>
+                <span style="transition-delay: 0ms">E</span
+                ><span style="transition-delay: 50ms">m</span
+                ><span style="transition-delay: 100ms">a</span
+                ><span style="transition-delay: 100ms">i</span
+                ><span style="transition-delay: 150ms">l</span>
+              </label>
+            </div>
+            <div *ngIf="errorMessage" class="alert alert-danger">
+              {{ errorMessage }}
+            </div>
+            <!-- <p class="invalid-input">
         <span *ngIf="email.invalid && email.touched"
           >Email không được để trống</span
         >
       </p> -->
 
-      <div class="form-control">
-        <input
-          type="password"
-          name="password"
-          ngModel
-          formControlName="password"
-          required
-        />
-        <label>
-          <span style="transition-delay: 0ms">M</span
-          ><span style="transition-delay: 50ms">ậ</span
-          ><span style="transition-delay: 100ms">t</span
-          ><span style="transition-delay: 150ms"> </span
-          ><span style="transition-delay: 200ms">K</span
-          ><span style="transition-delay: 250ms">h</span
-          ><span style="transition-delay: 300ms">ẩ</span
-          ><span style="transition-delay: 350ms">u</span>
-        </label>
-      </div>
-      <!-- <p class="invalid-input">
+            <div class="form-control">
+              <input
+                type="password"
+                name="password"
+                ngModel
+                formControlName="password"
+                required
+              />
+              <label>
+                <span style="transition-delay: 0ms">M</span
+                ><span style="transition-delay: 50ms">ậ</span
+                ><span style="transition-delay: 100ms">t</span
+                ><span style="transition-delay: 150ms"> </span
+                ><span style="transition-delay: 200ms">K</span
+                ><span style="transition-delay: 250ms">h</span
+                ><span style="transition-delay: 300ms">ẩ</span
+                ><span style="transition-delay: 350ms">u</span>
+              </label>
+            </div>
+            <!-- <p class="invalid-input">
         <span *ngIf="password.invalid && password.touched"
           >Mật khẩu không được để trống</span
         >
       </p> -->
-      <div class="form-control">
-        <input type="password" formControlName="confirmPassword" required />
+            <div class="form-control">
+              <input
+                type="password"
+                formControlName="confirmPassword"
+                required
+              />
 
-        <label>
-          <span style="transition-delay: 0ms">X</span
-          ><span style="transition-delay: 50ms">á</span
-          ><span style="transition-delay: 100ms">c</span
-          ><span style="transition-delay: 150ms"> </span
-          ><span style="transition-delay: 200ms">N</span
-          ><span style="transition-delay: 250ms">h</span
-          ><span style="transition-delay: 300ms">ậ</span
-          ><span style="transition-delay: 350ms">n</span>
-          <span style="transition-delay: 400ms"> </span
+              <label>
+                <span style="transition-delay: 0ms">X</span
+                ><span style="transition-delay: 50ms">á</span
+                ><span style="transition-delay: 100ms">c</span
+                ><span style="transition-delay: 150ms"> </span
+                ><span style="transition-delay: 200ms">N</span
+                ><span style="transition-delay: 250ms">h</span
+                ><span style="transition-delay: 300ms">ậ</span
+                ><span style="transition-delay: 350ms">n</span>
+                <span style="transition-delay: 400ms"> </span>
+                <span style="transition-delay: 400ms">M</span
+                ><span style="transition-delay: 450ms">ậ</span
+                ><span style="transition-delay: 500ms">t</span
+                ><span style="transition-delay: 550ms"> </span
+                ><span style="transition-delay: 600ms">K</span
+                ><span style="transition-delay: 650ms">h</span
+                ><span style="transition-delay: 700ms">ẩ</span
+                ><span style="transition-delay: 750ms">u</span>
+              </label>
+            </div>
+            <div
+              *ngIf="signupForm.get('confirmPassword')?.errors?.['passwordMismatch']"
+            >
+              Mật khẩu xác nhận không khớp.
+            </div>
+            <button class="button" [disabled]="signupForm.invalid">
+              Đăng ký
+            </button>
+            <p class="clickhere">
+              Bạn đã có tài khoản? <a (click)="openLogin()">Nhấp vào đây</a>
+            </p>
+          </form>
+        </div>
 
-            > <span style="transition-delay: 400ms">M</span
-              ><span style="transition-delay: 450ms">ậ</span
-            ><span style="transition-delay: 500ms">t</span
-            ><span style="transition-delay: 550ms"> </span
-            ><span style="transition-delay: 600ms">K</span
-            ><span style="transition-delay: 650ms">h</span
-            ><span style="transition-delay: 700ms">ẩ</span
-            ><span style="transition-delay: 750ms">u</span>
-        </label>
+        <div *ngIf="showLogin" class="login">
+          <h1>Đăng nhập</h1>
+
+          <form
+            #userLogin="ngForm"
+            class="common-form"
+            (ngSubmit)="login(userLogin.value)"
+          >
+            <p class="error-p">{{ authError }}</p>
+
+            <div class="form-control">
+              <input
+                type="value"
+                required=""
+                name="email"
+                ngModel
+                email
+                #email="ngModel"
+                required
+              />
+              <label>
+                <span style="transition-delay: 0ms">E</span
+                ><span style="transition-delay: 50ms">m</span
+                ><span style="transition-delay: 100ms">a</span
+                ><span style="transition-delay: 100ms">i</span
+                ><span style="transition-delay: 150ms">l</span>
+              </label>
+            </div>
+            <p class="invalid-input">
+              <span *ngIf="email.invalid && email.touched"
+                >Email không được để trống</span
+              >
+            </p>
+
+            <div class="form-control">
+              <input
+                type="password"
+                name="password"
+                ngModel
+                minlength="6"
+                maxlength="20"
+                #password="ngModel"
+                required
+              />
+              <label>
+                <span style="transition-delay: 0ms">M</span
+                ><span style="transition-delay: 50ms">ậ</span
+                ><span style="transition-delay: 100ms">t</span
+                ><span style="transition-delay: 150ms"> </span
+                ><span style="transition-delay: 200ms">K</span
+                ><span style="transition-delay: 250ms">h</span
+                ><span style="transition-delay: 300ms">ẩ</span
+                ><span style="transition-delay: 350ms">u</span>
+              </label>
+            </div>
+            <p class="invalid-input">
+              <span *ngIf="password.invalid && password.touched"
+                >Mật khẩu không được để trống</span
+              >
+            </p>
+
+            <button class="button" [disabled]="userLogin.invalid">
+              Đăng nhập
+            </button>
+            <p class="clickhere">
+              Bạn chưa có tài khoản? <a (click)="openSignUp()">Nhấp vào đây</a>
+            </p>
+            <span class="another-login">hoặc đăng nhập bằng</span>
+            <div class="social-container">
+              <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="social"
+                ><i class="fab fa-google-plus-g"></i
+              ></a>
+              <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </form>
+        </div>
       </div>
-      <div
-      *ngIf="signupForm.get('confirmPassword')?.errors?.['passwordMismatch']"
-    >
-      Mật khẩu xác nhận không khớp.
     </div>
-      <button class="button" [disabled]="signupForm.invalid">Đăng ký</button>
-      <p class="clickhere">
-        Bạn đã có tài khoản? <a (click)="openLogin()">Nhấp vào đây</a>
-      </p>
-    </form>
-  </div>
-
-  <div *ngIf="showLogin" class="login">
-    <h1>Đăng nhập</h1>
-
-    <form
-      #userLogin="ngForm"
-      class="common-form"
-      (ngSubmit)="login(userLogin.value)"
-    >
-      <p class="error-p">{{ authError }}</p>
-
-      <div class="form-control">
-        <input
-          type="value"
-          required=""
-          name="email"
-          ngModel
-          email
-          #email="ngModel"
-          required
-        />
-        <label>
-          <span style="transition-delay: 0ms">E</span
-          ><span style="transition-delay: 50ms">m</span
-          ><span style="transition-delay: 100ms">a</span
-          ><span style="transition-delay: 100ms">i</span
-          ><span style="transition-delay: 150ms">l</span>
-        </label>
-      </div>
-      <p class="invalid-input">
-        <span *ngIf="email.invalid && email.touched"
-          >Email không được để trống</span
-        >
-      </p>
-
-      <div class="form-control">
-        <input
-          type="password"
-          name="password"
-          ngModel
-          minlength="6"
-          maxlength="20"
-          #password="ngModel"
-          required
-        />
-        <label>
-          <span style="transition-delay: 0ms">M</span
-          ><span style="transition-delay: 50ms">ậ</span
-          ><span style="transition-delay: 100ms">t</span
-          ><span style="transition-delay: 150ms"> </span
-          ><span style="transition-delay: 200ms">K</span
-          ><span style="transition-delay: 250ms">h</span
-          ><span style="transition-delay: 300ms">ẩ</span
-          ><span style="transition-delay: 350ms">u</span>
-        </label>
-      </div>
-      <p class="invalid-input">
-        <span *ngIf="password.invalid && password.touched"
-          >Mật khẩu không được để trống</span
-        >
-      </p>
-
-      <button class="button" [disabled]="userLogin.invalid">Đăng nhập</button>
-      <p class="clickhere">
-        Bạn chưa có tài khoản? <a (click)="openSignUp()">Nhấp vào đây</a>
-      </p>
-      <span class="another-login">hoặc đăng nhập bằng</span>
-      <div class="social-container">
-        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-      </div>
-    </form>
   </div>
 </div>

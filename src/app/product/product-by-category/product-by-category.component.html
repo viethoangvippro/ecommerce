@@ -1,5 +1,6 @@
-<div class="container">
-  <div class="row mt-4">
+<div class="container-fluid" style="background-color: #ececec">
+<div class="container p-3">
+  <div class="row  p-3" style="background-color: #ffffff; border-radius: 3px">
     <div class="col-lg-3">
       <ul>
         <li class="border p-2">
@@ -37,25 +38,25 @@
               ><img src="{{ item.image }}" alt=""
             /></a>
             <div class="product-details">
-              <a href="" routerLink="/details/{{ item.id }}"
+              <a href="" style="color: red;"  routerLink="/details/{{ item.id }}"
                 ><h6 class="name-head">{{ item.name }}</h6></a
               >
               <div class="product-price">
-                <h6>
-                  Giá sản phẩm:
+                <h6   style="color: red;font-size: 23px;font-family: 'REM', sans-serif;">
+
                   {{ item.price | currency : currencyCode : currencyFormat }}
                 </h6>
               </div>
               <div class="product-color"></div>
             </div>
-            <div class="product-footer">
+            <!-- <div class="product-footer">
               <a routerLink="/details/{{ item.id }}" class="btn btn1"
                 >Xem Chi tiết</a
               >
               <a href="" routerLink="/details/{{ item.id }}" class="btn btn2"
                 >Mua ngay</a
               >
-            </div>
+            </div> -->
           </div>
         </div>
       </section>
@@ -67,4 +68,5 @@
       ></pagination-controls>
     </div>
   </div>
+</div>
 </div>

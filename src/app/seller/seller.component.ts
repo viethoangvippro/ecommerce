@@ -18,7 +18,11 @@ export class SellerComponent implements OnInit {
   productMessage: undefined | string;
   icon = faTrash;
   iconEdit=faEdit;
-  constructor(private product: ProductService,private router: Router) { }
+  constructor(private product: ProductService,private router: Router) {const isAdmin = this.router.url.startsWith('/seller');
+  if (!isAdmin) {
+    // Nếu không phải là AdminComponent, chuyển hướng đến trang khác
+    this.router.navigate(['/seller']);
+  } }
 
   ngOnInit(): void {
     this.product.trendyProducts().subscribe(data =>{
@@ -36,7 +40,7 @@ export class SellerComponent implements OnInit {
     });
     setTimeout(() => {
       this.productMessage = undefined;
-
+      this.router.navigate(["/seller"])
     }, 500);
   }
   list() {

@@ -35,22 +35,22 @@
             class="product-item card"
 
           >
-            <a href="" routerLink="/details/{{ item.id }}"
+            <a href=""routerLink="/details/{{ item.id }}"
               ><img src="{{ item.image }}" alt=""
             /></a>
             <div class="product-details">
-              <a href="" routerLink="/details/{{ item.id }}"
+              <a href="" style="color: red;"  routerLink="/details/{{ item.id }}"
                 ><h6 class="name-head">{{ item.name }}</h6></a
               >
               <div class="product-price">
-                <h6>
+                <h6  style="color: red;font-size: 23px;font-family: 'REM', sans-serif;">
                   Giá sản phẩm:
                   {{ item.price | currency : currencyCode : currencyFormat }}
                 </h6>
               </div>
               <div class="product-color"></div>
             </div>
-            <div class="product-footer p-3">
+            <!-- <div class="product-footer p-3">
               <a
                 routerLink="/details/{{ item.id }}"
                 class="btn btn1"
@@ -62,7 +62,7 @@
                 class="btn btn2"
                 >Mua ngay</a
               >
-            </div>
+            </div> -->
           </div>
         </div>
       </section>

@@ -46,8 +46,8 @@ export class CartPageComponent implements OnInit {
       this.priceSummary.price = price;
       this.priceSummary.discount = price / 10;
       this.priceSummary.tax = price / 10;
-      this.priceSummary.delivery = 25000;
-      this.priceSummary.total = price + (price / 10) + 25000 - (price / 10);
+      this.priceSummary.delivery = 0;
+      this.priceSummary.total = price + (price / 10) + 0 - (price / 10);
 
     if(!this.cartData.length){
       this.router.navigate(['/'])

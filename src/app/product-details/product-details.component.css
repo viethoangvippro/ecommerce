@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=REM:wght@500&display=swap');
 .product-details{
-    margin-top: 50px;
+
     margin-bottom: 80px;
 }
 .product-details .product-img{
@@ -15,6 +16,11 @@
 }
 .quantity-group{
     margin-top: 20px;
+
+}
+ul{
+  list-style-type: none;
+
 }
 
 .quantity-group input{
@@ -96,4 +102,17 @@ svg{
 .checked {
   color: gold;
 }
+h6{
+  padding: 5px;
+  font-weight: bold;
 
+}
+.table-bordered {
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+}
+
+.table-bordered td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}

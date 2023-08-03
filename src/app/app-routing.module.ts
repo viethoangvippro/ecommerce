@@ -23,6 +23,7 @@ import { SellerAddCategoryComponent } from './seller-add-category/seller-add-cat
 import { SellerContactComponent } from './seller-contact/seller-contact.component';
 import { SellerUpdateCategoryComponent } from './seller-update-category/seller-update-category.component';
 import { SellerUpdateOrderComponent } from './seller-update-order/seller-update-order.component';
+import { UserAccountEditComponent } from './user-account-edit/user-account-edit.component';
 
 const routes: Routes = [
   {
@@ -102,11 +103,13 @@ const routes: Routes = [
   {
     component: CheckoutComponent,
     path: 'checkout',
+
   },
   {
     component: MyOrdersComponent,
     path: 'my-orders',
   },
+  { path: 'account/:id/edit', component: UserAccountEditComponent },
   {
     component: ProductReviewsComponent,
     path: 'product-reviews/:id',

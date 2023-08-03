@@ -1,5 +1,5 @@
 
-import { category, contact } from './../data-type';
+import { category, contact, reviews } from './../data-type';
 import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
 import { cart, order, product } from '../data-type';
@@ -49,9 +49,19 @@ export class ProductService {
     return this.http.post<any>(`${this.api}`, review);
   }
 
-  getProductReview(): Observable<any> {
 
+  getProductReview(): Observable<any> {
     return this.http.get<any>(`${this.api}`);
+  }
+
+  getProductReviewById(productId:any): Observable<any> {
+    return this.http.get<any>(`${this.api}/${productId}`);
+  }
+
+  private apiUrl2 = 'http://localhost:3000/reviews';
+  getReviewsByProductId(productId: number): Observable<any> {
+    const url1 = `${this.apiUrl2}?productId=${productId}`;
+    return this.http.get<any>(url1);
   }
 
   private baseUrl = "http://localhost:3000";

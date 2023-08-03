@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=REM:wght@500&display=swap');
 .product-header-image{
   object-fit: contain;
   width: 100%;
@@ -23,7 +24,7 @@
 .product-item img:hover{
 
   transform: translateY(-20px);
-  transition: 0.5s;
+  transition: 0.7s;
 }
 .product-item .name-head{
   font-size: 20px;
@@ -69,7 +70,7 @@ ul li a{
 
   border: 2px solid #fff;
   font-size: 15px;
-
+  margin-left: 5px;
   cursor: pointer;
   position: relative;
   overflow: hidden;
@@ -139,7 +140,7 @@ ul li a{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  box-shadow:0px 1px 5px 5px #ececec;
 }
 
 .bg {

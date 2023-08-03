@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=REM:wght@500&display=swap');
 .product-header-image{
     object-fit: contain;
     width: 100%;
-    height: 260px;
+    height: 270px;
 }
 .product-item{
     margin-bottom: 40px;
@@ -31,7 +32,34 @@
 .product-item img:hover{
 
   transform: translateY(-20px);
-  transition: 0.5s;
+  transition: 0.7s;
+}
+.discount {
+  background: #fa0;
+  z-index: 3;
+  position: relative;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  display: block;
+  text-transform: uppercase;
+  width: 70px;
+  height: 30px;
+  border-radius: 0 15px 15px 0;
+  line-height: 30px;
+  font-style: italic;
+  left: -9px;
+  top: 20px;
+}
+
+.discount::after {
+  border-top: 6px solid #c80;
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  border-left: 8px solid transparent;
+  border-right: 0px solid transparent;
 }
 .product-footer a{
   transition: 0.5s;
@@ -118,7 +146,7 @@ text-decoration: none;
 }
 
 .sort{
-  margin-left: 1040px;
+  margin-left: 1035px;
 }
 .sort button{
   margin-left: 3px;
@@ -374,6 +402,140 @@ input {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
-  ;
+  box-shadow:0px 1px 5px 5px #ececec
+}
+.policy {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background: linear-gradient(to right, #000000, #df3030, #000000);
+  height: 400px;
+  padding: 60px 0;
+}
+.round {
+  padding: 23px;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  font-size: 34px;
+  background: rgba(255, 255, 255, .2);
+  transition: all .3s ease;
+  margin: 0% auto;
+  position: relative;
+}
+.round-icon{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+}
+.policy-card h2 {
+  transition: all .3s ease;
+  font-weight: 700;
+  font-size: 16px;
+  color: #fff;
+  text-transform: uppercase;
+  margin: 12px 0 5px;
+}
+.policy-card p {
+  color: #dbdbdb;
+  font-style: italic;
+}
+.policy-card:hover .round{
+  background: #fe5b29;
+  cursor: pointer;
+}
+.policy-product{
+  padding: 60px 0;
+  background: #eee;
+  margin-bottom: -150px;
+}
+.policy-p-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  border-bottom: 1px solid #a8a8a8;
+  position: relative;
+  top: -170px;
+}
+.date{
+  position: absolute;
+  top: 0px;
+  left: 30px;
+  z-index: 2;
+  padding: 15px 10px;
+  text-align: center;
+  background: #fe5b29;
+  border-radius: 0 0 4px 4px;
+}
+.date h3{
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.date h4{
+  color: #eee;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+.policy-img{
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+.policy-img img{
+  width: 100%;
+  height: 100%;
+  transition: all .3s ease;
+}
+.policy-img img:hover {
+  transform: scale(1.2);
+}
+.policy-p-card h2{
+  text-transform: capitalize;
+  line-height: 24px;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 18px 0 10px;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+.policy-p-card p {
+  color: #777;
+  line-height: 21px;
+  font-size: 14px;
+  transition: all .3s ease;
+  font-weight: 500;
+
+}
+.policy-p-card h2:hover{
+  color: #fe5b29;
+}
+.read-more {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 14px 0;
+  display: block;
+  background: #333;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s ;
+}
+.read-more i {
+  margin-left: 4px;
+
+}
+.read-more:hover{
+  background: #fe5b29;
+  color: #fff;
+
+}
+.read-more:hover i {
+  margin-left: 6px;
 }

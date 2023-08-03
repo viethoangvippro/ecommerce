@@ -32,7 +32,9 @@
 .summary h3{
     text-align: center;
 }
-
+.summary{
+  margin-top: -43px;
+}
 .summary ul {
     border: 1px solid #ddd;
     list-style-type: none;

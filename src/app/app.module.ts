@@ -41,6 +41,7 @@ import { SellerAddCategoryComponent } from './seller-add-category/seller-add-cat
 import { SellerContactComponent } from './seller-contact/seller-contact.component';
 import { SellerUpdateCategoryComponent } from './seller-update-category/seller-update-category.component';
 import { SellerUpdateOrderComponent } from './seller-update-order/seller-update-order.component';
+import { UserAccountEditComponent } from './user-account-edit/user-account-edit.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,8 @@ import { SellerUpdateOrderComponent } from './seller-update-order/seller-update-
     SellerContactComponent,
     SellerUpdateCategoryComponent,
     SellerUpdateOrderComponent,
+    UserAccountEditComponent,
+
 
 
   ],

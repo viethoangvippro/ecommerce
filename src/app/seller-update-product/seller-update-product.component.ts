@@ -52,6 +52,7 @@ export class SellerUpdateProductComponent implements OnInit {
     if (this.productData) {
       data.id = this.productData.id;
       data.categoryId = this.productData.categoryId;
+      data.rating = this.productData.rating
     }
     this.product.updateProduct(data).subscribe((result) => {
       if (result) {

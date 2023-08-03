@@ -52,69 +52,380 @@ ngModel
   </form>
 </div> -->
 <div class="admin-page">
-  <div class="admin-nav " style="  font-size: 20px;">
-    <a href="seller" class="all-product">Sản phẩm</a><br>
-    <a href="seller-add-product" class="add-product" style="margin-left: 15px;">Thêm sản phẩm</a><br>
-    <a href="seller-category" class="all-product">Danh mục</a><br>
-    <a href="seller-add-category" class="add-product" style="margin-left: 15px;">Thêm danh mục</a><br>
-    <a href="seller-order" class="all-product">Đơn hàng</a><br>
-    <a href="seller-contact" class="all-product">Phản hồi</a><br>
+  <div class="admin-nav" style="font-size: 20px">
+    <a href="seller" class="all-product">Sản phẩm</a><br />
+    <a href="seller-add-product" class="add-product" style="margin-left: 15px"
+      >Thêm sản phẩm</a
+    ><br />
+    <a href="seller-category" class="all-product">Danh mục</a><br />
+    <a href="seller-add-category" class="add-product" style="margin-left: 15px"
+      >Thêm danh mục</a
+    ><br />
+    <a href="seller-order" class="all-product">Đơn hàng</a><br />
+    <a href="seller-contact" class="all-product">Phản hồi</a><br />
   </div>
   <div class="admin-content">
     <div class="">
-      <h2 class=" mt-6 p-4" style="color: #Ff4b2b; text-align: center;">THÊM SẢN PHẨM</h2>
-      <form #addProduct="ngForm"
-      (ngSubmit)="submit(addProduct.value)">
-        <label for="fname" >Tên sản phẩm</label>
-        <input type="text" #name="ngModel" name="name"
-        ngModel placeholder="Nhập tên sản phẩm" required>
-        <p class="invalid-input"><br>
-          <span  *ngIf="name.invalid && name.touched"
+      <h2 class="mt-6 p-4" style="color: #ff4b2b; text-align: center">
+        THÊM SẢN PHẨM
+      </h2>
+      <form #addProduct="ngForm" (ngSubmit)="submit(addProduct.value)">
+        <label for="fname">Tên sản phẩm</label>
+        <input
+          type="text"
+          #name="ngModel"
+          name="name"
+          ngModel
+          placeholder="Nhập tên sản phẩm"
+          required
+        />
+        <p class="invalid-input">
+          <br />
+          <span *ngIf="name.invalid && name.touched"
             >Tên sản phẩm không được để trống</span
           >
         </p>
-        <label for="lname">Giá sản phẩm</label><br>
-        <input type="number"#password="ngModel" class="price" name="price"
-        ngModel placeholder="Nhập giá sản phẩm"required>
-        <br>
-        <p class="invalid-input"><br>
-          <span  *ngIf="password.invalid && password.touched"
+        <label for="lname">Giá sản phẩm</label><br />
+        <input
+          type="number"
+          #price="ngModel"
+          class="price"
+          name="price"
+          ngModel
+          placeholder="Nhập giá sản phẩm"
+          required
+        />
+        <br />
+        <p class="invalid-input">
+          <br />
+          <span *ngIf="price.invalid && price.touched"
+            >Giá sản phẩm không được để trống</span
+          >
+        </p>
+        <label for="lname">Giá sản phẩm sau giảm giá</label><br />
+        <input
+          type="number"
+          #priceD="ngModel"
+          class="price"
+          name="priceDiscount"
+          ngModel
+          placeholder="Nhập giá sản phẩm"
+          required
+        />
+        <br />
+        <p class="invalid-input">
+          <br />
+          <span *ngIf="priceD.invalid && priceD.touched"
             >Giá sản phẩm không được để trống</span
           >
         </p>
         <label for="idcat">Mã danh mục</label>
-        <input type="text"#idCat="ngModel" name="categoryId"
-        ngModel placeholder="Mã danh mục"required>
-        <p class="invalid-input"><br>
-          <span  *ngIf="idCat.invalid && idCat.touched"
+        <input
+          type="text"
+          #idCat="ngModel"
+          name="categoryId"
+          ngModel
+          placeholder="Mã danh mục"
+          required
+        />
+        <p class="invalid-input">
+          <br />
+          <span *ngIf="idCat.invalid && idCat.touched"
             >Mã danh mục không được để trống</span
           >
         </p>
-        <label for="color">Màu sản phẩm: </label> <br>
-        <input type="color" class="color" #color="ngModel" name="color"
-        ngModel placeholder="Nhập màu sản phẩm"required>
-        <p class="invalid-input"><br>
-          <span  *ngIf="color.invalid && color.touched"
+        <label for="color">Màu sản phẩm: </label> <br />
+        <input
+          type="color"
+          class="color"
+          #color="ngModel"
+          name="color"
+          ngModel
+          placeholder="Nhập màu sản phẩm"
+          required
+        />
+        <p class="invalid-input">
+          <br />
+          <span *ngIf="color.invalid && color.touched"
             >Màu sản phẩm không được để trống</span
           >
         </p>
         <label for="description">Mô tả chi tiết</label>
-        <textarea name="description"
-        ngModel placeholder="Nhập mô tả sản phẩm" style="height:200px"></textarea>
+        <textarea
+          name="description"
+          ngModel
+          placeholder="Nhập mô tả sản phẩm"
+          style="height: 200px"
+        ></textarea>
         <label for="color">Ảnh sản phẩm</label>
-        <input type="text" #image="ngModel" name="image"
-        ngModel placeholder="Nhập ảnh sản phẩm"required>
-        <p class="invalid-input"><br>
-          <span  *ngIf="image.invalid && image.touched"
+        <input
+          type="text"
+          #image="ngModel"
+          name="image"
+          ngModel
+          placeholder="Nhập ảnh sản phẩm"
+          required
+        />
+        <p class="invalid-input">
+          <br />
+          <span *ngIf="image.invalid && image.touched"
             >Ảnh sản phẩm không được để trống</span
           >
         </p>
-        <button type="submit" class="mb-4 " [disabled]="addProduct.invalid">Thêm sản phẩm</button>
+        <label for="fname">CPU</label>
+        <input
+          type="text"
+          #cpu="ngModel"
+          name="cpu"
+          ngModel
+          placeholder="CPU"
+          required
+        />
+        <p class="invalid-input">
+          <br />
+          <span *ngIf="cpu.invalid && cpu.touched"
+            >CPU không được để trống</span
+          >
+        </p>
+
+        <label for="fname">RAM</label>
+        <input
+          type="text"
+          #ram="ngModel"
+          name="ram"
+          ngModel
+          placeholder="RAM"
+          required
+        />
+        <p class="invalid-input">
+          <br />
+          <span *ngIf="ram.invalid && ram.touched"
+            >RAM không được để trống</span
+          >
+        </p>
+        <label for="fname">Ổ cứng</label>
+        <input
+          type="text"
+          #drive="ngModel"
+          name="drive"
+          ngModel
+          placeholder="Ổ cứng"
+          required
+        />
+        <p class="invalid-input">
+          <br />
+          <span *ngIf="drive.invalid && drive.touched"
+            >Ổ cứng không được để trống</span
+          >
+        </p>
+
+        <label for="fname">Card đồ hoạ</label>
+        <input
+          type="text"
+          #card="ngModel"
+          name="card"
+          ngModel
+          placeholder="Card đồ hoạ"
+          required
+        />
+        <p class="invalid-input">
+          <br />
+          <span *ngIf="card.invalid && card.touched"
+            >Card đồ hoạ không được để trống</span
+          >
+        </p>
+        <label for="fname">Màn hình</label>
+        <input
+          type="text"
+          #monitor="ngModel"
+          name="monitor"
+          ngModel
+          placeholder="Màn hình"
+          required
+        />
+        <p class="invalid-input">
+          <br />
+          <span *ngIf="monitor.invalid && monitor.touched"
+            >Màn hình không được để trống</span
+          >
+        </p>
+
+        <label for="fname">Cổng giao tiếp</label>
+        <input
+          type="text"
+          #conecttionport="ngModel"
+          name="conecttionport"
+          ngModel
+          placeholder="Cổng giao tiếp"
+          required
+        />
+        <p class="invalid-input">
+          <br />
+          <span *ngIf="conecttionport.invalid && conecttionport.touched"
+            >Cổng giao tiếp không được để trống</span
+          >
+        </p>
+
+        <label for="fname">Bàn phím</label>
+        <input
+          type="text"
+          #keyboard="ngModel"
+          name="keyboard"
+          ngModel
+          placeholder="Bàn phím"
+          required
+        />
+        <p class="invalid-input">
+          <br />
+          <span *ngIf="keyboard.invalid && keyboard.touched"
+            >Bàn phím không được để trống</span
+          >
+        </p>
+
+        <label for="fname">Chuẩn LAN</label>
+        <input
+          type="text"
+          #lan="ngModel"
+          name="lan"
+          ngModel
+          placeholder="Chuẩn LAN"
+          required
+        />
+        <p class="invalid-input">
+          <br />
+          <span *ngIf="lan.invalid && lan.touched"
+            >Chuẩn LAN không được để trống</span
+          >
+        </p>
+
+        <label for="fname">Chuẩn WIFI</label>
+        <input
+          type="text"
+          #wifi="ngModel"
+          name="wifi"
+          ngModel
+          placeholder="Chuẩn WIFI"
+          required
+        />
+        <p class="invalid-input">
+          <br />
+          <span *ngIf="wifi.invalid && wifi.touched"
+            >Chuẩn WIFI không được để trống</span
+          >
+        </p>
+
+        <label for="fname">Bluetooth</label>
+        <input
+          type="text"
+          #bluetooth="ngModel"
+          name="bluetooth"
+          ngModel
+          placeholder="Bluetooth"
+          required
+        />
+        <p class="invalid-input">
+          <br />
+          <span *ngIf="bluetooth.invalid && bluetooth.touched"
+            >Bluetooth không được để trống</span
+          >
+        </p>
+
+        <label for="fname">Audio</label>
+        <input
+          type="text"
+          #audio="ngModel"
+          name="audio"
+          ngModel
+          placeholder="Audio"
+          required
+        />
+        <p class="invalid-input">
+          <br />
+          <span *ngIf="audio.invalid && audio.touched"
+            >Audio không được để trống</span
+          >
+        </p>
+        <label for="fname">Webcam</label>
+        <input
+          type="text"
+          #cam="ngModel"
+          name="webcam"
+          ngModel
+          placeholder="Webcam"
+          required
+        />
+        <p class="invalid-input">
+          <br />
+          <span *ngIf="cam.invalid && cam.touched"
+            >Webcam không được để trống</span
+          >
+        </p>
+
+        <label for="fname">Hệ điều hành</label>
+        <input
+          type="text"
+          #system="ngModel"
+          name="system"
+          ngModel
+          placeholder="Hệ điều hành"
+          required
+        />
+        <p class="invalid-input">
+          <br />
+          <span *ngIf="system.invalid && system.touched"
+            >Hệ điều hành không được để trống</span
+          >
+        </p>
+        <label for="fname">Pin</label>
+        <input
+          type="text"
+          #pin="ngModel"
+          name="battery"
+          ngModel
+          placeholder="Pin"
+          required
+        />
+        <p class="invalid-input">
+          <br />
+          <span *ngIf="pin.invalid && pin.touched"
+            >Pin không được để trống</span
+          >
+        </p>
+
+        <label for="fname">Trọng lượng</label>
+        <input
+          type="text"
+          #weight="ngModel"
+          name="weight"
+          ngModel
+          placeholder="Trọng lượng"
+          required
+        />
+        <p class="invalid-input">
+          <br />
+          <span *ngIf="weight.invalid && weight.touched"
+            >Trọng lượng không được để trống</span
+          >
+        </p>
+        <label for="fname">Kích thước</label>
+        <input
+          type="text"
+          #size="ngModel"
+          name="size"
+          ngModel
+          placeholder="Kích thước"
+          required
+        />
+        <p class="invalid-input">
+          <br />
+          <span *ngIf="size.invalid && size.touched"
+            >Kích thước không được để trống</span
+          >
+        </p>
+        <button type="submit" class="mb-4" [disabled]="addProduct.invalid">
+          Thêm sản phẩm
+        </button>
       </form>
     </div>
-
   </div>
 </div>
-
-
-

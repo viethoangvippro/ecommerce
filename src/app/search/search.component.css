@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=REM:wght@500&display=swap');
 .search-item{
     width: 800px;
     margin: 25px auto;
@@ -28,6 +29,13 @@
 
 }
 
+ul {
+  list-style-type: none;
+}
+ul li a{
+  text-decoration: none;
+
+}
 .product-item img{
   width: 100%;
   height: 300px;
@@ -77,7 +85,7 @@ text-decoration: none;
 
   border: 2px solid #fff;
   font-size: 15px;
-
+  margin-left: 2px;
   cursor: pointer;
   position: relative;
   overflow: hidden;
@@ -146,11 +154,11 @@ text-decoration: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  box-shadow:0px 1px 5px 5px #ececec;
   ;
 }
 .product-item img:hover{
 
   transform: translateY(-20px);
-  transition: 0.5s;
+  transition: 0.7s;
 }

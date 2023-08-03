@@ -1,27 +1,57 @@
-
-<div class="container p-5">
-  <h1 class="mb-5" style="color: #Ff4b2b ; text-align: center;">Kết quả tìm kiếm</h1>
-  <section class="row">
-    <div class="col-sm-3" *ngFor="let item of searchResult">
-
-      <div class="product-item card" >
-       <a href="" routerLink="/details/{{ item.id }}"><img  src="{{ item.image }}" alt="" /></a>
-        <div class="product-details">
-          <a href="" routerLink="/details/{{ item.id }}"><h6 class="name-head" >{{
-            item.name
-          }}</h6></a>
-          <div class="product-price">
-            <h6> {{ item.price | currency:currencyCode:currencyFormat }} </h6>
-          </div>
-          <div class="product-color">
-
-          </div>
-        </div>
-        <div class="product-footer">
+<div class="container-fluid p-3" style="background-color: #ececec">
+<div class="container">
+  <div class="row p-3" style="background-color: #ffffff; border-radius: 3px">
+    <div class="col-lg-3">
+      <ul>
+        <li class="border p-2">
+          <h4>Danh mục sản phẩm</h4>
+          <hr />
+          <a
+            href=""
+            style="margin-left: 5%"
+            href="category/{{ item.id }}"
+            *ngFor="let item of listCategory"
+          >
+            {{ item.name }} <br />
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-lg-9">
+      <h1 class="mb-2" style="color: #ff4b2b; text-align: center">
+        Kết quả tìm kiếm
+      </h1>
+      <section class="row">
+        <div class="col-sm-4" *ngFor="let item of searchResult">
+          <div class="product-item card">
+            <a href="" routerLink="/details/{{ item.id }}"
+              ><img src="{{ item.image }}" alt=""
+            /></a>
+            <div class="product-details">
+              <a href="" style="color: red" routerLink="/details/{{ item.id }}"
+                ><h6 class="name-head">{{ item.name }}</h6></a
+              >
+              <div class="product-price">
+                <h6
+                  style="
+                    color: red;
+                    font-size: 23px;
+                    font-family: 'REM', sans-serif;
+                  "
+                >
+                  {{ item.price | currency : currencyCode : currencyFormat }}
+                </h6>
+              </div>
+              <div class="product-color"></div>
+            </div>
+            <!-- <div class="product-footer">
           <a routerLink="/details/{{ item.id }}" class="btn btn1">Xem Chi tiết</a>
           <a href="" routerLink="/details/{{ item.id }}" class="btn btn2">Mua ngay</a>
+        </div> -->
+          </div>
         </div>
-      </div>
-
-
-
+      </section>
+    </div>
+  </div>
+</div>
+</div>

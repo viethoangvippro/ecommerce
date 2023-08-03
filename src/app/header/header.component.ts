@@ -1,21 +1,28 @@
+import { User } from './../data-type';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { product } from '../data-type';
 import { ProductService } from '../services/product.service';
+import { UserService } from '../services/user.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
+  userData1 :any |User[];
+
   menuType: string = 'default';
   sellerName:string="";
   userName:string="";
   searchResult:undefined|product[];
   cartItems=0;
-  constructor(private route: Router, private product:ProductService) {}
+
+
+  constructor(private route: Router, private product:ProductService,private router: ActivatedRoute,private userService:UserService) {}
 
   ngOnInit(): void {
+
     this.route.events.subscribe((val: any) => {
       if (val.url) {
         if (localStorage.getItem('seller') && val.url.includes('seller')) {
@@ -43,6 +50,7 @@ export class HeaderComponent implements OnInit {
     this.product.cartData.subscribe((items)=>{
       this.cartItems= items.length
     })
+
   }
   logout(){
     localStorage.removeItem('seller');

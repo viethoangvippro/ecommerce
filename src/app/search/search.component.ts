@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { product } from '../data-type';
+import { category, product } from '../data-type';
 import { ProductService } from '../services/product.service';
 @Component({
   selector: 'app-search',
@@ -16,7 +16,9 @@ export class SearchComponent implements OnInit {
   query:any;
   sortOrder: 'asc' | 'desc' = 'asc';
   pageSize: string | number | undefined ;
-
+  listCategory: any;
+  searchCategory: category | any;
+  productList: product | any;
   constructor(private activeRoute: ActivatedRoute, private product:ProductService) { }
 
   ngOnInit(): void {
@@ -26,7 +28,16 @@ export class SearchComponent implements OnInit {
       this.searchResult=result;
 
     })
-
+    this.activeRoute.params.subscribe(data => {
+      this.searchCategory = data['id'];
+      this.product.getProductById(this.searchCategory).subscribe(categoryData =>{
+        this.productList = categoryData;
+      })
+    });
+    this.product.categoryList().subscribe(data =>{
+      this.listCategory = data;
+  }
+  )
 
   }
   sortByName(): void {
