@@ -2,7 +2,7 @@
   <div class="container mb-3">
     <div class="row" style="background-color: #ffffff; border-radius: 3px">
       <div class="col-md-8" style="margin-top: 10px">
-        <ngb-carousel class="mb-2" style="background: linear-gradient(to right, #000000, #7a7a7a, #ececec);" *ngIf="popularProducts">
+        <ngb-carousel class="mb-2" style="background: linear-gradient(to right,#000000, #a9a9a9,  #000000);" *ngIf="popularProducts">
           <ng-template *ngFor="let item of popularProducts" ngbSlide>
             <div class="picsum-img-wrapper">
               <a routerLink="/details/{{ item.id }}">
@@ -176,7 +176,7 @@
         <button (click)="sortByPrice()">Theo giá</button>
         <button (click)="sortByRating()">Thịnh hành</button>
       </div>
-      <section class="row">
+      <section class="row" style="text-align: center;">
         <div
           class="col-sm-3"
           *ngFor="
@@ -189,29 +189,35 @@
             <a href="" routerLink="/details/{{ item.id }}"
               ><img src="{{ item.image }}" alt=""
             /></a>
+
             <div class="product-details">
               <a href="" routerLink="/details/{{ item.id }}"
                 ><h6 class="name-head" style="color: #ff4b2b">
                   {{ item.name }}
                 </h6></a
               >
+
+              <a routerLink="/details/{{ item.id }}" style="color: black; font-size:13px;" [innerHTML]="convertToStars(item.rating)"></a>
               <div class="product-price">
                 <h6>
                   <del>{{
                     item.price | currency : currencyCode : currencyFormat
                   }}</del>
+
                 </h6>
                 <h6
                   style="
                     color: red;
                     font-size: 23px;
                     font-family: 'REM', sans-serif;
+
                   "
                 >
                   {{
                     item.priceDiscount
                       | currency : currencyCode : currencyFormat
                   }}
+
                 </h6>
               </div>
               <div class="product-color"></div>
@@ -256,7 +262,7 @@
         Miễn phí giao hàng</span
       >
 
-      <section class="row mt-5">
+      <section class="row mt-5" style="text-align: center;">
         <div class="col-sm-3" *ngFor="let item of newProduct">
           <div class="product-item card1">
             <div class="discount">NEW</div>
@@ -268,7 +274,7 @@
                 ><h6 class="name-head" style="color: #ff4b2b">
                   {{ item.name }}
                 </h6></a
-              >
+              ><a routerLink="/details/{{ item.id }}" style="color: black; font-size:13px;" [innerHTML]="convertToStars(item.rating)"></a>
               <div class="product-price">
                 <h6
                   style="
@@ -410,3 +416,4 @@
     </div>
   </div>
 </section>
+

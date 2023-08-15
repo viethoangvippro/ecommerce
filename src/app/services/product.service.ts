@@ -3,7 +3,7 @@ import { category, contact, reviews } from './../data-type';
 import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
 import { cart, order, product } from '../data-type';
-import { Observable, Observer } from 'rxjs';
+import { Observable, Observer, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -143,6 +143,17 @@ export class ProductService {
   }
   getContact(){
     return this.http.get<contact[]>('http://localhost:3000/contacts')
+  }
+  private mockApiUrl = 'http://localhost:3000';
+  getReviewCount(productId: number): Observable<number> {
+    const url = `${this.mockApiUrl}/products/${productId}/reviews`;
+    return this.http.get<any[]>(url).pipe(
+      map(reviews => reviews.length)
+    );
+  }
+  private apiUrl12 = 'http://localhost:3000/products';
+  getProductbyName(): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl12);
   }
 
   orderNow(data: order) {

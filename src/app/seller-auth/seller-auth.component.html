@@ -34,6 +34,7 @@
                 ><span style="transition-delay: 150ms">n</span>
               </label>
             </div>
+            <div style="margin-top: -10px; margin-bottom: 10px; color: red;font-size: 13px;" *ngIf="sellerSignUp.get('name')?.hasError('required')">Tên không được để trống!</div>
             <!-- <p class="invalid-input">
       <span *ngIf="username.invalid && username.touched"
         >Tên không được để trống</span
@@ -48,6 +49,7 @@
                 required
                 email
                 formControlName="email"
+                [(ngModel)]="email" (blur)="checkEmail()"
               />
               <label>
                 <span style="transition-delay: 0ms">E</span
@@ -57,11 +59,11 @@
                 ><span style="transition-delay: 150ms">l</span>
               </label>
             </div>
-            <!-- <p class="invalid-input">
-      <span *ngIf="email.invalid && email.touched"
-        >Email không được để trống</span
-      >
-    </p> -->
+            <div style="margin-top: -10px; margin-bottom: 10px; color: red;font-size: 13px;">
+              <div *ngIf="sellerSignUp.get('email')?.hasError('required')">Email không được để trống</div>
+              <div *ngIf="sellerSignUp.get('email')?.hasError('email')">Email không đúng định dạng</div>
+              <div *ngIf="emailExists">Email đã tồn tại</div>
+            </div>
 
             <div class="form-control">
               <input
@@ -81,6 +83,12 @@
                 ><span style="transition-delay: 300ms">ẩ</span
                 ><span style="transition-delay: 350ms">u</span>
               </label>
+            </div>
+            <div style="margin-top: -10px; margin-bottom: 10px; color: red;font-size: 13px;">
+              <div *ngIf="sellerSignUp.get('password')?.hasError('required')">Mật khẩu không được để trống!</div>
+              <div *ngIf="sellerSignUp.get('password')?.hasError('passwordInvalid')">Mật khẩu ít nhất phải có 1 chữ cái!</div>
+              <div *ngIf="sellerSignUp.get('password')?.hasError('noSpecialCharacter')">Mật khẩu không được có ký tự đặc biệt!</div>
+              <div *ngIf="sellerSignUp.get('password')?.hasError('minlength')">Mật khẩu phải trên 6 ký tự!</div>
             </div>
             <!-- <p class="invalid-input">
       <span *ngIf="password.invalid && password.touched"
@@ -115,7 +123,7 @@
               </label>
             </div>
             <div
-              *ngIf="sellerSignUp.get('confirmPassword')?.errors?.['passwordMismatch']"
+              *ngIf="sellerSignUp.get('confirmPassword')?.errors?.['passwordMismatch']"style="margin-top: -10px; margin-bottom: 10px; color: red;font-size: 13px;"
             >
               Mật khẩu xác nhận không khớp.
             </div>
@@ -132,9 +140,9 @@
           </form>
         </div>
 
-        <div *ngIf="showLogin" class="login">
+        <div *ngIf="showLogin" class="login" >
           <h1>Quản lý đăng nhập</h1>
-          <p class="error-p">{{ authError }}</p>
+
           <form
             #sellerLogin="ngForm"
             (ngSubmit)="login(sellerLogin.value)"
@@ -189,6 +197,7 @@
                 >Mật khẩu không được để trống</span
               >
             </p>
+            <p class="error-p " style="background-color: rgb(219, 52, 52); color: white; border-radius: 5px;">{{ authError }}</p>
 
             <button class="button" [disabled]="sellerLogin.invalid">
               Đăng nhập

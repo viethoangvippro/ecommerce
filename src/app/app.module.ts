@@ -24,6 +24,7 @@ import { MyOrdersComponent } from './my-orders/my-orders.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ProductReviewsComponent } from './product-reviews/product-reviews.component';
 import { ProductComponent } from './product/product.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 import { RouterModule } from '@angular/router';
 import { ProductModule } from './product/product.module';
@@ -42,6 +43,8 @@ import { SellerContactComponent } from './seller-contact/seller-contact.componen
 import { SellerUpdateCategoryComponent } from './seller-update-category/seller-update-category.component';
 import { SellerUpdateOrderComponent } from './seller-update-order/seller-update-order.component';
 import { UserAccountEditComponent } from './user-account-edit/user-account-edit.component';
+import { SellerUserComponent } from './seller-user/seller-user.component';
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 
 @NgModule({
   declarations: [
@@ -72,6 +75,7 @@ import { UserAccountEditComponent } from './user-account-edit/user-account-edit.
     SellerUpdateCategoryComponent,
     SellerUpdateOrderComponent,
     UserAccountEditComponent,
+    SellerUserComponent,
 
 
 
@@ -87,7 +91,10 @@ import { UserAccountEditComponent } from './user-account-edit/user-account-edit.
     NgxPaginationModule,RouterModule,ProductModule,
     MatIconModule,
     MatDialogModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+    CarouselModule,
+    ScrollToModule.forRoot()
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,13 +1,13 @@
-<div class="container-fluid p-3" style="background-color: #ececec">
-  <div class="container product-details p-3">
-    <div class="row p-3" style="background-color: #ffffff; border-radius: 3px; width: 500px; margin-left: 400px;">
+<div class="container-fluid p-3" style="background-color: #ececec;">
+  <div class="container product-details p-3" >
+    <div class="row p-3" style="background-color: #ffffff; border-radius: 3px; width: 500px; margin-left: 390px;">
       <div class="user-auth">
         <div *ngIf="!showLogin" class="sign-up">
           <h1 class="h1">Đăng ký tài khoản</h1>
           <form
-            [formGroup]="signupForm"
+            [formGroup]="registrationForm"
             class="common-form"
-            (ngSubmit)="signUp(signupForm.value)"
+            (ngSubmit)="signUp(registrationForm.value)"
           >
             <p class="error-p">{{ authError }}</p>
 
@@ -28,20 +28,16 @@
                 ><span style="transition-delay: 150ms">n</span>
               </label>
             </div>
-            <!-- <p class="invalid-input">
-        <span *ngIf="username.invalid && username.touched"
-          >Tên không được để trống</span
-        >
-      </p> -->
-
+            <div style="margin-top: -10px; margin-bottom: 10px; color: red;font-size: 13px;" *ngIf="registrationForm.get('name')?.hasError('required')">Tên không được để trống!</div>
             <div class="form-control">
               <input
                 type="value"
                 name="email"
-                ngModel
+
                 required
                 email
                 formControlName="email"
+                [(ngModel)]="email" (blur)="checkEmail()"
               />
               <label>
                 <span style="transition-delay: 0ms">E</span
@@ -50,15 +46,14 @@
                 ><span style="transition-delay: 100ms">i</span
                 ><span style="transition-delay: 150ms">l</span>
               </label>
+
             </div>
-            <div *ngIf="errorMessage" class="alert alert-danger">
-              {{ errorMessage }}
+            <div style="margin-top: -10px; margin-bottom: 10px; color: red;font-size: 13px;">
+              <div *ngIf="registrationForm.get('email')?.hasError('required')">Email không được để trống</div>
+              <div *ngIf="registrationForm.get('email')?.hasError('email')">Email không đúng định dạng </div>
+              <div  *ngIf="emailExists">Email đã tồn tại</div>
             </div>
-            <!-- <p class="invalid-input">
-        <span *ngIf="email.invalid && email.touched"
-          >Email không được để trống</span
-        >
-      </p> -->
+
 
             <div class="form-control">
               <input
@@ -79,11 +74,13 @@
                 ><span style="transition-delay: 350ms">u</span>
               </label>
             </div>
-            <!-- <p class="invalid-input">
-        <span *ngIf="password.invalid && password.touched"
-          >Mật khẩu không được để trống</span
-        >
-      </p> -->
+            <div style="margin-top: -10px; margin-bottom: 10px; color: red;font-size: 13px;">
+              <div *ngIf="registrationForm.get('password')?.hasError('required')">Mật khẩu không được để trống!</div>
+              <div *ngIf="registrationForm.get('password')?.hasError('passwordInvalid')">Mật khẩu ít nhất phải có 1 chữ cái!</div>
+              <div *ngIf="registrationForm.get('password')?.hasError('noSpecialCharacter')">Mật khẩu không được có ký tự đặc biệt!</div>
+              <div *ngIf="registrationForm.get('password')?.hasError('minlength')">Mật khẩu phải trên 6 ký tự!</div>
+            </div>
+
             <div class="form-control">
               <input
                 type="password"
@@ -112,11 +109,12 @@
               </label>
             </div>
             <div
-              *ngIf="signupForm.get('confirmPassword')?.errors?.['passwordMismatch']"
+              *ngIf="registrationForm.get('confirmPassword')?.errors?.['passwordMismatch']"
+              style="margin-top: -10px; margin-bottom: 10px; color: red;font-size: 13px;"
             >
               Mật khẩu xác nhận không khớp.
             </div>
-            <button class="button" [disabled]="signupForm.invalid">
+            <button class="button" type="submit" [disabled]="registrationForm.invalid">
               Đăng ký
             </button>
             <p class="clickhere">
@@ -144,7 +142,9 @@
                 email
                 #email="ngModel"
                 required
+
               />
+              <p *ngIf="emailExists">Email already exists.</p>
               <label>
                 <span style="transition-delay: 0ms">E</span
                 ><span style="transition-delay: 50ms">m</span
@@ -206,3 +206,17 @@
     </div>
   </div>
 </div>
+
+
+ <!-- <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label>Email</label>
+    <input type="email" formControlName="email" class="form-control">
+    <div *ngIf="registrationForm.get('email')?.hasError('required')">Email is required.</div>
+    <div *ngIf="registrationForm.get('email')?.hasError('email')">Invalid email format.</div>
+    <div *ngIf="registrationForm.get('email')?.hasError('duplicateEmail')">Email already exists.</div>
+  </div>
+
+  <input type="text" formControlName="password" class="form-control">
+  <button type="submit" [disabled]="registrationForm.invalid">Register</button>
+</form> -->

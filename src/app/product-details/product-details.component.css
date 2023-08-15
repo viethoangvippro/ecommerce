@@ -93,7 +93,19 @@ svg{
 
   margin-top: -2%;
 }
+.image-container {
+  position: relative;
 
+  overflow: hidden;
+}
+
+.image {
+  transition: transform 0.3s;
+}
+
+.image:hover {
+  transform: scale(1.2);
+}
 .fa {
   font-size: 1.2rem;
   color: #ccc;

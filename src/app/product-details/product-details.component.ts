@@ -1,5 +1,5 @@
 import { ReposeReview, User, reviews } from './../data-type';
-import { Component, EventEmitter, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, Input, OnInit, Renderer2 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { cart, product } from '../data-type';
 import { ProductService } from '../services/product.service';
@@ -23,16 +23,21 @@ export class ProductDetailsComponent implements OnInit {
   userId:any;
   user: any;  p :any;
   productReviews: reviews | any;
-
+  reviewCount: number |any;
   review: reviews[] = [];
 
   constructor(
     private activeRoute: ActivatedRoute,
     private product: ProductService,
-    private userService: UserService
+    private userService: UserService,
+    private el: ElementRef, private renderer: Renderer2,
+    private elementRef: ElementRef
   ) {}
   products: any[] = [];
-
+  scrollToElement() {
+    const element = this.elementRef.nativeElement.querySelector('#feedback');
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
   OnInit() {
     this.product.getProducts().subscribe(
       (products) => {
@@ -56,6 +61,31 @@ export class ProductDetailsComponent implements OnInit {
     this.userId = this.userService.getCurrentUserId();
   }
 
+  @HostListener('mousemove', ['$event'])
+  onMouseMove(event: MouseEvent) {
+    const img = this.el.nativeElement.querySelector('img');
+    const rect = this.el.nativeElement.getBoundingClientRect();
+    const mouseX = event.clientX - rect.left;
+    const mouseY = event.clientY - rect.top;
+    const imgX = (mouseX / rect.width) * 100;
+    const imgY = (mouseY / rect.height) * 100;
+
+    this.renderer.setStyle(img, 'transform-origin', `${imgX}% ${imgY}%`);
+  }
+  zoomImage(event: MouseEvent) {
+    const target = event.currentTarget as HTMLElement;
+    const img = target.querySelector('img');
+
+    if (img) {
+      const rect = target.getBoundingClientRect();
+      const mouseX = event.clientX - rect.left;
+      const mouseY = event.clientY - rect.top;
+      const imgX = (mouseX / rect.width) * 100;
+      const imgY = (mouseY / rect.height) * 100;
+
+      img.style.transformOrigin = `${imgX}% ${imgY}%`;
+    }
+  }
   convertToStars(rating: number): string {
     let stars = '';
     for (let i = 0; i < 5; i++) {
@@ -121,6 +151,15 @@ export class ProductDetailsComponent implements OnInit {
 
         this.review = response;
       });
+      const productidReivew = this.activeRoute.snapshot.params['productId'];
+      this.product.getReviewCount(productidReivew).subscribe(
+        count => {
+          this.reviewCount = count;
+        },
+        error => {
+          console.log('Lỗi khi tải số lượng đánh giá:', error);
+        }
+      );
   }
   handleQuantity(val: string) {
     if (this.productQuantity < 20 && val === 'plus') {

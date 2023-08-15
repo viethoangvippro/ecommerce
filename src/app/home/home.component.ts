@@ -9,6 +9,7 @@ import { ProductService } from '../services/product.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
+
   p:any;
   pageSize: string | number | undefined ;
  popularProducts:any|product[];
@@ -22,6 +23,18 @@ export class HomeComponent implements OnInit {
 
   constructor(private product:ProductService) {
 
+  }
+
+  convertToStars(rating: number): string {
+    let stars = '';
+    for (let i = 0; i < 5; i++) {
+      if (i < Math.round(rating)) {
+        stars += '<span class="fa fa-star checked"></span>';
+      } else {
+        stars += '<span class="fa fa-star"></span>';
+      }
+    }
+    return stars;
   }
   sortByName(): void {
     this.product.getProducts().subscribe(trendyProducts => {
@@ -51,7 +64,7 @@ export class HomeComponent implements OnInit {
 
   sortByRating():void{
     this.product.getProducts().subscribe(trendyProducts =>{
-      this.trendyProducts = trendyProducts.sort((a,b) => a.rating - b.rating);
+      this.trendyProducts = trendyProducts.sort((a,b) =>b.rating - a.rating );
     })
   }
 

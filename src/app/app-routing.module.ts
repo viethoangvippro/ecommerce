@@ -24,6 +24,7 @@ import { SellerContactComponent } from './seller-contact/seller-contact.componen
 import { SellerUpdateCategoryComponent } from './seller-update-category/seller-update-category.component';
 import { SellerUpdateOrderComponent } from './seller-update-order/seller-update-order.component';
 import { UserAccountEditComponent } from './user-account-edit/user-account-edit.component';
+import { SellerUserComponent } from './seller-user/seller-user.component';
 
 const routes: Routes = [
   {
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     component: SellerHomeComponent,
     path: 'seller-home',
+    canActivate: [AuthGuard],
+  },{
+    component: SellerUserComponent,
+    path: 'seller-user',
     canActivate: [AuthGuard],
   },
   {

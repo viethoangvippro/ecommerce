@@ -39,6 +39,8 @@ export class SellerCategoryComponent implements OnInit {
 
     }, 500);
   }
+
+
   list() {
     this.api.categoryList().subscribe((result) => {
       if (result) {

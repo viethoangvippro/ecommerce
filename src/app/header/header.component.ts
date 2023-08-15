@@ -22,7 +22,6 @@ export class HeaderComponent implements OnInit {
   constructor(private route: Router, private product:ProductService,private router: ActivatedRoute,private userService:UserService) {}
 
   ngOnInit(): void {
-
     this.route.events.subscribe((val: any) => {
       if (val.url) {
         if (localStorage.getItem('seller') && val.url.includes('seller')) {

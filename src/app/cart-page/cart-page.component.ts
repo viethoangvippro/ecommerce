@@ -12,6 +12,7 @@ export class CartPageComponent implements OnInit {
   cartData: cart[] | undefined;
   currencyCode = 'VND';
   currencyFormat = 'symbol';
+
   priceSummary: priceSummary = {
     price: 0,
     discount: 0,
@@ -31,6 +32,11 @@ export class CartPageComponent implements OnInit {
     .subscribe((result)=>{
       this.loadDetails();
     })
+  }
+
+  totalPrice(){
+
+
   }
 
   loadDetails(){

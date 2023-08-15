@@ -1,13 +1,11 @@
 
 <nav class="nav p-3 " >
-  <h2 class="h2"><a routerLink="/" class="text-white"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-bag-heart-fill" viewBox="0 0 16 16">
-    <path d="M11.5 4v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5ZM8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1Zm0 6.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"/>
-  </svg>HinMART</a></h2>
+  <h2 class="h2"><a routerLink="/" class="text-white"><img src="https://cdn.pnghd.pics/data/743/logo-asus-rog-png-28.svg" style="margin-top: -7px;" width="50px" alt="">  HinMART</a></h2>
     <div *ngIf="menuType!=='seller'" class="nav-search">
       <input type="text" style="border-radius: 5px;"
       #searchInput
       (keyup)="searchProduct($event)" (blur)="hideSearch()" placeholder=" Tìm kiếm sản phẩm" />
-      <button (click)="submitSearch(searchInput.value) " style="margin-left: -52px; margin-top: 3px;background-color: #Ff4b2b;border-radius: 5px; width: 50px; height: 33px;"><svg xmlns="http://www.w3.org/2000/svg"  width="16" height="16" fill="currentColor" class="bi bi-search " viewBox="0 0 16 16">
+      <button (click)="submitSearch(searchInput.value) " style="margin-left: -52px; margin-top: 3px;background-color: #ff0000;border-radius: 5px; width: 50px; height: 33px;"><svg xmlns="http://www.w3.org/2000/svg"  width="16" height="16" fill="currentColor" class="bi bi-search " viewBox="0 0 16 16">
         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
       </svg></button>
       <ul class="suggested-search" *ngIf="searchResult">

@@ -18,6 +18,17 @@ export class ProductByCategoryComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private ProductsService: ProductService){
 
   }
+  convertToStars(rating: number): string {
+    let stars = '';
+    for (let i = 0; i < 5; i++) {
+      if (i < Math.round(rating)) {
+        stars += '<span class="fa fa-star checked"></span>';
+      } else {
+        stars += '<span class="fa fa-star"></span>';
+      }
+    }
+    return stars;
+  }
   ngOnInit(): void{
     this.activatedRoute.params.subscribe(data => {
       this.searchCategory = data['id'];

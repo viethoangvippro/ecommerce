@@ -1,7 +1,7 @@
 .nav {
   display: flex;
   justify-content: space-between;
-  background-color:#Ff4b2b;
+  background: linear-gradient(to right, #383838, #ad2121, #2f2f2f);
 }
 .nav a {
   text-decoration: none;

@@ -22,13 +22,14 @@ export class ProductReviewsComponent implements OnInit {
   cartData: product | undefined;
   currencyCode = 'VND';
   currencyFormat = 'symbol';
-
+  currentDateTime: string |any;
   productId: any;
   userId:any;
    p :any;
   productReviews: reviews | any;
 
   review: reviews[] = [];
+  reviewCount:number|any;
   constructor(
     private productService: ProductService,
     private userService: UserService,
@@ -47,6 +48,15 @@ export class ProductReviewsComponent implements OnInit {
       }
     );
 
+    const productidReivew = this.route.snapshot.params['id'];
+      this.productService.getReviewCount(productidReivew).subscribe(
+        count => {
+          this.reviewCount = count;
+        },
+        error => {
+          console.log('Lỗi khi tải số lượng đánh giá:', error);
+        }
+      );
   }
   convertToStars(rating: number): string {
     let stars = '';
@@ -92,6 +102,7 @@ export class ProductReviewsComponent implements OnInit {
     }
   }
   removeToCart(productId: number) {
+
     if (!localStorage.getItem('user')) {
       this.product.removeItemFromCart(productId);
     } else {
@@ -106,15 +117,21 @@ export class ProductReviewsComponent implements OnInit {
     }
     this.removeCart = false;
   }
-  saveProductReview() {
-    const review = {
 
+  saveProductReview() {
+    const date = new Date();
+    const hours = date.getHours();
+    const minutes = date.getMinutes();
+    const year = date.getFullYear();
+    const month = date.getMonth();
+    const day = date.getDate();
+    const date_created = this.currentDateTime =  `${year}/${month}/${day} ${hours}:${minutes}`;
+    const review = {
       rating: this.rating,
       comment: this.comment,
       productId: this.product.id,
-      date_create :new Date(),
-      userId: this.user.id,
-
+      date_create :date_created,
+      // userId: this.user.id,
     };
 
     // Update product rating
@@ -134,7 +151,7 @@ export class ProductReviewsComponent implements OnInit {
         this.productService.updateProduct(newProduct).subscribe(
           (response) => {
             console.log('Product updated successfully:', response);
-            this.router.navigate(['/'])
+            this.router.navigate([''])
           },
           (error) => {
             console.error('Failed to update product:', error);

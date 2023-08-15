@@ -1,109 +1,3 @@
-<!-- <div class="update-product">
-  <h1>Update Product</h1>
-  <form
-    #addProduct="ngForm"
-    (ngSubmit)="submit(addProduct.value)"
-    class="common-form"
-  >
-    <input
-      type="text"
-      class="form-input"
-      placeholder="Enter Product Name"
-      name="name"
-      ngModel="{{ productData?.name }}"
-    />
-    <input
-      type="text"
-      class="form-input"
-      placeholder="Enter Product Price"
-      name="price"
-      ngModel="{{ productData?.price }}"
-    />
-    <input
-      type="text"
-      class="form-input"
-      placeholder="Enter Product Category"
-      name="category"
-      ngModel="{{ productData?.category }}"
-    />
-    <input
-      type="text"
-      class="form-input"
-      placeholder="Enter Product Color"
-      name="color"
-      ngModel="{{ productData?.color }}"
-    />
-    <textarea
-      type="text"
-      class="form-input"
-      placeholder="Enter Product Description"
-      name="description"
-      ngModel="{{ productData?.description }}"
-    ></textarea>
-
-    <input
-      type="text"
-      class="form-input"
-      placeholder="Enter Product Image URL"
-      name="image"
-      ngModel="{{ productData?.image }}"
-    />
-    <button class="form-button">Update Product</button>
-  </form>
-</div> -->
-<!-- <div class="add-product">
-  <h1>Add New Product</h1>
-  <p class="message-p">{{addProductMessage}}</p>
-  <form #addProduct="ngForm"
-  (ngSubmit)="submit(addProduct.value)"
-   class="common-form">
-    <input
-      type="text"
-      class="form-input"
-      placeholder="Enter Product Name"
-      name="name"
-      ngModel
-    />
-    <input
-    type="text"
-    class="form-input"
-    placeholder="Enter Product Price"
-    name="price"
-    ngModel
-  />
-  <input
-  type="text"
-  class="form-input"
-  placeholder="Enter Product Category"
-  name="category"
-  ngModel
-/>
-<input
-type="text"
-class="form-input"
-placeholder="Enter Product Color"
-name="color"
-ngModel
-/>
-<textarea
-type="text"
-class="form-input"
-placeholder="Enter Product Description"
-name="description"
-ngModel
-></textarea>
-
-<input
-type="text"
-class="form-input"
-placeholder="Enter Product Image URL"
-name="image"
-ngModel
-/>
-<button class="form-button">Add Product</button>
-
-  </form>
-</div> -->
 <div class="admin-page">
   <div class="admin-nav " style="  font-size: 20px;">
     <a href="seller" class="all-product"><i class="fa fa-laptop"></i> Sản phẩm</a><br>
@@ -124,34 +18,51 @@ ngModel
     </svg> Phản hồi</a><br>
   </div>
   <div class="admin-content">
-    <h2 class=" mt-6 p-4" style="color: #Ff4b2b; text-align: center;">Cập nhật sản phẩm</h2>
-    <p class="message-p">{{ productMessage }}</p>
-
-    <div class="">
-      <form #updateOrder="ngForm"
-      (ngSubmit)="submit(updateOrder.value)">
-
-        <label for="fruit">Trạng thái</label>
-          <select type="text" id="fname" #status="ngModel" ngModel="{{orderData?.status}}" name="status">
-            <option ngModel="{{orderData?.status}}" value="Đang giao hàng">Đang giao hàng</option>
-            <option ngModel="{{orderData?.status}}" value="Đã nhận hàng">Đã nhận hàng</option>
-          </select>
-          <p class="invalid-input"> <br>
-            <span class="invalid-input"*ngIf="status.invalid && (status.dirty || status.touched)">
-              Tên sản phẩm không được để trống.
-            </span>
-            </p>
-
-
-        <button type="submit"  [disabled]="updateOrder.invalid">Cập nhật</button>
-      </form>
+    <div class="product-list">
+      <h1 style="color: #ff4b2b; text-align: center" class="">
+        Danh sách sản phẩm
+      </h1>
+      <p class="message-p">{{ productMessage }}</p>
+      <table class="mb-3" style="width: 100%;justify-content: center;text-align: center;">
+        <thead>
+          <tr>
+            <th>Mã người dùng</th>
+            <th>Tên</th>
+            <th>Email</th>
+            <th>Mật khẩu</th>
+            <th>Hành động</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="
+              let item of allUser
+                | paginate : { itemsPerPage: 8, currentPage: p }
+            "
+          >
+            <td> {{item.id }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.email }}</td>
+            <td>{{ item.password }}</td>
+            <td>
+              <fa-icon (click)="deleteUser(item.id)" [icon]="icon"></fa-icon>
+              <!-- <a
+                class="adjust-update-link"
+                routerLink="/seller-update-category/{{ item.id }}"
+              >
+                <fa-icon  [icon]="iconEdit"></fa-icon
+              ></a> -->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <pagination-controls
+        previousLabel="Trước"
+        nextLabel="Tiếp"
+        style="text-align: center;"
+        (pageChange)="p = $event"
+      ></pagination-controls>
     </div>
+
   </div>
 </div>
-
-
-
-
-
-
-

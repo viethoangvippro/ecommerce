@@ -12,6 +12,7 @@ import { ProductService } from '../services/product.service';
 export class SellerContactComponent implements OnInit {
   icon = faTrash;
   iconEdit=faEdit;
+  p:any;
   productMessage: any;
   currencyCode = 'VND';
   currencyFormat = 'symbol';

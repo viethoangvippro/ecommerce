@@ -37,14 +37,15 @@
             <a href="" routerLink="/details/{{ item.id }}"
               ><img src="{{ item.image }}" alt=""
             /></a>
-            <div class="product-details">
+            <div class="product-details" style="text-align: center;">
               <a href="" style="color: red;"  routerLink="/details/{{ item.id }}"
                 ><h6 class="name-head">{{ item.name }}</h6></a
               >
+              <a routerLink="/details/{{ item.id }}" style="color: black; font-size:13px;" [innerHTML]="convertToStars(item.rating)"></a>
               <div class="product-price">
                 <h6   style="color: red;font-size: 23px;font-family: 'REM', sans-serif;">
 
-                  {{ item.price | currency : currencyCode : currencyFormat }}
+                  {{ item.priceDiscount | currency : currencyCode : currencyFormat }}
                 </h6>
               </div>
               <div class="product-color"></div>

@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { User, cart, login, product, signUp } from '../data-type';
 import { ProductService } from '../services/product.service';
 import { UserService } from '../services/user.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
 
 
 
@@ -21,66 +22,125 @@ function passwordMatch(controlName: string, matchingControlName: string) {
     }
   };
 }
+export function noSpecialCharacterValidator(): ValidatorFn {
+  const specialCharacterRegex = /^[^!@#$%^&*(),.?":{}|<>]+$/; // Regex to match strings without special characters
+
+  return (control: AbstractControl): { [key: string]: any } | null => {
+    const value = control.value;
+    const containsSpecialCharacter = !specialCharacterRegex.test(value);
+
+    return containsSpecialCharacter ? { noSpecialCharacter: true } : null;
+  };
+}
+export function passwordValidator(): ValidatorFn {
+  const passwordRegex = /^(?=.*[a-zA-Z]).+$/; // Regex để kiểm tra mật khẩu chứa ít nhất một chữ cái
+
+  return (control: AbstractControl): { [key: string]: any } | null => {
+    const value = control.value;
+    const isPasswordValid = passwordRegex.test(value);
+
+    return isPasswordValid ? null : { passwordInvalid: true };
+  };
+}
+
 @Component({
   selector: 'app-user-auth',
   templateUrl: './user-auth.component.html',
   styleUrls: ['./user-auth.component.css'],
 })
-export class UserAuthComponent implements OnInit {
+export class UserAuthComponent  {
   showLogin: boolean = true;
+  username: string |any;
+  email: string |any;
+  usernameExists: boolean |any;
+  emailExists: boolean |any;
   authError: string = '';
-  signupForm: FormGroup;
+  // signupForm: FormGroup;
   errorMessage : any;
   users: User = {
     email: '', password: '',
     id: 0 , name:''
   };
-  constructor(private fb: FormBuilder,private user: UserService, private product: ProductService,private http: HttpClient) {
-    this.signupForm = this.fb.group({
+
+  registrationForm: FormGroup | any;
+  constructor(private fb: FormBuilder,private user: UserService, private product: ProductService,private http: HttpClient,private route :ActivatedRoute) {
+    this.registrationForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
+      password: ['', [Validators.required, Validators.minLength(6),noSpecialCharacterValidator(),passwordValidator()]],
       confirmPassword: ['', Validators.required]
     }, {
       validator: passwordMatch('password', 'confirmPassword')
     });
+
   }
 
-  onSubmit() {
-    const formData = {
-      email: this.signupForm.value.email,
-      password: this.signupForm.value.password
-    };
-    this.user.checkEmail(this.users.email).subscribe(
-      response => {
-        if (response.exists) {
-          this.errorMessage = 'Email already exists';
+  onSubmit(email: string) {
+    // Kiểm tra sự tồn tại của email
+    this.user.checkEmailExists2(email).subscribe(
+      (emailExists: boolean) => {
+        if (emailExists) {
+          // Hiển thị thông báo lỗi rằng email đã tồn tại
+          console.log('Email đã tồn tại. Vui lòng sử dụng một email khác.');
         } else {
-          this.user.register(this.users).subscribe(
-            response => {
-              console.log(response);
-            },
-            error => {
-              console.log(error);
-            }
-          );
+          // Tiếp tục xử lý khi email không tồn tại
+          // Thực hiện các hành động khác, ví dụ: gửi yêu cầu lưu email vào cơ sở dữ liệu
+          console.log('Email mới đã được thêm vào cơ sở dữ liệu.');
         }
       },
-      error => {
-        console.log(error);
+      (error: any) => {
+        // Xử lý lỗi nếu có
+        console.error('Đã xảy ra lỗi:', error);
       }
     );
   }
 
 
 
-  ngOnInit(): void {
-    this.user.userAuthReload();
 
+  // ngOnInit(): void {
+  //   this.user.userAuthReload();
+
+  // }
+  checkEmail() {
+    this.user.checkEmailExists3(this.email).subscribe(
+      (response: any) => {
+        // Kiểm tra kết quả trả về từ MockAPI
+        if (response.length > 0) {
+          // Email đã tồn tại
+          this.emailExists = true;
+        } else {
+          // Email không tồn tại
+          this.emailExists = false;
+
+        }
+      },
+      (error) => {
+        console.error('Lỗi kiểm tra email:', error);
+      }
+    );
   }
 
+
   signUp(data: signUp) {
-    this.user.userSignUp(data);
+    this.user.checkEmailExists3(this.email).subscribe(
+      (response: any) => {
+        // Kiểm tra kết quả trả về từ MockAPI
+        if (response.length > 0) {
+          // Email đã tồn tại
+          this.emailExists = true;
+        } else {
+          // Email không tồn tại
+          this.emailExists = false;
+        // Thực hiện đăng ký người dùng
+        this.user.userSignUp(data);
+        }
+      },
+      (error) => {
+        console.error('Lỗi kiểm tra email:', error);
+      }
+    );
+
   }
 
 
