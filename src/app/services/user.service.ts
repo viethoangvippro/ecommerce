@@ -97,10 +97,7 @@ invalidUserAuth= new EventEmitter<boolean>(false)
   }
   private baseUrl = 'http://localhost:3000/users';
 
-  // checkEmail(email: any): Observable<{ exists: boolean }> {
-  //   const url = `${this.baseUrl}?email=${email}`;
-  //   return this.http.get<{ exists: boolean }>(url);
-  // }
+
   register(user: User): Observable<User> {
     return this.http.post<User>(this.baseUrl, user);
   }

@@ -35,11 +35,7 @@
               </label>
             </div>
             <div style="margin-top: -10px; margin-bottom: 10px; color: red;font-size: 13px;" *ngIf="sellerSignUp.get('name')?.hasError('required')">Tên không được để trống!</div>
-            <!-- <p class="invalid-input">
-      <span *ngIf="username.invalid && username.touched"
-        >Tên không được để trống</span
-      >
-    </p> -->
+
 
             <div class="form-control">
               <input
@@ -90,11 +86,7 @@
               <div *ngIf="sellerSignUp.get('password')?.hasError('noSpecialCharacter')">Mật khẩu không được có ký tự đặc biệt!</div>
               <div *ngIf="sellerSignUp.get('password')?.hasError('minlength')">Mật khẩu phải trên 6 ký tự!</div>
             </div>
-            <!-- <p class="invalid-input">
-      <span *ngIf="password.invalid && password.touched"
-        >Mật khẩu không được để trống</span
-      >
-    </p> -->
+
             <div class="form-control">
               <input
                 type="password"
