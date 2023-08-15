@@ -11,7 +11,7 @@
               #orderData="ngForm"
               class="common-form"
               (ngSubmit)="orderNow(orderData.value)"
-            >
+            >      <span>Email</span>
               <div class="inputbox">
                 <input
                   type="text"
@@ -21,7 +21,7 @@
                   required
                   #email="ngModel"
                 />
-                <span>Email</span>
+
                 <i></i>
               </div>
               <br />
@@ -30,7 +30,7 @@
                   >Email không được để trống</span
                 >
               </p>
-
+              <span>Thông tin liên hệ</span>
               <div class="inputbox">
                 <input
                   type="text"
@@ -40,7 +40,7 @@
                   required
                   #phone="ngModel"
                 />
-                <span>Thông tin liên hệ</span>
+
                 <i></i>
               </div>
               <br />
@@ -49,17 +49,17 @@
                   >Thông tin liên hệ không được để trống</span
                 >
               </p>
-
+              <span>Địa chỉ</span>
               <div class="inputbox">
-                <input
+                <textarea
                   type="text"
-                  class="form-input"
+                  class="form-input p-3"
                   name="address"
                   ngModel
                   required
                   #address="ngModel"
-                />
-                <span>Địa chỉ</span>
+                ></textarea>
+
                 <i></i>
               </div>
               <br />

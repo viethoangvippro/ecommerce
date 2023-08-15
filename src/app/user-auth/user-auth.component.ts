@@ -34,7 +34,6 @@ export function noSpecialCharacterValidator(): ValidatorFn {
 }
 export function passwordValidator(): ValidatorFn {
   const passwordRegex = /^(?=.*[a-zA-Z]).+$/; // Regex để kiểm tra mật khẩu chứa ít nhất một chữ cái
-
   return (control: AbstractControl): { [key: string]: any } | null => {
     const value = control.value;
     const isPasswordValid = passwordRegex.test(value);

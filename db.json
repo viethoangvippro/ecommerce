@@ -61,8 +61,8 @@
       "size": "360.1 x 279.9 x 25.9~27.9 (mm)",
       "id": 1,
       "categoryId": 1,
-      "rating": 4.333333333333333,
-      "numReviews": 3
+      "rating": 4.25,
+      "numReviews": 4
     },
     {
       "name": "Laptop HP VICTUS 15 ",
@@ -345,6 +345,13 @@
       "password": "123123a",
       "confirmPassword": "123123a",
       "id": 4
+    },
+    {
+      "name": "Việt Trương",
+      "email": "hoangkai251@gmail.com",
+      "password": "123123a",
+      "confirmPassword": "123123a",
+      "id": 5
     }
   ],
   "cart": [
@@ -438,6 +445,37 @@
       "productId": 1,
       "userId": 3,
       "id": 3
+    },
+    {
+      "name": "Laptop HP VICTUS 15 ",
+      "price": "20990000",
+      "priceDiscount": 18000000,
+      "color": "Black",
+      "description": "Laptop HP VICTUS 15 fa0155TX i5 12450H (81P00PA) hứa hẹn mang đến trải nghiệm làm việc và giải trí tuyệt vời nhờ bộ vi xử lý Intel thế hệ 12 mạnh mẽ, card đồ họa NVIDIA RTX 30-series và màn hình 144 Hz siêu mượt mà.",
+      "image": "https://nguyenvu-store-medias.tn-cdn.net/2022/03/HP-VICTUS-16-e0177AX-4R0U9PA-nguyenvustore-1.png",
+      "cpu": "AMD Ryzen™ 9-7940HS 4.0GHz up to 5.2GHz 16MB",
+      "ram": "16GB DDR5 5600MHz (2x SO-DIMM socket, up to 32GB SDRAM)",
+      "drive": "512GB PCIe NVMe SED SSD (Còn trống 1 khe SSD M.2 PCIe Gen 4)",
+      "card": "NVIDIA® GeForce RTX™ 4060 8GB GDDR6 + AMD Radeon™ 780M",
+      "monitor": "16\" WQXGA (2560x1600) IPS, Slim Bezel, 165Hz, 500 nits, sRGB 100%, Acer ComfyView™",
+      "conecttionport": "1x USB Type-C™ port (supporting USB 3.2 Gen 2 (up to 10 Gbps); USB charging 5V - 3A; DC-in port 20V - 65W) 1x USB Type-C™ port (supporting USB charging 5V - 3A; DC-in port 20V - 65W) 1x USB 3.2 Gen 2 featuring power off USB charging 1x USB 3.2 Gen 2 1x USB 2.0  1x HDMI® 2.1 port with HDCP support 1x 3.5 mm headphone/speaker jack, supporting headsets with built-in microphone 1x Ethernet (RJ-45) port 1x DC-in jack for AC adapter",
+      "keyboard": "RGB 4 vùng",
+      "lan": "Killer Ethernet E2600",
+      "wifi": "Wi-Fi 6E (2x2)",
+      "bluetooth": "v5.1",
+      "audio": "2x 2W Speaker,Microphone,DTS:X® Ultra Audio Technology",
+      "webcam": "1080p HD video at 30 fps with Temporal Noise Reduction",
+      "system": "Windows 11 Home",
+      "battery": "4 cell, 90Whr",
+      "weight": "2.7 kg",
+      "size": "360.1 x 279.9 x 25.9~27.9 (mm)",
+      "categoryId": 1,
+      "rating": null,
+      "numReviews": null,
+      "quantity": 1,
+      "productId": 2,
+      "userId": 5,
+      "id": 4
     }
   ],
   "category": [
@@ -563,6 +601,13 @@
       "productId": 5,
       "date_create": "2023/7/15 8:34",
       "id": 15
+    },
+    {
+      "rating": 4,
+      "comment": "h",
+      "productId": 1,
+      "date_create": "2023/7/15 10:16",
+      "id": 16
     }
   ],
   "orders": [
@@ -574,6 +619,15 @@
       "address": "233 Trần Phú",
       "totalPrice": 30015000,
       "userId": 1
+    },
+    {
+      "status": "Đang giao hàng",
+      "id": 2,
+      "email": "hoangkai251@gmail.com",
+      "contact": "0397064432",
+      "address": "233 Trần Phú",
+      "totalPrice": 20990000,
+      "userId": 5
     }
   ],
   "contacts": [
