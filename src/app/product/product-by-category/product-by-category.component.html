@@ -39,9 +39,25 @@
               >
               <a routerLink="/details/{{ item.id }}" style="color: black; font-size:13px;" [innerHTML]="convertToStars(item.rating)"></a>
               <div class="product-price">
-                <h6   style="color: red;font-size: 23px;font-family: 'REM', sans-serif;">
+                <h6>
+                  <del>{{
+                    item.price | currency : currencyCode : currencyFormat
+                  }}</del>
 
-                  {{ item.priceDiscount | currency : currencyCode : currencyFormat }}
+                </h6>
+                <h6
+                  style="
+                    color: red;
+                    font-size: 23px;
+                    font-family: 'REM', sans-serif;
+
+                  "
+                >
+                  {{
+                    item.priceDiscount
+                      | currency : currencyCode : currencyFormat
+                  }}
+
                 </h6>
               </div>
               <div class="product-color"></div>

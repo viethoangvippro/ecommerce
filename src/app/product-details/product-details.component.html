@@ -13,7 +13,6 @@
           <div class="row">
             <div class="col-lg-1">{{ productData.rating | number:'1.1-1' }}</div>
             <a
-
               [innerHTML]="convertToStars(productData.rating)"
               class="col-md-3"  (click)="scrollToElement()" scrollToDuration="500" scrollToOffset="100"
               style="margin-left: -15px; margin-top: -2px; color: black"

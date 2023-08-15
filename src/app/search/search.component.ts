@@ -45,7 +45,17 @@ export class SearchComponent implements OnInit {
       this.trendyProducts = trendyProducts.sort((a, b) => (a.name > b.name) ? 1 : -1);
     });
   }
-
+  convertToStars(rating: number): string {
+    let stars = '';
+    for (let i = 0; i < 5; i++) {
+      if (i < Math.round(rating)) {
+        stars += '<span class="fa fa-star checked"></span>';
+      } else {
+        stars += '<span class="fa fa-star"></span>';
+      }
+    }
+    return stars;
+  }
   sortByName1():void{
     this.product.getProducts().subscribe(trendyProducts=>{
       this.trendyProducts = this.trendyProducts.sort((a: { name: string; }, b: { name: string; }) => {
