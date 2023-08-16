@@ -46,8 +46,8 @@
           >
             <td><img src="{{ item.image }}" /></td>
             <td>{{ item.name }}</td>
-            <td>{{ item.price }}</td>
-            <td>{{ item.priceDiscount }}</td>
+            <td>{{ item.price | currency : currencyCode : currencyFormat}}</td>
+            <td>{{ item.priceDiscount | currency : currencyCode : currencyFormat}}</td>
             <td>{{ item.color }}</td>
             <td>{{ item.categoryId }}</td>
             <td>{{ item.description }}</td>

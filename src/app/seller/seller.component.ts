@@ -14,7 +14,8 @@ export class SellerComponent implements OnInit {
   trendyProducts:any| product[];
   p:any;
   pageSize: string | number | undefined ;
-
+  currencyCode = 'VND';
+  currencyFormat = 'symbol-narrow';
   productMessage: undefined | string;
   icon = faTrash;
   iconEdit=faEdit;
